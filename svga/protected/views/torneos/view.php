@@ -3,7 +3,7 @@
 /* @var $model Torneos */
 
 $this->breadcrumbs=array(
-	'Torneoses'=>array('index'),
+	'Torneos'=>array('index'),
 	$model->name,
 );
 
@@ -24,8 +24,9 @@ $this->menu=array(
 		'id',
 		'name',
 		array(
-		'name'=>'type',
-		'value'=>($model->type == 0 ? 'Individual':'Equipos')
+			'name'=>'type',
+			'value'=>($model->type == 0 ? 'Individual':'Equipos')
 		),
+		'EnabledType',
 	),
 )); ?>

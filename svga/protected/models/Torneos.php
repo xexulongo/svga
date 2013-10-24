@@ -12,6 +12,11 @@ class Torneos extends CActiveRecord
 {
 	const TYPE_ENABLED=1;
     const TYPE_OFF=0;
+    const STATUS_OFF=0;
+    const STATUS_REGISTER=1;
+    const STATUS_PLAYING=2;
+    const STATUS_FINISHED=3;
+    
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -40,6 +45,7 @@ class Torneos extends CActiveRecord
 		return array(
 			array('name, type', 'length', 'max'=>45),
 			array('type', 'in', 'range'=>array(0,1)),
+			array('enabled', 'in', 'range'=>array(0,1)),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, type', 'safe', 'on'=>'search'),
@@ -63,6 +69,15 @@ class Torneos extends CActiveRecord
 			'teams' => array(self::MANY_MANY, 'Teams', 'Torneos_has_Teams(torneo_id,teams_id)'),
 		);
 	}
+	
+	public function getEnabledType(){
+		$status = $this->enabled;
+			if($status == 0) $status = 'Descativado';
+			else if ($status==1) $status = 'Inscripciones Abiertas';
+			else if($status ==2) $status = 'En juego';
+			else $status = "Finalizado";
+		return $status;
+	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -74,6 +89,7 @@ class Torneos extends CActiveRecord
 			'name' => 'Nombre',
 			'type' => 'Tipo de torneo',
 			'NameAddresss'=>'Nombre',
+			'EnabledType'=>'Status',
 		);
 	}
 

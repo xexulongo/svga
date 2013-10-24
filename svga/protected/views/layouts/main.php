@@ -23,7 +23,7 @@
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(               
                 array('label'=>'Inicio', 'url'=> $this->createUrl('post/index')),
-                //~ array('label'=>'Contacto', 'url'=> $this->createUrl('site/contact')),
+				array('label'=>'Usuarios', 'url'=> $this->createUrl('users/index')),
 				array('label'=>'Equipos', 'url'=> $this->createUrl('teams/index')),
 				array('label'=>'Torneos', 'url'=> $this->createUrl('torneos/index')),
                 array('label'=>'Login', 'url'=> $this->createUrl('site/login'), 'visible'=> Yii::app()->user->isGuest),

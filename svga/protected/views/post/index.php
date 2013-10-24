@@ -50,7 +50,7 @@ $this->menu=array(
       'dataProvider'=>$dataProvider2,
       'itemView'=>'_view',
       'sortableAttributes'=>array(
-              'title',
+              'title'=>'Título',
               'create_time'=>'Fecha',
           ),
     ));

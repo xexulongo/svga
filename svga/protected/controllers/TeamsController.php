@@ -70,8 +70,15 @@ class TeamsController extends Controller
 		if(isset($_POST['Teams']))
 		{
 			$model->attributes=$_POST['Teams'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$temp = Teams::model()->findByAttributes(array('name'=>$model->name)); //Busca si hi han coincidencies en el nom
+			
+			if($temp == null ) {
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
+			}
+			else {
+				Yii::app()->user->setFlash('error', "El nombre de equipo ya esta en uso!");
+			}
 		}
 
 		$this->render('create',array(
@@ -95,7 +102,7 @@ class TeamsController extends Controller
 		{
 			$model->attributes=$_POST['Teams'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));			
 		}
 
 		$this->render('update',array(
