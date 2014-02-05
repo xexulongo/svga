@@ -66,9 +66,7 @@ class PostController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
-	{
-		if(Yii::app()->user->getName()=='admin') {
-			$model=new Post;
+	{			$model=new Post;
 
 			// Uncomment the following line if AJAX validation is needed
 			// $this->performAjaxValidation($model);
@@ -83,12 +81,6 @@ class PostController extends Controller
 			$this->render('create',array(
 				'model'=>$model,
 			));
-		}
-		else{
-			Yii::app()->user->setFlash('error', "Solo el administrador puede crear posts!");
-			if(Yii::app()->user->isGuest) $this->redirect(array('site/login'));
-			$this->redirect(Yii::app()->user->returnUrl);
-		}
 	}
 	protected function newComment($post)
 	{
@@ -162,25 +154,25 @@ class PostController extends Controller
 		/*
 		** CREA UNA LLISTA DE LES FOTOGRAFIES
 		*/
-		$fileListOfDirectory = array();
+		// $fileListOfDirectory = array();
 
-		$pathTofileListDirectory = '/home/xexu/yii/svga/gallery/' ;
+		// $pathTofileListDirectory = '/home/xexu/yii/svga/gallery/' ;
 
-		if(!is_dir($pathTofileListDirectory ))
-		{
-		    die(" Invalid Directory");
-		}
+		// if(!is_dir($pathTofileListDirectory ))
+		// {
+		//     die(" Invalid Directory");
+		// }
 
-		if(!is_readable($pathTofileListDirectory ))
-		{
-		    die("You don't have permission to read Directory");
-		}
+		// if(!is_readable($pathTofileListDirectory ))
+		// {
+		//     die("You don't have permission to read Directory");
+		// }
 
-		foreach ( new DirectoryIterator ( $pathTofileListDirectory ) as $file ) {
-		      if ($file->getExtension () == "jpg" or $file->getExtension () == "png") {
-		          array_push ( $fileListOfDirectory, $file->getBasename () );
-	      }
-		}
+		// foreach ( new DirectoryIterator ( $pathTofileListDirectory ) as $file ) {
+		//       if ($file->getExtension () == "jpg" or $file->getExtension () == "png") {
+		//           array_push ( $fileListOfDirectory, $file->getBasename () );
+	 //      }
+		// }
 
 		/* 
 		** DEFINIM DATAPROVIDERS PER LES NOTICIES DESTACADES I TOTES LES NOTICIES
@@ -207,12 +199,13 @@ class PostController extends Controller
 	        'order'=>'update_time DESC',
 	        'limit'=>4,
     	));
+    	$value = array(1,2,3);
+    	$criteriaDestacados->addInCondition('destacado',$value,'AND');
 	    if(isset($_GET['tag']))
 	        $criteriaPost->addSearchCondition('tags',$_GET['tag']);
 	 
 	    $dataProviderDestacados=new CActiveDataProvider('Post', array(
 	    	'pagination' => false,
-
 	        'criteria'=>$criteriaDestacados,
 	    ));
 
@@ -225,7 +218,7 @@ class PostController extends Controller
 	   	$this->layout = '//layouts/column2';
 	   	$this->renderPartial('index',array(
         	'dataProvider2'=>$dataProviderPost,
-        	'filelist'=>$fileListOfDirectory
+        	//'filelist'=>$fileListOfDirectory
     	));
 	}
 

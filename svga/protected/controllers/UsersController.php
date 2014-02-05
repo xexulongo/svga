@@ -28,16 +28,16 @@ class UsersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create'),
+				'actions'=>array('view', 'create', 'login', 'loginmembre', 'gethash'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('update', 'logout'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('admin','delete', 'index'),
+				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -45,6 +45,103 @@ class UsersController extends Controller
 		);
 	}
 
+	public function actions()
+	{
+		return array(
+			'captcha'=>array(
+				'class'=>'CCaptchaAction',
+				'backColor'=>0xFFFFFF,
+			),
+		);
+	}
+
+	/**
+	 * Displays the login page
+	 */
+	public function actionLogin() {
+		$this->layout='//layouts/main';
+		//només deixem loggejar si no ho està
+		if (!Yii::app() -> user -> isGuest) {
+			Yii::app() -> user -> setFlash('warning', Yii::t('SVGA', 'Ja tens la sessió iniciada!'));
+			$this -> redirect($this -> createUrl(Yii::app() -> homeUrl));
+		} 
+		else {
+			$form = new LoginForm();
+			if (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['Usuarisvga'])) {
+					$user = new UserIdentity($_POST['Usuarisvga']['username'], $_POST['Usuarisvga']['password']);
+					$result = $user -> authenticate();
+					if ($result == PasswordIdentity::CREDENTIALS_ERROR) {
+						Yii::app() -> user -> setFlash('danger', Yii::t('SVGA', 'Usuari i/o contrasenya incorrecte'));
+					}
+					else if ($result == PasswordIdentity::OK) {
+
+						Yii::app() -> user -> login($user);
+
+						Yii::app() -> user -> setFlash('success', Yii::t('SVGA', 'Sessió iniciada correctament!'));
+						$this -> redirect(Yii::app() -> user -> returnUrl);
+					} 
+					else {
+						Yii::app() -> user -> setFlash('danger', Yii::t('SVGA', 'Error en iniciar la sessió'));
+				}
+				$form -> password = '';
+			}
+			if (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['LoginForm'])) {
+				//ens estan enviant dades per iniciar sessió
+				$user = new PasswordIdentity($_POST['LoginForm']['email'], $_POST['LoginForm']['password']);
+				$result = $user -> authenticate();
+				if ($result == PasswordIdentity::CREDENTIALS_ERROR) {
+					Yii::app() -> user -> setFlash('danger', Yii::t('SVGA', 'Usuari i/o contrasenya incorrecte'));
+				} else if ($result == PasswordIdentity::EMAIL_NOT_ACTIVATED) {
+					Yii::app() -> user -> setFlash('danger', Yii::t('SVGA', 'Encara no has confirmat la teva direcció de correu electrònic!'));
+				} else if ($result == PasswordIdentity::NOT_ACTIVATED) {
+					Yii::app() -> user -> setFlash('danger', Yii::t('SVGA', 'Aquest compte està desactivat'));
+				} else if ($result == PasswordIdentity::OK) {
+
+					Yii::app() -> user -> login($user);
+
+					Yii::app() -> user -> setFlash('success', Yii::t('SVGA', 'Sessió iniciada correctament!'));
+					$this -> redirect(Yii::app() -> user -> returnUrl);
+				} else {
+					Yii::app() -> user -> setFlash('danger', Yii::t('SVGA', 'Error en iniciar la sessió'));
+				}
+
+				$form -> password = '';
+				$this -> render('login', array('formModel' => $form));
+			} 
+			else {
+				
+				//mostrem el formulari
+				$this -> render('login', array('formModel' => $form));
+			}
+		}
+	}
+
+	// public function actionLoginmembre() {
+	// 		if (($_SERVER['REQUEST_METHOD'] == 'POST') && !empty($_POST['username']) && !empty($_POST['password'])) {
+	// 			//Usarisvga::model()->find();
+	// 			echo json_encode($data);
+	// 		}
+	// 		else {
+	// 			if(empty($_POST['username']) || empty($_POST['username'])){
+	// 				$data['status'] = 'warning';
+	// 				$data['message'] = '<div class="alert alert-warning">Password o username incorrecte!</div>';
+	// 				echo json_encode($data);
+	// 			}
+	// 		}	
+	// }
+
+	public function Gethash($string){
+		return md5($string);
+	}
+
+	/**
+	 * Logs out the current user and redirect to homepage.
+	 */
+	public function actionLogout()
+	{
+		Yii::app()->user->logout();
+		$this->redirect(Yii::app()->homeUrl);
+	}
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -78,25 +175,17 @@ class UsersController extends Controller
 
 			{	
 				$model->attributes = $_POST['Users'];
-				if(Users::model()->findByAttributes(array('username'=>$model->username)) == null ){
-					if (Users::model()->findByAttributes(array('email'=>$model->email)) == null){
-						if($model->save())
-							$this->redirect(array('view','id'=>$model->id));
-					}
-					else {
-						Yii::app()->user->setFlash('error', "El e-mail ya esta en uso!");
-					}
+				$model->birthday = $_POST['Users']['birthday'];
+				
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
 				}
-				else {
-					Yii::app()->user->setFlash('error', "El nombre de usuario ya esta en uso!");
-				}
-			}
 
 			$this->render('create',array(
 				'model'=>$model,
 			));
 		}
-	}
+	}	
 
 	/**
 	 * Updates a particular model.

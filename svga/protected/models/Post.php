@@ -14,6 +14,7 @@
  * @property integer $create_time
  * @property integer $update_time
  * @property integer $author_id
+ *  @property bool $destacado
  */
 class Post extends CActiveRecord
 {
@@ -74,10 +75,11 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		 return array(
-        array('title, content, description, status', 'required',
+        array('title, content, description, status, destacado', 'required',
         	'message'=>'{attribute} no puede estar en blanco'),
         array('title', 'length', 'max'=>128),
         array('status', 'in', 'range'=>array(1,2,3)),
+     	array('destacado', 'in', 'range'=>array(0,1)),
         array('tags', 'match', 'pattern'=>'/^[\w\s,]+$/',
             'message'=>'Tags can only contain word characters.'),
         array('tags', 'normalizeTags'),
@@ -168,6 +170,7 @@ class Post extends CActiveRecord
 			'create_time' => 'Create Time',
 			'update_time' => 'Update Time',
 			'author_id' => 'Author',
+			'destacado'=>'Destacado',
 		);
 	}
 
@@ -192,6 +195,8 @@ class Post extends CActiveRecord
 		$criteria->compare('create_time',$this->create_time);
 		$criteria->compare('update_time',$this->update_time);
 		$criteria->compare('author_id',$this->author_id);
+		$criteria->compare('destacado',$this->destacado);
+
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

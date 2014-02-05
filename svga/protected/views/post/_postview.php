@@ -14,9 +14,6 @@
 			
 			<div class="text-center">
 
-				<!-- <?php echo implode(', ', $data->userLinks); ?> CREA LINKS USUARIS-->
-				<!-- <img src="<?php echo $data->image; ?>"/> <br /> INTENT IMATGES-->
-				<!-- <?php echo $data->author->username . ', ' . date('F j, Y',$data->create_time); ?> <br /> -->
 				<i class="icon-pencil"></i>Autor: <b><?php echo $data->author->username . ' ||   '?></b>
 				<i class="icon-calendar"> </i><?= Yii::app()->dateFormatter->formatDateTime($data->create_time, 'long', 'short')?> <br /><?php if($data->image != NULl) echo CHtml::image(Yii::app()->baseUrl . '/images/' . $data->image)?>
 				<br /><br /><p class="text-left" style="font-size:16px;"><?php echo CHtml::encode($data->content); ?></p>

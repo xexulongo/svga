@@ -6,6 +6,8 @@ class UserMenu extends CPortlet
 {
 	public function init()
 	{
+		$this->contentCssClass='menu';
+		$this->titleCssClass='menu-title';
 		$loguear='Bienvenid@: ';
 		$nombre=Yii::app()->user->name;
 		$loguear = $loguear . $nombre;

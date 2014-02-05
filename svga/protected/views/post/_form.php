@@ -47,17 +47,30 @@
 		<?php echo $form->error($model,'tags', array("class"=>"alert alert-error")); ?>
 		<?php echo $form->labelEx($model,'tags:'); ?>
 		<?php echo $form->textField($model,'tags',array('rows'=>6, 'cols'=>50)); ?>
+
+		<?php echo $form->error($model,'destacado', array("class"=>"alert alert-error")); ?>
+		<?php echo $form->labelEx($model,'destacado:'); ?>
+		<?php echo $form->checkBox($model,'destacado'); ?>
+
+		<br /><br />
 		
 	
 	<div class="clear">
 		<?php echo ('Guardar como:'); ?>
-		<?php echo $form->dropDownList($model,'status',Lookup::items('PostStatus')); ?>
-		<div class="pull-right"><?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?></div>
+		<?php echo $form->dropDownList($model,'status', array('1'=>'Borrador', '2'=>'Publicado','3'=>'Archivado')); ?>
+		<div class="pull-right"><?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar', array('class'=>'btn btn-primary')); ?></div>
 	</div>
 
 	<script>
 	
 	$(document).ready(function() {
+		$('.input_class_checkbox').each(function(){
+    		$(this).hide().after('<div class="class_checkbox" />');
+    	});
+
+		$('.class_checkbox').on('click',function(){
+    		$(this).toggleClass('checked').prev().prop('checked',$(this).is('.checked'))
+    	});
 		
 		$('#News_title_ca').slug({'slug': 'News_slug'});
 		
@@ -68,6 +81,8 @@
 			menubar: 'edit insert format',
 			toolbar: 'undo redo | styleselect forecolor backcolor| bold italic | link image  | pagebreak table hr | emoticons preview',
 		});
+
+     
 		
 	});
 	

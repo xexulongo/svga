@@ -8,14 +8,10 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'teams-form',
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 )); ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son imprescindibles.</p>
-<!--
-
-	<?php echo $form->errorSummary($model); ?>
--->
 
 		<?php echo $form->labelEx($model,'name'); ?>
 		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>

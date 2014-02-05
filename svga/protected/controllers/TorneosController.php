@@ -45,6 +45,31 @@ class TorneosController extends Controller
 		);
 	}
 
+	public function actionProcessImageUpload() {
+	    
+        $model=new files;
+ 
+        // Uncomment the following line if AJAX validation is needed
+        // $this->performAjaxValidation($model);
+ 
+                     
+        if(isset($_POST['files']))
+        {
+                    
+        	$rnd = rand(0,9999); // use to generate random
+        	$model->attributes=$_POST['files'];
+            $uploadedFile = CUploadedFile::getInstance($model, 'filename');
+            $fileName = "{$rnd}-{$uploadedFile}"; // random number + file name
+			$model->filename = $fileName; 
+			$model->size = $uploadedFile->getSize();  //get size of file
+			$model->file_type = $uploadedFile->getType();  //get type of file                      
+                        
+            if($model->save()){ 
+        		$uploadedFile->saveAs(Yii::app()->basePath.'/../uploads/fiels/'.$fileName); // image will uplode to rootDirectory/uploads/fiels/                        
+        	}		
+		}
+	}
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed

@@ -19,7 +19,10 @@
 	<?php echo CHtml::encode($data->profile); ?>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('TorneosNames')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('TorneosNames'));
+	$count = count($data->torneos);
+	if($count !== 0) echo '('. $count.')';
+	?>:</b>
 	<?php echo ((!$data->TorneosNames == NULL ? ($data->TorneosNames) : 'Ningun torneo asignado')) ; ?>
 	<br />
 	

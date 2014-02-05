@@ -4,23 +4,21 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form span4 offset4" style="padding-bottom:45px;",>
-
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'register-form',
+	'id'=>'login-form',
 	'enableClientValidation'=>true,
 	'clientOptions'=>array(
-				'validateOnSubmit'=>true,
-			),
+		'validateOnSubmit'=>true,
+	),
 	'htmlOptions'=>array(
-	        'class'=>'log-page',
+        'class'=>'log-page nomargin2 text-center',
+        'style'=>'padding-bottom:10px;',
+
     ),
 )); ?>
 
-	<h1>Create Users</h1>
+	<h1>Crear Usuari</h1>
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
 
 		<?php echo $form->labelEx($model,'username'); ?>
 		<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><?php echo $form->textField($model,'username'); ?></div>
@@ -48,27 +46,34 @@
 
 	
 		<?php echo $form->labelEx($model,'birthday'); ?>
-		<?php echo $form->textField($model,'birthday'); ?>
 		<?php echo $form->error($model,'birthday'); ?>
 	
+<?php    
+    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+    'model' => $model,
+    'attribute'=>'birthday',
+    // additional javascript options for the date picker plugin
+    'options'=>array(
+        'showAnim'=>'fold',
+                'changeYear' => 'true',
+                'dateFormat' => 'dd/mm/yy',
+                'monthNames' => array('Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre'),
+                'monthNamesShort' => array("Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"),
+                'dayNames' => array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"),
+                'dayNamesMin' => array('Do','Lu','Ma','Mi','Ju','Vi','Sa'),
+                'defaultDate' => '-18y',
+                'yearRange' => '1930:2008',
+                'changeMonth' => 'true',
+                'language'=> 'es',
+                //'language'=> Yii::app()->getLanguage(),
+    ),
+    'htmlOptions'=>array(
+        'style'=>'height:20px;'
+    ),
+)); 
+?>
 
-	<!--<?php echo $form->labelEx($model,'last_login'); ?>
-		<?php echo $form->textField($model,'last_login'); ?>
-		<?php echo $form->error($model,'last_login'); ?>
-	
-	
-		<?php echo $form->labelEx($model,'created'); ?>
-		<?php echo $form->textField($model,'created'); ?>
-		<?php echo $form->error($model,'created'); ?> -->
-	
-
-	<!--<div class="row buttons">-->
-		<!-- <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?> -->
-		<br/>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Save', array("class"=>"btn btn-info")); ?>
-	<!--</div>-->
+	<br/>
+	<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Save', array("class"=>"btn btn-info")); ?>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- form -->
-<div style="float:both;"></div>

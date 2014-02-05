@@ -49,11 +49,12 @@ class Users extends CActiveRecord
 		return array(
 			array('username, password, email, repeat_password', 'required',
 				'message'=>'{attribute} no puede estar en blanco'),
-			array('birthday, last_login, created', 'numerical', 'integerOnly'=>true),
+			array('last_login, created', 'numerical', 'integerOnly'=>true),
 			array('username, password, email, avatar', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, username, password, email, avatar, birthday, last_login, created', 'safe', 'on'=>'search'),
+			array('email, username', 'unique'),
 		);
 	}
 

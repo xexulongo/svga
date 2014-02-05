@@ -11,12 +11,13 @@
     <meta content="" name="author" />
     <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	<link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/custom.css" />
+
 </head>
 
 <body>
 
 <?php $this->widget('bootstrap.widgets.TbNavbar',array(
-
     'items'=>array(
     	
         array(
@@ -26,9 +27,9 @@
 				array('label'=>'Usuarios', 'url'=> $this->createUrl('users/index')),
 				array('label'=>'Equipos', 'url'=> $this->createUrl('teams/index')),
 				array('label'=>'Torneos', 'url'=> $this->createUrl('torneos/index')),
-                array('label'=>'Login', 'url'=> $this->createUrl('site/login'), 'visible'=> Yii::app()->user->isGuest),
+                array('label'=>'Login', 'url'=> $this->createUrl('users/login'), 'visible'=> Yii::app()->user->isGuest),
                 array('label'=>'Registrate', 'url'=> $this->createUrl('users/create'), 'visible'=> Yii::app()->user->isGuest),
-                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('users/logout'), 'visible'=>!Yii::app()->user->isGuest),
             ),
         ),
         
@@ -48,7 +49,6 @@
 			'homeLink' => Chtml::link(Yii::t('SVGA', 'Inicio'), $this->createUrl('post/index'))
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
-
 	<?php $this->widget('bootstrap.widgets.TbAlert', array(
         'block'=>true, 
         'fade'=>true, 
@@ -57,10 +57,8 @@
 
 	<?php echo $content; ?>
 
-	<div class="clear"></div>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+	<div class="footer">
+		Copyright &copy; <?php echo date('Y'); ?> by SVGA.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

@@ -1,7 +1,7 @@
 <?php
 return array (
   'template' => 'default',
-  'connectionId' => 'db',
+  'connectionId' => 'db2',
   'tablePrefix' => 'tbl_',
   'modelPath' => 'application.models',
   'baseClass' => 'CActiveRecord',

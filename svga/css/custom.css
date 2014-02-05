@@ -1,0 +1,68 @@
+.filter_input_custom{
+	width: 50%;
+	border: 1px solid #ccc;
+}
+.menu{
+	background-color: aliceblue;
+	padding: 5px;
+	margin-top: -10px;
+}
+.menu-title{
+	font-style: bold;
+	background-color: aliceblue;
+	padding: 5px;
+	margin-top: -10px;
+}
+
+.siguenos{
+	padding: 10px;
+	margin-top: 5px;
+	color: #7ea57b;
+}
+
+.slogan {
+	min-height: 100px;
+	background: #fafafa;
+	width: 100%;
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.head-form{
+	width: 300px;
+	margin: 50px auto;
+	background: #f95252;
+	border-radius: 20px 20px 0 0;
+	color: #fff;
+	font-size: 16px;
+	padding: 5px 5px;
+}
+
+#usuarisvga-form{
+	width: 300px;
+	margin: 50px auto;
+	margin-top: -50px;
+	padding:5px 5px;
+	border-radius: 0 0 20px 20px;
+	text-align: center;
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.nomargin{
+	margin-top: -30px;
+}
+
+.nomargin2{
+	margin-top: -10px;
+}
+
+.minim{
+	margin: 35px auto;
+	padding: 0 0;
+}
+.footer{clear:both;}
+input.error {background-color: pink; border-color: red; color: white;}

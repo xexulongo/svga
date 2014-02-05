@@ -304,7 +304,7 @@ class CGridView extends CBaseListView
 	 * </ul>
 	 * @since 1.1.11
 	 */
-	public $enableHistory=false;
+	public $enableHistory=true;
 	/**
 	 * Initializes the grid view.
 	 * This method will initialize required property values and instantiate {@link columns} objects.

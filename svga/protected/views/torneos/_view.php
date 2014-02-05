@@ -21,7 +21,11 @@
 			<br />
 			<b><?php echo CHtml::encode($data->getAttributeLabel('EnabledType')); ?>:</b>
 			<?php  echo CHtml::encode($data->EnabledType)?>
-			<br /><br />
+			<br />
+			
+			<b><?php echo CHtml::encode($data->getAttributeLabel('TeamsNames')); ?>:</b>
+			<?php  echo $data->TeamsNames?>
+			<br/>
 		</div>
 	</div>
 	<hr>

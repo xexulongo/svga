@@ -120,6 +120,6 @@
 .grid-view .filters input,
 .grid-view .filters select
 {
-	width: 100%;
+	width: 90%;
 	border: 1px solid #ccc;
 }

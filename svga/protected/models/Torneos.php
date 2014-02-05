@@ -66,7 +66,7 @@ class Torneos extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'teams' => array(self::MANY_MANY, 'Teams', 'Torneos_has_Teams(torneo_id,teams_id)'),
+			'equipos' => array(self::MANY_MANY, 'Teams', 'Torneos_has_Teams(torneos_id,teams_id)','together'=>true),
 		);
 	}
 	
@@ -78,6 +78,16 @@ class Torneos extends CActiveRecord
 			else $status = "Finalizado";
 		return $status;
 	}
+	
+	public function getTeamsNames()
+        {
+                $names = array();
+                foreach($this->equipos as $team) {
+                        $names[] = '<a href='.Yii::app()->CreateUrl('/teams/'.$team->id).'>'.$team->name .'</a>';
+                }
+                
+                return implode(", ", $names);
+        }
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -90,6 +100,8 @@ class Torneos extends CActiveRecord
 			'type' => 'Tipo de torneo',
 			'NameAddresss'=>'Nombre',
 			'EnabledType'=>'Status',
+			'teams'=>'Equipo',
+			'TeamsNames'=>'Participantes',
 		);
 	}
 

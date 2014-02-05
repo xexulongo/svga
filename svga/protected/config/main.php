@@ -20,7 +20,13 @@ return array(
 		'application.models.*',
 		'application.helpers.*',
 		'application.components.*',
+        'ext.yii-mail.YiiMailMessage',
+		'ext.eutils.EUtils',
 	),
+
+    'aliases' => array(
+        'xupload' => 'ext.xupload'
+    ),
 
 	'defaultController'=>'post',
 
@@ -41,17 +47,28 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			'class' => 'WebUser',
 		),
+        'authManager'=>array(
+            'class'=>'CPhpAuthManager',
+            'showErrors' => true,
+            'defaultRoles'=>array('membre', 'kapo'),
+        ),
 		// uncomment the following to enable URLs in path-format
 
 		'urlManager'=>array(
+            //'showScriptName'=>false,
+            'caseSensitive'=>false,
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
+				//array('post/index', 'pattern' => ''),
+				//array('<controller>/index', 'pattern' => '<controller>'),
+  				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
+		
 		
 		/*
        'db'=>array(
@@ -66,6 +83,15 @@ return array(
 			'username' => 'root',
 			'password' => 'zherlon10',
 			'charset' => 'utf8',
+		),
+
+		'db2'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=SVGATeam',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => 'zherlon10',
+			'charset' => 'utf8',
+			'class' => 'CDbConnection',
 		),
 
 		'errorHandler'=>array(
