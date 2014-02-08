@@ -31,12 +31,7 @@
                 array('label'=>'Registrate', 'url'=> $this->createUrl('users/create'), 'visible'=> Yii::app()->user->isGuest),
                 array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('users/logout'), 'visible'=>!Yii::app()->user->isGuest),
             ),
-        ),
-        
-        '<form class="navbar-search pull-right">
-           <input type="text" class="search-query span3" placeholder="Search">
-           <div class="icon-search"></div>
-		</form>',          
+        ),        
     ),
 
 )); ?>

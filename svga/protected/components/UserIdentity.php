@@ -10,6 +10,9 @@ class UserIdentity extends CUserIdentity
     
     public $username;
     public $password;
+    public $seccions;
+    public $nomseccions;
+
     
     public function __construct($email, $password) {
         $this->username = $email;
@@ -32,7 +35,17 @@ class UserIdentity extends CUserIdentity
             // if(!$user->email_activated) {
             //  return self::EMAIL_NOT_ACTIVATED;
             // }
+
+            $criteria = new CDbCriteria();
+            $criteria->with = array('nomseccions');
+            $criteria->addCondition('Usuaris_id = :user');
+            $criteria->params = array(
+                ':user' => $user->id
+            );
+
+            $seccions = SeccionsHasUsuaris::model()->findAll($criteria);
             $this->setState('name', $user->username);
+            $this->setState('nombreseccions', $seccions);
             $this->setState('login_type', 'password');
             $this->setState('id', $user->id);
             return self::OK;

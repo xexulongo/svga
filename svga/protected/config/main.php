@@ -55,7 +55,7 @@ return array(
             'defaultRoles'=>array('membre', 'kapo'),
         ),
 		// uncomment the following to enable URLs in path-format
-
+        /*
 		'urlManager'=>array(
             //'showScriptName'=>false,
             'caseSensitive'=>false,
@@ -68,6 +68,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
+		*/
 		
 		
 		/*

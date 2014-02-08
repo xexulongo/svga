@@ -51,6 +51,16 @@ class SeccionsHasUsuaris extends CActiveRecord
 		);
 	}
 
+	public function getSeccionsNames()
+        {
+                $names = array();
+                foreach($this->nomseccions as $seccio) {
+                        $names[] = $seccio->name;
+                }
+                
+                return implode(", ", $names);
+        }
+
 	/**
 	 * @return array relational rules.
 	 */
@@ -59,6 +69,7 @@ class SeccionsHasUsuaris extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'nomseccions'=> array(self::BELONGS_TO, 'Seccionsvga', 'Seccions_id'),
 		);
 	}
 

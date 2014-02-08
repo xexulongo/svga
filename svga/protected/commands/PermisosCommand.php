@@ -34,9 +34,9 @@ class PermisosCommand extends CConsoleCommand
 		$role = $auth->createRole('junta', 'secció junta', $bizRule);
 		$role->addChild('admin');
 		
-		//rol de kapos
-		$bizRule = "return (Yii::app()->user->getState('login_type') == 'kapo');";
-		$role = $auth->createRole('kapo', 'Usuari Kapo', $bizRule);
+		//rol de membres
+		$bizRule = "return (Yii::app()->user->getState('login_type') == 'membre');";
+		$role = $auth->createRole('membre', 'Usuari membre', $bizRule);
 		$role->addChild('web');
 		$role->addChild('junta');
 		

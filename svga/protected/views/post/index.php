@@ -21,6 +21,12 @@ $this->menu=array(
   <div class="row-fluid">
     <div class="span2">
       <div id="sidebar">
+        <?php if(!Yii::app()->user->isGuest){
+          if(Yii::app()->user->login_type == 'membre') {
+            var_dump(Yii::app()->user->getState('seccions'));
+            var_dump(Yii::app()->user->getState('nomseccions')); 
+          }
+          }?>
         <?php if(Yii::app()->user->getName()=='admin') $this->widget('UserMenu'); ?>
 
           <div class ="headline text-center" style="margin-bottom:-20px"><h4><b>SÍGUENOS EN</b></h4></div>
@@ -37,6 +43,10 @@ $this->menu=array(
       </div>
     </div>
     <div class="span10">
+      <?php $seccions = Yii::app()->user->getState('nombreseccions');
+      foreach($seccions as $seccio){
+                  echo $seccio->SeccionsNames ;
+      }?>
 
     <?php $this->widget('zii.widgets.CListView', array(
       'dataProvider'=>$dataProvider2,

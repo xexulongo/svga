@@ -6,7 +6,7 @@ class WebUser extends CWebUser {
 		if(Yii::app()->isGuest) {
 			return false;
 		} else {	
-			if(Yii::app()->user->getState('login_type') == 'kapo') {
+			if(Yii::app()->user->getState('login_type') == 'membre') {
 				return false;
 			} else {
 				return User::model()->findByPk(Yii::app()->user->getID());
@@ -15,15 +15,15 @@ class WebUser extends CWebUser {
 	}
 	
 	public function checkSeccio($seccio) {
-		if(Yii::app()->user->getState('login_type') == 'kapo') {
+		if(Yii::app()->user->getState('login_type') == 'membre') {
 			return in_array($seccio, $this->getState('seccions'));
 		} else {
 			return false;
 		}
 	}
 	
-    public function checkIsKapo() {
-        if(Yii::app()->user->getState('login_type') == 'kapo') {
+    public function checkIsMembre() {
+        if(Yii::app()->user->getState('login_type') == 'membre') {
             return true;
         } else {
             return false;
