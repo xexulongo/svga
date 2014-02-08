@@ -52,7 +52,7 @@ return array(
         'authManager'=>array(
             'class'=>'CPhpAuthManager',
             'showErrors' => true,
-            'defaultRoles'=>array('membre', 'kapo'),
+            'defaultRoles'=>array('registrat', 'membre'),
         ),
 		// uncomment the following to enable URLs in path-format
         /*

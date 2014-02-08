@@ -59,7 +59,7 @@ class Seccionsvga extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'seccions'=> array(self::HAS_MANY, 'SeccionsHasUsuaris', 'Seccions_id')
+			'usuaris' => array(self::MANY_MANY, 'Usuarisvga', 'Seccions_Has_Usuaris(Seccions_id,Usuaris_id)','together'=>true),
 		);
 	}
 

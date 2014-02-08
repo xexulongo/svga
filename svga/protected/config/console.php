@@ -11,6 +11,9 @@ return array(
 
 	// application components
 	'components'=>array(
+	 	'authManager'=>array(
+            'class'=>'CPhpAuthManager',
+        ),
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),

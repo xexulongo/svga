@@ -42,7 +42,7 @@ class PermisosCommand extends CConsoleCommand
 		
 		//rol d'usuaris registrats
 		$bizRule = 'return !Yii::app()->user->isGuest;'; //els usuaris registrats tenen aquest rol
-		$role = $auth->createRole('membre', 'usuari registrat', $bizRule);
+		$role = $auth->createRole('registrat', 'usuari registrat', $bizRule);
 		$role->addChild('createTeam');
 		$role->addChild('TeamAdmin');
 		

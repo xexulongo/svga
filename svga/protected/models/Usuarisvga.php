@@ -40,6 +40,25 @@ class Usuarisvga extends CActiveRecord
 		return 'Usuaris';
 	}
 
+	public function getSeccionsNames()
+    {
+        $names = array();
+        foreach($this->seccions as $seccio) {
+                $names[] = $seccio->name;
+        }
+        
+        return implode(", ", $names);
+    }
+
+    public function getSeccions(){
+    	$names = array();
+        foreach($this->seccions as $seccio) {
+                $names[] = $seccio->name;
+        }
+        return $names;
+    }
+        
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -64,7 +83,7 @@ class Usuarisvga extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'seccions' => array(self::MANY_MANY, 'Seccionsvga', 'Seccions_Has_Usuaris(Usuaris_id, Seccions_id)','together'=>true),
+			'seccions' => array(self::MANY_MANY, 'Seccionsvga', 'Seccions_has_Usuaris(Usuaris_id, Seccions_id)','together'=>true),
 		);
 	}
 

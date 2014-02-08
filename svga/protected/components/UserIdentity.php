@@ -11,7 +11,6 @@ class UserIdentity extends CUserIdentity
     public $username;
     public $password;
     public $seccions;
-    public $nomseccions;
 
     
     public function __construct($email, $password) {
@@ -21,6 +20,7 @@ class UserIdentity extends CUserIdentity
     public function authenticate() {        
         
         $criteria = new CDbCriteria();
+        $criteria->with = 'seccions';
         $criteria->addCondition('username = :username AND password = :password');
         $criteria->params = array(
             ':username' => $this->username,
@@ -37,7 +37,6 @@ class UserIdentity extends CUserIdentity
             // }
 
             $criteria = new CDbCriteria();
-            $criteria->with = array('nomseccions');
             $criteria->addCondition('Usuaris_id = :user');
             $criteria->params = array(
                 ':user' => $user->id
@@ -45,8 +44,8 @@ class UserIdentity extends CUserIdentity
 
             $seccions = SeccionsHasUsuaris::model()->findAll($criteria);
             $this->setState('name', $user->username);
-            $this->setState('nombreseccions', $seccions);
-            $this->setState('login_type', 'password');
+            $this->setState('seccions',$user->Seccions);
+            $this->setState('login_type', 'membre');
             $this->setState('id', $user->id);
             return self::OK;
         } else {
