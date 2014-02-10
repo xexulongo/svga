@@ -1280,3 +1280,31 @@ in /home/xexu/yii/svga/index.php (13)
 2013/10/30 14:09:08 [warning] [application] Failed to set unsafe attribute "birthday" of "Users".
 in /home/xexu/yii/svga/protected/controllers/UsersController.php (80)
 in /home/xexu/yii/svga/index.php (13)
+2014/02/08 12:41:37 [error] [exception.CException] exception 'CException' with message 'Unable to add an item whose name is the same as an existing item.' in /home/xexu/yii/framework/web/auth/CPhpAuthManager.php:289
+Stack trace:
+#0 /home/xexu/yii/framework/web/auth/CAuthManager.php(100): CPhpAuthManager->createAuthItem('createTeam', 0, '', NULL, NULL)
+#1 /home/xexu/yii/svga/protected/commands/PermisosCommand.php(12): CAuthManager->createOperation('createTeam')
+#2 [internal function]: PermisosCommand->actionCarrega()
+#3 /home/xexu/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(PermisosCommand), Array)
+#4 /home/xexu/yii/framework/console/CConsoleCommandRunner.php(67): CConsoleCommand->run(Array)
+#5 /home/xexu/yii/framework/console/CConsoleApplication.php(91): CConsoleCommandRunner->run(Array)
+#6 /home/xexu/yii/framework/base/CApplication.php(169): CConsoleApplication->processRequest()
+#7 /home/xexu/yii/framework/yiic.php(33): CApplication->run()
+#8 /home/xexu/yii/svga/protected/yiic.php(7): require_once('/home/xexu/yii/...')
+#9 /home/xexu/yii/svga/protected/yiic(4): require_once('/home/xexu/yii/...')
+#10 {main}
+---
+2014/02/08 12:44:28 [error] [exception.CException] exception 'CException' with message 'Unable to add an item whose name is the same as an existing item.' in /home/xexu/yii/framework/web/auth/CPhpAuthManager.php:289
+Stack trace:
+#0 /home/xexu/yii/framework/web/auth/CAuthManager.php(100): CPhpAuthManager->createAuthItem('createTeam', 0, '', NULL, NULL)
+#1 /home/xexu/yii/svga/protected/commands/PermisosCommand.php(12): CAuthManager->createOperation('createTeam')
+#2 [internal function]: PermisosCommand->actionCarrega()
+#3 /home/xexu/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(PermisosCommand), Array)
+#4 /home/xexu/yii/framework/console/CConsoleCommandRunner.php(67): CConsoleCommand->run(Array)
+#5 /home/xexu/yii/framework/console/CConsoleApplication.php(91): CConsoleCommandRunner->run(Array)
+#6 /home/xexu/yii/framework/base/CApplication.php(169): CConsoleApplication->processRequest()
+#7 /home/xexu/yii/framework/yiic.php(33): CApplication->run()
+#8 /home/xexu/yii/svga/protected/yiic.php(7): require_once('/home/xexu/yii/...')
+#9 /home/xexu/yii/svga/protected/yiic(4): require_once('/home/xexu/yii/...')
+#10 {main}
+---

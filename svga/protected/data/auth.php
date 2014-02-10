@@ -25,11 +25,11 @@ return array (
   array (
     'type' => 1,
     'description' => 'Admin del Team',
-    'bizRule' => '$auth = UsersHaveTeams::model()->find(\'user_id = :user_id AND Team_id = :Team_id, array(\':user_id\' => Yii::app()->user->getID(), \':Team_id\' => $params[\'Team\']->id));
+    'bizRule' => '$auth = UsersHaveTeam::model()->find(\'user_id = :user_id AND team_id = :team_id AND type = :type\', array(\':user_id\' => Yii::app()->user->getID(), \':team_id\' => $params[\'team\']->id, \'type\' => UsersHaveTeam::ADMIN));
 		return !empty($auth);',
     'data' => 
     array (
-      0 => 'Team',
+      0 => 'team',
     ),
     'children' => 
     array (
@@ -71,21 +71,19 @@ return array (
       0 => 'admin',
     ),
   ),
-  'kapo' => 
+  'membre' => 
   array (
     'type' => 2,
-    'description' => 'Usuari Kapo',
-    'bizRule' => 'return (Yii::app()->user->getState(\'login_type\') == \'kapo\');',
+    'description' => 'Usuari membre',
+    'bizRule' => 'return (Yii::app()->user->getState(\'login_type\') == \'membre\');',
     'data' => NULL,
     'children' => 
     array (
       0 => 'web',
-      1 => 'engrescat',
-      2 => 'junta',
-      3 => 'marqueting',
+      1 => 'junta',
     ),
   ),
-  'membre' => 
+  'registrat' => 
   array (
     'type' => 2,
     'description' => 'usuari registrat',

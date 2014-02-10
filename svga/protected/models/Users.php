@@ -49,12 +49,13 @@ class Users extends CActiveRecord
 		return array(
 			array('username, password, email, repeat_password', 'required',
 				'message'=>'{attribute} no puede estar en blanco'),
-			array('last_login, created', 'numerical', 'integerOnly'=>true),
-			array('username, password, email, avatar', 'length', 'max'=>45),
+			array('activated, email_activated, recovery_timestamp, last_login, created', 'numerical', 'integerOnly'=>true),
+			array('username, password, email, email_token, recovery_token, avatar', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, username, password, email, avatar, birthday, last_login, created', 'safe', 'on'=>'search'),
 			array('email, username', 'unique'),
+			array('email', 'email'),
 		);
 	}
 
@@ -81,6 +82,11 @@ class Users extends CActiveRecord
 			'username' => 'Username',
 			'password' => 'Password',
 			'email' => 'Email',
+			'activated' => 'Activated',
+            'email_activated' => 'Email Activated',
+            'email_token' => 'Email Token',
+            'recovery_token' => 'Recovery Token',
+            'recovery_timestamp' => 'Recovery Timestamp',
 			'avatar' => 'Avatar',
 			'birthday' => 'Birthday',
 			'last_login' => 'Last Login',
@@ -104,6 +110,11 @@ class Users extends CActiveRecord
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->compare('activated',$this->activated);
+        $criteria->compare('email_activated',$this->email_activated);
+        $criteria->compare('email_token',$this->email_token,true);
+        $criteria->compare('recovery_token',$this->recovery_token,true);
+        $criteria->compare('recovery_timestamp',$this->recovery_timestamp);
 		$criteria->compare('avatar',$this->avatar,true);
 		$criteria->compare('birthday',$this->birthday);
 		$criteria->compare('last_login',$this->last_login);

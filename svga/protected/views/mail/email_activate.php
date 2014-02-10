@@ -1,0 +1,3 @@
+<p><?= sprintf(Yii::t('svga', 'Hola %s!'), CHtml::encode($username)) ?>,</p>
+<p><?= Yii::t('svga', "T'has registrat correctament al web de SVGA. Per acabar el procés d'activació, fes click al següent enllaç per tal de poder verificar la validesa del teu correu electrònic.")?></p>
+<p><a href="<?= Yii::app()->createAbsoluteUrl('users/activate', array('token' => $token)); ?>"><?= Yii::app()->createAbsoluteUrl('user/activate', array('token' => $token)); ?></a></p>

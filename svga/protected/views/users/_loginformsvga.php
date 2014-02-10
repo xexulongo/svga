@@ -14,9 +14,8 @@
 			<div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><?php echo $form->passwordField($model,'password'); ?></div>
 			<?php echo $form->error($model,'password',array("class"=>"alert alert-error")); ?>
 			<br/><br/>
-		<?php echo CHtml::submitButton(Yii::t('SVGA', 'Inicia sessió'), array("class"=>"btn-u"));?> 	</div>
-
-		</div>
+		<?php echo CHtml::submitButton(Yii::t('SVGA', 'Inicia sessió'), array("class"=>"btn-u"));?> 	
+	</div>
 
 	<?php $this->endWidget(); ?>
 </div>

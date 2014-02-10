@@ -21,7 +21,7 @@ $this->menu=array(
   <div class="row-fluid">
     <div class="span2">
       <div id="sidebar">
-        <?php if(Yii::app()->user->checkIsMembre()) $this->widget('UserMenu'); ?>
+        <?php if(Yii::app()->user->checkAccess('admin', array(Yii::app()->user->id)))$this->widget('UserMenu'); ?>
 
           <div class ="headline text-center" style="margin-bottom:-20px"><h4><b>SÍGUENOS EN</b></h4></div>
         <ul style="list-style: none;">
@@ -37,8 +37,6 @@ $this->menu=array(
       </div>
     </div>
     <div class="span10">
-              <?php  var_dump(Yii::app()->authManager->getRoles(Yii::app()->user->getState('id'))) ?>
-
     <?php $this->widget('zii.widgets.CListView', array(
       'dataProvider'=>$dataProvider2,
       'itemView'=>'_view',

@@ -43,11 +43,30 @@ return array(
 
 	// application components
 	'components'=>array(
+		'token' => array(
+            'class' => 'TokenComponent'
+        ),
+        'mail' => array(
+            'class' => 'ext.yii-mail.YiiMail',
+            'transportType'=>'smtp',
+		     'transportOptions'=>array(
+		       'host'=>'smtp.gmail.com',
+		       'username'=>'jlexposito7@gmail.com',//contohna nama_email@yahoo.co.id
+		       'password'=>'zherlon10',
+		       'port'=>'465',
+		       'encryption'=>'ssl',
+		     ),
+            'viewPath' => 'application.views.mail',
+            'logging' => true,
+            'dryRun' => false
+        ),
 		'bootstrap'=>array('class'=>'application.extensions.bootstrap.components.Bootstrap'),
 		'user'=>array(
 			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+			'allowAutoLogin'=>false,
 			'class' => 'WebUser',
+			'loginUrl'=>array('users/login'),
+
 		),
         'authManager'=>array(
             'class'=>'CPhpAuthManager',

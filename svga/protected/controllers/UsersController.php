@@ -166,24 +166,40 @@ class UsersController extends Controller
 			$this -> redirect($this -> createUrl(Yii::app()->request->urlReferrer));
 		}
 		else {
-			$model=new Users;
+			$user=new Users('register');
 
 			// Uncomment the following line if AJAX validation is needed
-			$this->performAjaxValidation($model);
 
 			if(isset($_POST['Users']))
 
 			{	
-				$model->attributes = $_POST['Users'];
-				$model->birthday = $_POST['Users']['birthday'];
-				
-				if($model->save())
-					$this->redirect(array('view','id'=>$model->id));
-				}
+				$user->attributes = $_POST['Users'];
+				$user->birthday = $_POST['Users']['birthday'];
+				if($user->validate()){
+					$user -> email_token = Yii::app() -> token -> createUnique(40, Users::model(), 'email_token');
+					$user -> email_activated = 0;
+					$user -> password = sha1($user -> password);
+					$user -> save(false);
 
-			$this->render('create',array(
-				'model'=>$model,
-			));
+					//enviem el correu amb la direcció per activar el compte
+					$message = new YiiMailMessage();
+					$message -> setFrom(array('jlexposito7@gmail.com' => 'José Luis Expósito Robles'));
+					$message -> setTo(array($user -> email => $user -> username));
+					$message -> subject = Yii::t('svga', 'Activeu el vostre compte');
+					$message -> view = 'email_activate';
+					$message -> setBody(array('username' => $user -> username, 'token' => $user -> email_token), 'text/html');
+					Yii::app() -> mail -> send($message);
+
+					Yii::app() -> user -> setFlash('success', Yii::t('engrescat', "S'ha completat correctament el registre. T'hem enviat un correu electrònic amb instruccions sobre com activar el teu compte."));
+
+					if($user->save(false))
+						$this->redirect(array('view','id'=>$user->id));
+					}
+				}else{
+					$this->render('create',array(
+						'model'=>$user,
+					));
+				}
 		}
 	}	
 

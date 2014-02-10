@@ -67,11 +67,12 @@ class Usuarisvga extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, username, password, email', 'required'),
+			array('name, username, password, email', 'required', 'on' =>'register'),
 			array('name, username, password, email, created, last_login', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, username, password, email, created, last_login', 'safe', 'on'=>'search'),
+			array('name, email, username', 'unique'),
 		);
 	}
 
