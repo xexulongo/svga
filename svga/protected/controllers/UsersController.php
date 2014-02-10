@@ -28,7 +28,7 @@ class UsersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('view', 'create', 'login', 'loginmembre', 'gethash'),
+				'actions'=>array('view', 'create', 'login', 'loginmembre', 'gethash', 'activate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -178,7 +178,6 @@ class UsersController extends Controller
 				if($user->validate()){
 					$user -> email_token = Yii::app() -> token -> createUnique(40, Users::model(), 'email_token');
 					$user -> email_activated = 0;
-					$user -> password = sha1($user -> password);
 					$user -> save(false);
 
 					//enviem el correu amb la direcció per activar el compte
@@ -190,7 +189,7 @@ class UsersController extends Controller
 					$message -> setBody(array('username' => $user -> username, 'token' => $user -> email_token), 'text/html');
 					Yii::app() -> mail -> send($message);
 
-					Yii::app() -> user -> setFlash('success', Yii::t('engrescat', "S'ha completat correctament el registre. T'hem enviat un correu electrònic amb instruccions sobre com activar el teu compte."));
+					Yii::app() -> user -> setFlash('success', Yii::t('svga', "S'ha completat correctament el registre. T'hem enviat un correu electrònic amb instruccions sobre com activar el teu compte."));
 
 					if($user->save(false))
 						$this->redirect(array('view','id'=>$user->id));
@@ -200,6 +199,32 @@ class UsersController extends Controller
 						'model'=>$user,
 					));
 				}
+		}
+	}
+
+	/**
+	 * Funció encarregada d'activar els comptes amb el token que s'envia per correu electrònic
+	 */
+	public function actionActivate() {
+
+		if (!empty($_GET['token'])) {
+			$user = Users::model()->find('email_token = :token', array(':token' => $_GET['token']));
+			if (empty($user)) {
+				Yii::app()->user->setFlash('danger', Yii::t('svga', "No existeix cap usuari amb aquest token"));
+				$this->redirect($this -> createUrl(Yii::app() -> homeUrl));
+			} else {
+				$user->email_activated = 1;
+				if ($user->save(false)) {
+					Yii::app()->user->setFlash('success', Yii::t('svga', "Hem activat el teu compte correctament. Ja pots iniciar sessió! :)"));
+					$this->redirect(Yii::app() -> homeUrl);
+				} else {
+					Yii::app()->user->setFlash('danger', Yii::t('svga', "Error en activar el teu compte"));
+					$this->redirect($this -> createUrl(Yii::app() -> homeUrl));
+				}
+			}
+		} else {
+			Yii::app()->user->setFlash('danger', Yii::t('svga', "No ens has passat cap token!"));
+			$this -> redirect($this -> createUrl(Yii::app() -> homeUrl));
 		}
 	}	
 

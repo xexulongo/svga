@@ -26,12 +26,12 @@ class PasswordIdentity extends Identity {
 		$user = Users::model()->find($criteria);
 		if(!empty($user)) {
 			//usuari i contrassenya correcte, comprovem que la compte estigui activa
-			// if(!$user->activated) {
-			// 	return self::NOT_ACTIVATED;
-			// }
-			// if(!$user->email_activated) {
-			// 	return self::EMAIL_NOT_ACTIVATED;
-			// }
+			if(!$user->activated) {
+			 	return self::NOT_ACTIVATED;
+			 }
+			if(!$user->email_activated) {
+			 	return self::EMAIL_NOT_ACTIVATED;
+			 }
 			$this->setState('name', $user->username);
 			$this->setState('login_type', 'password');
 			$this->setState('id', $user->id);
