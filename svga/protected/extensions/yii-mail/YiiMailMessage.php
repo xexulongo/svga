@@ -145,7 +145,7 @@ class YiiMailMessage extends CComponent {
             $layout = Yii::getPathOfAlias(Yii::app()->mail->viewPath.'.layout').'.php';
             
             $content = $controller->renderInternal($viewPath, array_merge($body, array('mail'=>$this)), true);	
-            $body = $controller->renderInternal($layout, array('content' => $content, 'logo' => $this->message->embed(Swift_Image::fromPath(Yii::getPathOfAlias('webroot') . '/img/logo_correu.png'))), true);
+            $body = $controller->renderInternal($layout, array('content' => $content, 'logo' => $this->message->embed(Swift_Image::fromPath(Yii::getPathOfAlias('webroot') . '/images/logo_correu.png'))), true);
 		}
 		return $this->message->setBody($body, $contentType, $charset);
 	}

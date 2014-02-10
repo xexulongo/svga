@@ -1,5 +1,6 @@
 <html>
 <body>
+<img style="margin-bottom: 50px; margin-top: 50px;" src="<?= $logo?>" alt="SVGA Logo" />
 
 <?php echo $content?>
 <hr />
