@@ -51,12 +51,16 @@ class Torneos extends CActiveRecord
 			array('id, name, type', 'safe', 'on'=>'search'),
 		);
 	}
-	
-	public function getNameAddress()
-	{
-		$nameadd = '<a href='. $this->id .'>'.$this->name.'</a>';
-		return $nameadd;
-	}
+
+	public function getTeamsNames()
+    {
+        $names = array();
+        foreach($this->equipos as $team) {
+                $names[] = '<a href='.Yii::app()->CreateUrl('/team/view', array('id'=>$team->id)).'>'.$team->name .'</a>';
+        }
+        
+        return implode(", ", $names);
+    }
 
 	/**
 	 * @return array relational rules.
@@ -78,16 +82,7 @@ class Torneos extends CActiveRecord
 			else $status = "Finalizado";
 		return $status;
 	}
-	
-	public function getTeamsNames()
-        {
-                $names = array();
-                foreach($this->equipos as $team) {
-                        $names[] = '<a href='.Yii::app()->CreateUrl('/teams/'.$team->id).'>'.$team->name .'</a>';
-                }
-                
-                return implode(", ", $names);
-        }
+
 
 	/**
 	 * @return array customized attribute labels (name=>label)

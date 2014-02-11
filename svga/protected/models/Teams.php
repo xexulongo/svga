@@ -50,17 +50,12 @@ class Teams extends CActiveRecord
         {
                 $names = array();
                 foreach($this->torneos as $torneo) {
-                        $names[] = '<a href='.Yii::app()->CreateUrl('/torneos/'.$torneo->id).'>'.$torneo->name .'</a>';
+                        $names[] = '<a href='.Yii::app()->CreateUrl('/torneos/view', array('id'=>$torneo->id)).'>'.$torneo->name .'</a>';
                 }
                 
                 return implode(", ", $names);
         }
         
-		public function getNameAddress()
-        {
-                $nameadd = '<a href='. $this->id .'>'.$this->name.'</a>';
-                return $nameadd;
-        }
 
 	/**
 	 * @return array relational rules.

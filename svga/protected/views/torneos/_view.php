@@ -9,8 +9,8 @@
 			<?php $html = array('class'=>'thumbnail');
 			if($data->image != NULL and $data->image != 'blanks') echo CHtml::image(Yii::app()->baseUrl .'/images/'.$data->image, $data->image,$html)?>
 		</div>
-		<div class="span7"><h2><b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-			<?php echo $data->NameAddress; ?><br/>  <small style="margin-top:-40px;"> Haz click en el nombre para ver más información</small></h2>
+		<div class="span7"><h2><b><?= CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
+			<?= CHtml::link($data->name,$this->createUrl('torneos/view', array('id'=>$data->id))); ?><br/>  <small style="margin-top:-40px;"> Haz click en el nombre para ver más información</small></h2>
 
 			<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
 				<?php $temporal = $data->type;

@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Ver equipo: <?php echo $model->NameAddress; ?></h1>
+<h1>Ver equipo: <?=  CHtml::link($model->name, $this->createUrl('teams/view', array('id'=>$model->id))) ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

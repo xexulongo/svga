@@ -12,7 +12,7 @@
 -->
 
 	<h2><b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-	<?php echo $data->NameAddress; ?><br/>  <small style="margin-top:-40px;"> Haz click en el nombre para ver más información</small></h2>
+	<?=  CHtml::link($data->name, $this->createUrl('teams/view', array('id'=>$data->id))) ?><br/>  <small style="margin-top:-40px;"> Haz click en el nombre para ver más información</small></h2>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('profile')); ?>:</b>

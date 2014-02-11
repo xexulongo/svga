@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Torneo: <?php echo $model->NameAddress; ?></h1>
+<h1>Torneo: <?= CHtml::link($model->name,$this->createUrl('torneos/view', array('id'=>$model->id))); ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -28,5 +28,10 @@ $this->menu=array(
 			'value'=>($model->type == 0 ? 'Individual':'Equipos')
 		),
 		'EnabledType',
+		array(
+			'label'=>'Teams Asignados',
+			'type' => 'raw',
+			'value'=> $model->TeamsNames,
+		),
 	),
 )); ?>
