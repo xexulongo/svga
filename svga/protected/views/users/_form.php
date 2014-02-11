@@ -31,7 +31,7 @@
 		
 		<?php echo $form->labelEx($model,'repeat_password'); ?>
 		<div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span> <?php echo $form->passwordField($model,'repeat_password',array('maxlength'=>40)); ?></div>
-		<?php echo $form->error($model,'password', array("class"=>"alert alert-error")); ?>
+		<?php echo $form->error($model,'repeat_password', array("class"=>"alert alert-error")); ?>
 
 
 		<?php echo $form->labelEx($model,'email'); ?>

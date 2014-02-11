@@ -192,12 +192,16 @@ class UsersController extends Controller
 
 					if($user->save(false))
 						$this->redirect(array('view','id'=>$user->id));
+					} else{
+						$this->render('create',array(
+						'model'=>$user,
+					));
 					}
-				}else{
+				} else{
 					$this->render('create',array(
 						'model'=>$user,
 					));
-				}
+			}
 		}
 	}
 

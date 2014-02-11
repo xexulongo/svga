@@ -33,11 +33,6 @@ class Users extends CActiveRecord
 	{
 		return 'Users';
 	}
-	
-	public static function string2array($tags)
-	{
-    	return preg_split('/\s*,\s*/',trim($tags),-1,PREG_SPLIT_NO_EMPTY);
-	}
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -46,17 +41,29 @@ class Users extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
-		return array(
+		$rules = array();
+
+		$rules[] = array('username, password, email, repeat_password', 'required', 'on'=>'register');
+		$rules[] = array('repeat_password', 'compare', 'compareAttribute' => 'password', 'on' => 'register');
+		$rules[] = array('password', 'length', 'min' => 5, 'on' => 'register');
+		$rules[] = array('email', 'email', 'on' => 'register');
+		$rules[] = array('email, username', 'unique', 'on' => 'register');
+		$rules[] = array('username, email, password', 'length', 'max'=>45, 'on' => 'register');
+		$rules[] = array('activated, email_activated, recovery_timestamp, last_login, created', 'numerical', 'integerOnly'=>true, 'on'=>'register');
+		$rules[] = array('id, username, password, email, avatar, birthday, last_login, created', 'safe', 'on'=>'search');
+		
+		/*
 			array('username, password, email, repeat_password', 'required',
 				'message'=>'{attribute} no puede estar en blanco'),
 			array('activated, email_activated, recovery_timestamp, last_login, created', 'numerical', 'integerOnly'=>true),
 			array('username, password, email, email_token, recovery_token, avatar', 'length', 'max'=>45),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, username, password, email, avatar, birthday, last_login, created', 'safe', 'on'=>'search'),
+			The following rule is used by search().
+			Please remove those attributes that should not be searched.
 			array('email, username', 'unique'),
 			array('email', 'email'),
-		);
+			*/
+
+		return $rules;
 	}
 
 	/**
