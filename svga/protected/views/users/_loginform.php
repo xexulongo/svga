@@ -10,12 +10,6 @@ CHtml::$afterRequiredLabel = '';
 	<?php echo $form->textFieldRow($formModel, 'email'); ?>
 	<?php echo $form->passwordFieldRow($formModel, 'password'); ?>
 </fieldset>
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-2 margin-bottom-10">
-		<?php echo CHtml::submitButton(Yii::t('SVGA', 'Inicia sessió'), array("class"=>"btn-u"));?> 	</div>
-	<div class="col-md-offset-2 col-md-6">
-        <h5><?= CHtml::link(Yii::t('SVGA', "No recordes la contrasenya?"), $this->createUrl('user/forgot')); ?></h5>
-    </div>
-</div>
- 
+		<?php echo CHtml::submitButton(Yii::t('SVGA', 'Inicia sessió'), array("class"=>"btn btn-primary pull-left"));?>
+        <h5><?= CHtml::link(Yii::t('SVGA', "No recordes la contrasenya?"), $this->createUrl('user/forgot'),array('class'=>'pull-right span3')); ?></h5>
 		<?php $this->endWidget(); ?>

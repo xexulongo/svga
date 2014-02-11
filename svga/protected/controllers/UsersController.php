@@ -109,7 +109,6 @@ class UsersController extends Controller
 				$this -> render('login', array('formModel' => $form));
 			} 
 			else {
-				
 				//mostrem el formulari
 				$this -> render('login', array('formModel' => $form));
 			}
