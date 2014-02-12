@@ -9,7 +9,10 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'usuarisvga-form',
-	'enableAjaxValidation'=>true,
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+	),
 )); ?>
 
 	<p class="note">Els camps <span class="required">*</span> són necessaris.</p>
@@ -26,6 +29,10 @@
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'password', array('class'=>'alert alert-danger')); ?>
+
+		<?php echo $form->labelEx($model,'repeat_password'); ?>
+		<?php echo $form->passwordField($model,'repeat_password',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'repeat_password', array('class'=>'alert alert-danger')); ?>
 
 		<?php echo $form->labelEx($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('size'=>45,'maxlength'=>45)); ?>

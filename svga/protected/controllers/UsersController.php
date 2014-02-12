@@ -115,20 +115,6 @@ class UsersController extends Controller
 		}
 	}
 
-	// public function actionLoginmembre() {
-	// 		if (($_SERVER['REQUEST_METHOD'] == 'POST') && !empty($_POST['username']) && !empty($_POST['password'])) {
-	// 			//Usarisvga::model()->find();
-	// 			echo json_encode($data);
-	// 		}
-	// 		else {
-	// 			if(empty($_POST['username']) || empty($_POST['username'])){
-	// 				$data['status'] = 'warning';
-	// 				$data['message'] = '<div class="alert alert-warning">Password o username incorrecte!</div>';
-	// 				echo json_encode($data);
-	// 			}
-	// 		}	
-	// }
-
 	public function Gethash($string){
 		return md5($string);
 	}

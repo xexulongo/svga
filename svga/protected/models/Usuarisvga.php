@@ -14,6 +14,8 @@
  */
 class Usuarisvga extends CActiveRecord
 {
+	public $repeat_password;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -66,13 +68,25 @@ class Usuarisvga extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
+		$rules = array();
+
+		$rules[] = array('name, username, password, email, repeat_password', 'required', 'on'=>'register');
+		$rules[] = array('repeat_password', 'compare', 'compareAttribute' => 'password', 'on' => 'register');
+		$rules[] = array('password', 'length', 'min' => 5, 'on' => 'register');
+		$rules[] = array('email', 'email', 'on' => 'register');
+		$rules[] = array('email, username, name', 'unique', 'on' => 'register');
+		$rules[] = array('name, username, email, password', 'length', 'max'=>45, 'on' => 'register');
+		$rules[] = array('activated, email_activated, recovery_timestamp, last_login, created', 'numerical', 'integerOnly'=>true, 'on'=>'register');
+		$rules[] = array('id, username, name, password, email, last_login, created', 'safe', 'on'=>'search');
+
+		return $rules;
 		return array(
-			array('name, username, password, email', 'required', 'on' =>'register'),
-			array('name, username, password, email, created, last_login', 'length', 'max'=>45),
+			//array('name, username, password, email', 'required', 'on' =>'register'),
+			//array('name, username, password, email, created, last_login', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, username, password, email, created, last_login', 'safe', 'on'=>'search'),
-			array('name, email, username', 'unique'),
+			//array('id, name, username, password, email, created, last_login', 'safe', 'on'=>'search'),
+			//array('name, email, username', 'unique'),
 		);
 	}
 
@@ -101,6 +115,8 @@ class Usuarisvga extends CActiveRecord
 			'email' => 'Email',
 			'created' => 'Created',
 			'last_login' => 'Last Login',
+			'repeat_password' => 'Repite el password',
+
 		);
 	}
 

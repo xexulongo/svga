@@ -62,7 +62,7 @@ class UsuarisvgaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Usuarisvga;
+		$model=new Usuarisvga('register');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -71,13 +71,22 @@ class UsuarisvgaController extends Controller
 		{
 			$model->attributes=$_POST['Usuarisvga'];
 			$model->password = md5($model->password);
-			if($model->save())
+			$model->activated = 1;
+			if($model->validate()){
+				if($model->save(false))
 				$this->redirect(array('view','id'=>$model->id));
+			}
+			else {	
+				$this->render('create',array(
+					'model'=>$model,
+				));
+			}
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		else {
+			$this->render('create',array(
+					'model'=>$model,
+				));
+		}
 	}
 
 	/**

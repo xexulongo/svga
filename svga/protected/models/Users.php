@@ -51,17 +51,6 @@ class Users extends CActiveRecord
 		$rules[] = array('username, email, password', 'length', 'max'=>45, 'on' => 'register');
 		$rules[] = array('activated, email_activated, recovery_timestamp, last_login, created', 'numerical', 'integerOnly'=>true, 'on'=>'register');
 		$rules[] = array('id, username, password, email, avatar, birthday, last_login, created', 'safe', 'on'=>'search');
-		
-		/*
-			array('username, password, email, repeat_password', 'required',
-				'message'=>'{attribute} no puede estar en blanco'),
-			array('activated, email_activated, recovery_timestamp, last_login, created', 'numerical', 'integerOnly'=>true),
-			array('username, password, email, email_token, recovery_token, avatar', 'length', 'max'=>45),
-			The following rule is used by search().
-			Please remove those attributes that should not be searched.
-			array('email, username', 'unique'),
-			array('email', 'email'),
-			*/
 
 		return $rules;
 	}
