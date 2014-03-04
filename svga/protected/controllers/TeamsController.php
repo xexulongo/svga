@@ -2,6 +2,7 @@
 
 class TeamsController extends Controller
 {
+	private $team;
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -19,6 +20,25 @@ class TeamsController extends Controller
 		);
 	}
 
+	public function filterLoadModel($filterChain) {
+		if(!isset($_GET['slug'])) {
+			throw new CHttpException('404', Yii::t('svga', 'No has especificat cap equip!'));	
+		} else {
+			$this->team = Team::model()->find('id = :id', array(':id' => $_GET['id']));
+			if(empty($this->artist)) {
+				throw new CHttpException('404', Yii::t('svga', 'Aquest equip no existeix!'));
+			} else {
+				//comprovem si està a la url que toca
+				if(isset($_GET['type']) && $this->artist->type == $_GET['type']) {
+					$filterChain->run();
+				} else {
+					$this->redirect($this->createUrl($this->artist->type . '/' . Yii::app()->controller->action->id, array('slug' => $_GET['slug'])));
+				}
+				
+			}
+		}
+	}
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -29,11 +49,11 @@ class TeamsController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view', 'create', 'update','admin','delete'),
-				'users'=>array('*'),
+				'roles'=>array('createTeam'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				//'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'actions'=>array('update'),
+				'roles'=>array('editTeam' => array('team'=>$this->team)),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				//'actions'=>array('admin','delete'),

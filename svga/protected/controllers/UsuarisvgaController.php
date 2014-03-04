@@ -62,30 +62,48 @@ class UsuarisvgaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Usuarisvga('register');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		if (!Yii::app() -> user -> isGuest) {
+			Yii::app() -> user -> setFlash('success', Yii::t('SVGA', "Ya tienes la sesión iniciada!"));
+			$this -> redirect($this -> createUrl(Yii::app()->request->urlReferrer));
+		} else{
+			$user=new Usuarisvga('register');
+			if(isset($_POST['Usuarisvga']))
+			{
+				$user->attributes=$_POST['Usuarisvga'];
+				$user->activated = 1;
+				if($user->validate()){
+					$user -> email_token = Yii::app() -> token -> createUnique(40, Users::model(), 'email_token');
+						$user -> email_activated = 0;
+						$user -> save(false);
 
-		if(isset($_POST['Usuarisvga']))
-		{
-			$model->attributes=$_POST['Usuarisvga'];
-			$model->password = md5($model->password);
-			$model->activated = 1;
-			if($model->validate()){
-				if($model->save(false))
-				$this->redirect(array('view','id'=>$model->id));
-			}
-			else {	
+						//enviem el correu amb la direcció per activar el compte
+						$message = new YiiMailMessage();
+						$message -> setFrom(array('jlexposito7@gmail.com' => 'José Luis Expósito Robles'));
+						$message -> setTo(array($user -> email => $user -> username));
+						$message -> subject = Yii::t('svga', 'Activeu el vostre compte');
+						$message -> view = 'email_activate';
+						$message -> setBody(array('username' => $user -> username, 'token' => $user -> email_token), 'text/html');
+						Yii::app() -> mail -> send($message);
+
+						Yii::app() -> user -> setFlash('success', Yii::t('svga', "S'ha completat correctament el registre. T'hem enviat un correu electrònic amb instruccions sobre com activar el teu compte."));
+
+						if($user->save(false))
+							$this->redirect(array('view','id'=>$user->id));
+				}
+				else {	
+					$this->render('create',array(
+						'model'=>$user,
+					));
+				}
+			} 
+			else {
 				$this->render('create',array(
-					'model'=>$model,
+					'model'=>$user,
 				));
 			}
-		}
-		else {
-			$this->render('create',array(
-					'model'=>$model,
-				));
 		}
 	}
 
@@ -167,18 +185,5 @@ class UsuarisvgaController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param Usuarisvga $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='usuarisvga-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
 	}
 }

@@ -80,15 +80,22 @@ class Usuarisvga extends CActiveRecord
 		$rules[] = array('id, username, name, password, email, last_login, created', 'safe', 'on'=>'search');
 
 		return $rules;
-		return array(
-			//array('name, username, password, email', 'required', 'on' =>'register'),
-			//array('name, username, password, email, created, last_login', 'length', 'max'=>45),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			//array('id, name, username, password, email, created, last_login', 'safe', 'on'=>'search'),
-			//array('name, email, username', 'unique'),
-		);
 	}
+
+	protected function beforeSave()
+    {
+        if(parent::beforeSave())
+        {
+            if($this->isNewRecord)
+            { 
+                $hash = md5($this->password);
+           	 	$this->password = $hash;
+            }
+            return true;
+        }
+        else
+            return false;
+    }
 
 	/**
 	 * @return array relational rules.
