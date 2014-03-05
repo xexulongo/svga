@@ -70,7 +70,7 @@ class Torneos extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'equipos' => array(self::MANY_MANY, 'Teams', 'Torneos_has_Teams(torneos_id,teams_id)','together'=>true),
+			'equipos' => array(self::MANY_MANY, 'Teams', 'Torneos_has_Teams(torneos_id, teams_id)','together'=>true),
 		);
 	}
 	

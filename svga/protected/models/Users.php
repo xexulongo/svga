@@ -65,6 +65,7 @@ class Users extends CActiveRecord
 		return array(
 			'posts' => array(self::HAS_MANY, 'Post', 'author_id'),
 			'comments' => array(self::HAS_MANY, 'Comment', 'author'),
+			'equipos' => array(self::HAS_MANY, 'Teams', 'Users_has_Teams(users_id,teams_id)'),
 		);
 	}
 

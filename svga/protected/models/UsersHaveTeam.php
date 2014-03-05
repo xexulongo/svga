@@ -51,6 +51,8 @@ class Users_has_Teams extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		  'teams' => array(self::BELONGS_TO, 'Teams', 'Teams_id'),
+		  'users' => array(self::BELONGS_TO, 'Users', 'Users_id'),
 		);
 	}
 

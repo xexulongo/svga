@@ -28,15 +28,15 @@ class UsersController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('view', 'create', 'login', 'loginmembre', 'gethash', 'activate'),
+				'actions'=>array('view', 'index', 'veure','create', 'login', 'loginmembre', 'gethash', 'activate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update', 'logout'),
+				'actions'=>array('update', 'logout, index'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete', 'index'),
+				'actions'=>array('admin','delete'),
 				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -117,6 +117,26 @@ class UsersController extends Controller
 
 	public function Gethash($string){
 		return md5($string);
+	}
+
+	public function actionVeure($id){
+		$user = Users::model()->findByPk($id);
+        
+        //artistes dels quals l'usuari és administrador
+        $criteria = new CDbCriteria();
+        //$criteria->with = array('users_have_artists');
+        $criteria->join = 'JOIN Users_has_Teams d ON (d.teams_id=t.id)';
+        $criteria->addCondition('d.users_id = :users_id');
+        $criteria->params = array(':users_id' => $id);
+
+        $dataProvider = new CActiveDataProvider('Teams', array(
+            'criteria' => $criteria,
+            'pagination'=>array(
+                'pageSize'=>30,
+            ),
+        ));
+                $this->render('profile', array('user' => $user, 'dataProvider' => $dataProvider));
+
 	}
 
 	/**

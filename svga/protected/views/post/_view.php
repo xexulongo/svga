@@ -7,7 +7,7 @@
 
 	<h2><?php echo CHtml::link(CHtml::encode($data->title), array('view', 'id'=>$data->id)); ?></h2>
 		<div class="text-left">		
-			<i class="icon-pencil"></i>Autor: <b><?php echo $data->author->username ?></b>
+			<i class="icon-pencil"></i>Autor: <b>SVGA</b>
 			<i class="icon-calendar"></i><?= Yii::app()->dateFormatter->formatDateTime($data->create_time, 'long', 'short')?> <br />
 			<div class="clear"><?php if($data->image != NULL and $data->image != 'blanks') echo CHtml::image(Yii::app()->baseUrl . '/images/' . $data->image)?></div>
 			

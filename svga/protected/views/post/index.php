@@ -37,6 +37,9 @@ $this->menu=array(
       </div>
     </div>
     <div class="span10">
+    <?php $user = Users::model()->findByPk(Yii::app()->user->getState('id'));
+    echo var_dump($user); ?>
+    <?php echo Yii::app()->user->getState('id');?>
     <?php $this->widget('zii.widgets.CListView', array(
       'dataProvider'=>$dataProvider2,
       'itemView'=>'_view',
