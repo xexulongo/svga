@@ -17,31 +17,35 @@
 
 <body>
 
-<?php $this->widget('bootstrap.widgets.TbNavbar',array(
-    'items'=>array(
-    	
-        array(
-            'class'=>'bootstrap.widgets.TbMenu',
-            'items'=>array(               
-                array('label'=>'Inicio', 'url'=> $this->createUrl('post/index')),
-				array('label'=>'Usuarios', 'url'=> $this->createUrl('users/index')),
-				array('label'=>'Equipos', 'url'=> $this->createUrl('teams/index')),
-				array('label'=>'Torneos', 'url'=> $this->createUrl('torneos/index')),
-                array('label'=>'Login', 'url'=> $this->createUrl('users/login'), 'visible'=> Yii::app()->user->isGuest),
-                array('label'=>'Registrate', 'url'=> $this->createUrl('users/create'), 'visible'=> Yii::app()->user->isGuest),
-                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('users/logout'), 'visible'=>!Yii::app()->user->isGuest),
-            ),
-        ),        
-    ),
-
-)); ?>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a href="/svga/index.php" class="pull-left">
+                <img src="/svga/images/logo.jpg" alt=""></a>
+            <ul id="yw1" class="nav">
+                <li><a href="<?= Yii::app()->createUrl('post/index')?>">Inicio</a></li>
+            </ul>
+            <ul class="pull-right nav" id="yw2">
+                <?php if(!Yii::app()->user->isGuest) : ?>
+                    <li><a href="/svga/index.php/usuarisvga/logout">
+                    <i class="icon-user"></i> Logout (<?=Yii::app()->user->name ?> )</a></li>
+                <?php else : ?>
+                    <li><a href="<?= Yii::app()->createUrl('usuarisvga/login')?>"> <i class="icon-user"></i> Login</a></li>
+                    <li><a href="/svga/index.php/usuarisvga/login">Registrate</a></li>
+                <?php endif; ?>
+                <li><a style="  padding: 10px 1px 10px !important;" href="#"><i class="cicon-fb"></i> </a></li>
+                <li><a style="padding: 10px 1px 10px !important;" href="#"><i class="cicon-twitter"></i> </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <div class="container" id="page">
 	
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
-			'homeLink' => Chtml::link(Yii::t('SVGA', 'Inicio'), $this->createUrl('post/index'))
+			'homeLink' => Chtml::link(Yii::t('HST2', 'Inicio'), $this->createUrl('post/index'))
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
 	<?php $this->widget('bootstrap.widgets.TbAlert', array(
@@ -53,7 +57,7 @@
 	<?php echo $content; ?>
 
 	<div class="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by SVGA.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by HST2.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

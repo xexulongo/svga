@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'SVGA',
+	'name'=>'HST2',
 
 	// preloading 'log' component
 	'preload'=>array(
@@ -74,7 +74,7 @@ return array(
             'defaultRoles'=>array('registrat', 'membre'),
         ),
 		// uncomment the following to enable URLs in path-format
-        /*
+        
 		'urlManager'=>array(
             //'showScriptName'=>false,
             'caseSensitive'=>false,
@@ -87,7 +87,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
+		
 		
 		
 		/*
@@ -103,15 +103,6 @@ return array(
 			'username' => 'root',
 			'password' => 'zherlon10',
 			'charset' => 'utf8',
-		),
-
-		'db2'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=SVGATeam',
-			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => 'zherlon10',
-			'charset' => 'utf8',
-			'class' => 'CDbConnection',
 		),
 
 		'errorHandler'=>array(

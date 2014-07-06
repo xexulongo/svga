@@ -31,7 +31,7 @@ class Usuarisvga extends CActiveRecord
 	 */
 	public function getDbConnection()
 	{
-		return Yii::app()->db2;
+		return Yii::app()->db;
 	}
 
 	/**
@@ -90,6 +90,7 @@ class Usuarisvga extends CActiveRecord
             { 
                 $hash = md5($this->password);
            	 	$this->password = $hash;
+           	 	$this->created = date("mdy"); 
             }
             return true;
         }

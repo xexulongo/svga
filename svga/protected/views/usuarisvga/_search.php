@@ -17,8 +17,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'validated'); ?>
-		<?php echo $form->textField($model,'validated'); ?>
+		<?php echo $form->label($model,'activated'); ?>
+		<?php echo $form->textField($model,'activated'); ?>
 	</div>
 
 	<div class="row">

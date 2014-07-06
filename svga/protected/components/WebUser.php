@@ -38,7 +38,7 @@ class WebUser extends CWebUser {
 
 		if(!$request->getIsAjaxRequest())
 		{
-			$this->setFlash('warning', '<h4><b>Error!</b></h4>' . Yii::t('SVGA', 'Per poder accedir a aquesta funcionalitat has d\'haver inciat sessió'));
+			$this->setFlash('warning', '<h4><b>Error!</b></h4>' . Yii::t('HST2', 'Per poder accedir a aquesta funcionalitat has d\'haver inciat sessió'));
 			$this->setReturnUrl($request->getUrl());
 			if(($url=$this->loginUrl)!==null)
 			{

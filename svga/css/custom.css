@@ -2,23 +2,36 @@
 	width: 50%;
 	border: 1px solid #ccc;
 }
-.menu{
-	background-color: aliceblue;
-	padding: 5px;
-	margin-top: -10px;
-}
-.menu-title{
-	font-style: bold;
-	background-color: aliceblue;
-	padding: 5px;
-	margin-top: -10px;
+
+.portlet {
+	margin-bottom: 20px;
+	border: 1px solid #e2e2e2;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
-.siguenos{
+.portlet h4 {
+	color: #333333;
+	height: 20px;
+	line-height: 20px;
+	background-color: #F4F4F4;
+	background-color: #f1f1f1;
+	background-image: -moz-linear-gradient(top, #f4f4f4, #ececec);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+	background-image: -webkit-linear-gradient(top, #f4f4f4, #ececec);
+	background-image: -o-linear-gradient(top, #f4f4f4, #ececec);
+	background-image: linear-gradient(to bottom, #f4f4f4, #ececec);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff4f4f4', endColorstr='#ffececec', GradientType=0);
+	border-bottom: 1px solid #d5d5d5;
+	margin-top: auto;
+	margin-bottom: auto;
 	padding: 10px;
-	margin-top: 5px;
-	color: #7ea57b;
 }
+
+
+
 
 .slogan {
 	min-height: 100px;
@@ -65,4 +78,23 @@
 	padding: 0 0;
 }
 .footer{clear:both;}
-input.error {background-color: pink; border-color: red; color: white;}
+
+.cicon-fb{
+	display: block;
+	background-image:url("./facebook.svg");
+	background-position: 0 0;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 20px;
+}
+
+.cicon-twitter{
+	display: block;
+	background-image:url("./twitter.svg");
+	background-position: 0 0;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 20px;
+}

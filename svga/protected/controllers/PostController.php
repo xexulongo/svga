@@ -156,7 +156,7 @@ class PostController extends Controller
 		*/
 		// $fileListOfDirectory = array();
 
-		// $pathTofileListDirectory = '/home/xexu/yii/svga/gallery/' ;
+		// $pathTofileListDirectory = '/home/xexu/yii/HST2/gallery/' ;
 
 		// if(!is_dir($pathTofileListDirectory ))
 		// {
@@ -201,8 +201,7 @@ class PostController extends Controller
     	));
     	$value = array(1,2,3);
     	$criteriaDestacados->addInCondition('destacado',$value,'AND');
-	    if(isset($_GET['tag']))
-	        $criteriaPost->addSearchCondition('tags',$_GET['tag']);
+
 	 
 	    $dataProviderDestacados=new CActiveDataProvider('Post', array(
 	    	'pagination' => false,
@@ -211,7 +210,7 @@ class PostController extends Controller
 
 
 
-	  	$this->pageTitle = "SVGA - Noticias"; // It could be something from DB or...whatever
+	  	$this->pageTitle = "HST2 - Noticias"; // It could be something from DB or...whatever
 	   	$this->render('destacados',array(
 	   		'dataProvider1'=>$dataProviderDestacados,
 	   	));

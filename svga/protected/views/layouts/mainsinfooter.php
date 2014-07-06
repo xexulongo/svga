@@ -16,32 +16,43 @@
 </head>
 
 <body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            
+            <ul id="yw1" class="nav">
+                <li>
+                    <a style="padding:0;" href="/svga/index.php" class="pull-left">
+                        <img src="/svga/images/logo.jpg" alt="">
+                    </a>
+                </li>
+                <li><a href="<?= Yii::app()->createUrl('post/index')?>">Inicio</a></li>
+                <li><?= CHtml::link(Yii::t('HST2', 'Sobre nosotros'), $this->createUrl('site/about'));?></li>
+                <li><?= CHtml::link(Yii::t('HST2', 'Contacte'), $this->createUrl('site/contact'))?></li>
+            </ul>
+            <ul class="pull-right nav" id="yw2">
+                <?php if(!Yii::app()->user->isGuest) : ?>
+                    <li><a href="<?= Yii::app()->createUrl('usuarisvga/logout')?>">
+                    <i class="icon-user"></i> Logout (<?=Yii::app()->user->name ?> )</a></li>
+                <?php else : ?>
+                    <li><a href="<?= Yii::app()->createUrl('usuarisvga/login')?>"> <i class="icon-user"></i> Login</a></li>
+                    <li><a href="/svga/index.php/usuarisvga/login">Registrate</a></li>
+                <?php endif; ?>
+                <li><a style="  padding: 10px 1px 10px !important;" href="#"><i class="cicon-fb"></i> </a></li>
+                <li><a style="padding: 10px 1px 10px !important;" href="#"><i class="cicon-twitter"></i> </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-<?php $this->widget('bootstrap.widgets.TbNavbar',array(
-    'items'=>array(
-    	
-        array(
-            'class'=>'bootstrap.widgets.TbMenu',
-            'items'=>array(
-                array('label'=>'Inicio', 'url'=> $this->createUrl('post/index')),
-                array('label'=>'Usuarios', 'url'=> $this->createUrl('users/index')),
-                array('label'=>'Equipos', 'url'=> $this->createUrl('teams/index')),
-                array('label'=>'Torneos', 'url'=> $this->createUrl('torneos/index')),
-                array('label'=>'Login', 'url'=> $this->createUrl('users/login'), 'visible'=> Yii::app()->user->isGuest),
-				array('label'=>'Registrate', 'url'=> $this->createUrl('users/create'), 'visible'=> Yii::app()->user->isGuest),
-                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('users/logout'), 'visible'=>!Yii::app()->user->isGuest),
-            ),
-        ),          
-    ),
 
-)); ?>
 
 <div class="container" id="page">
 	
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
-			'homeLink' => Chtml::link(Yii::t('SVGA', 'Inicio'), $this->createUrl('post/index'))
+			'homeLink' => Chtml::link(Yii::t('HST2', 'Inicio'), $this->createUrl('post/index'))
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
 

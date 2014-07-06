@@ -14,13 +14,11 @@
 			
 			<div class="text-center">
 
-				<i class="icon-pencil"></i>Autor: <b><?php echo $data->author->username . ' ||   '?></b>
+				<i class="icon-pencil"></i>Autor: <b>SVGA</b>
 				<i class="icon-calendar"> </i><?= Yii::app()->dateFormatter->formatDateTime($data->create_time, 'long', 'short')?> <br /><?php if($data->image != NULl) echo CHtml::image(Yii::app()->baseUrl . '/images/' . $data->image)?>
 				<br /><br /><p class="text-left" style="font-size:16px;"><?php echo CHtml::encode($data->content); ?></p>
 			
 		</div>
-
-	<!-- <b><?php echo CHtml::encode($data->getAttributeLabel('content')); ?>:</b> -->
 	<br />
 
 	

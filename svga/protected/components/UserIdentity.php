@@ -29,12 +29,12 @@ class UserIdentity extends CUserIdentity
         $user = Usuarisvga::model()->find($criteria);
         if(!empty($user)) {
             //usuari i contrassenya correcte, comprovem que la compte estigui activa
-            // if(!$user->activated) {
-            //  return self::NOT_ACTIVATED;
-            // }
-            // if(!$user->email_activated) {
-            //  return self::EMAIL_NOT_ACTIVATED;
-            // }
+            if($user->activated == 0) {
+             return self::NOT_ACTIVATED;
+            }
+            else if($user->email_activated == 0) {
+             return self::EMAIL_NOT_ACTIVATED;
+            }
 
             $criteria = new CDbCriteria();
             $criteria->addCondition('Usuaris_id = :user');
@@ -43,13 +43,34 @@ class UserIdentity extends CUserIdentity
             );
 
             $seccions = SeccionsHasUsuaris::model()->findAll($criteria);
-            $this->setState('name', $user->username);
+            $user->current_login = 1;
+            $user->save();
+            $this->setState('username', $user->username);
+            $this->setState('login_time', date("Y-m-d H:i:s"));
             $this->setState('seccions',$user->Seccions);
             $this->setState('login_type', 'membre');
             $this->setState('id', $user->id);
             return self::OK;
         } else {
             return self::CREDENTIALS_ERROR;
+        }
+    }
+
+    public function updatelogin(){
+        $criteria = new CDbCriteria();
+        $criteria->with = 'seccions';
+        $criteria->addCondition('username = :username');
+        $criteria->params = array(
+            ':username' => $this->username,
+        );
+        $user = Usuarisvga::model()->find($criteria);
+        if(!empty($user)) {
+            //usuari i contrassenya correcte, comprovem que la compte estigui activa
+            $user->last_login = Yii::app()->user->getState('login_time');
+            $user->current_login = 0;
+            $user->save();
+        } else {
+            return self::ERROR;
         }
     }
     

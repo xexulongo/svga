@@ -28,16 +28,16 @@ class UsuarisvgaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create'),
+				'actions'=>array('view', 'create', 'login'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('update', 'logout'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -66,7 +66,7 @@ class UsuarisvgaController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 		if (!Yii::app() -> user -> isGuest) {
-			Yii::app() -> user -> setFlash('success', Yii::t('SVGA', "Ya tienes la sesión iniciada!"));
+			Yii::app() -> user -> setFlash('success', Yii::t('hst2', "Ya tienes la sesión iniciada!"));
 			$this -> redirect($this -> createUrl(Yii::app()->request->urlReferrer));
 		} else{
 			$user=new Usuarisvga('register');
@@ -75,7 +75,7 @@ class UsuarisvgaController extends Controller
 				$user->attributes=$_POST['Usuarisvga'];
 				$user->activated = 1;
 				if($user->validate()){
-					$user -> email_token = Yii::app() -> token -> createUnique(40, Users::model(), 'email_token');
+					$user -> email_token = Yii::app() -> token -> createUnique(40, Usuarisvga::model(), 'email_token');
 						$user -> email_activated = 0;
 						$user -> save(false);
 
@@ -83,12 +83,12 @@ class UsuarisvgaController extends Controller
 						$message = new YiiMailMessage();
 						$message -> setFrom(array('jlexposito7@gmail.com' => 'José Luis Expósito Robles'));
 						$message -> setTo(array($user -> email => $user -> username));
-						$message -> subject = Yii::t('svga', 'Activeu el vostre compte');
+						$message -> subject = Yii::t('hst2', 'Activeu el vostre compte');
 						$message -> view = 'email_activate';
 						$message -> setBody(array('username' => $user -> username, 'token' => $user -> email_token), 'text/html');
 						Yii::app() -> mail -> send($message);
 
-						Yii::app() -> user -> setFlash('success', Yii::t('svga', "S'ha completat correctament el registre. T'hem enviat un correu electrònic amb instruccions sobre com activar el teu compte."));
+						Yii::app() -> user -> setFlash('success', Yii::t('hst2', "S'ha completat correctament el registre. T'hem enviat un correu electrònic amb instruccions sobre com activar el teu compte."));
 
 						if($user->save(false))
 							$this->redirect(array('view','id'=>$user->id));
@@ -185,5 +185,57 @@ class UsuarisvgaController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
+	}
+
+/**
+	 * Displays the login page
+	 */
+	public function actionLogin() {
+		$this->layout='//layouts/main';
+		//només deixem loggejar si no ho està
+		if (!Yii::app() -> user -> isGuest) {
+			Yii::app() -> user -> setFlash('warning', Yii::t('hst2', 'Ja tens la sessió iniciada!'));
+			$this -> redirect($this -> createUrl(Yii::app() -> homeUrl));
+		} 
+		else {
+			$form = new LoginForm();
+			if (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['Usuarisvga'])) {
+					$user = new UserIdentity($_POST['Usuarisvga']['username'], $_POST['Usuarisvga']['password']);
+					$result = $user -> authenticate();
+					if ($result == PasswordIdentity::CREDENTIALS_ERROR) {
+						Yii::app() -> user -> setFlash('danger', Yii::t('hst2', 'Usuari i/o contrasenya incorrecte'));
+						$this -> render('login', array('formModel' => $form));
+					}
+					else if ($result == PasswordIdentity::NOT_ACTIVATED) {
+						Yii::app() -> user -> setFlash('warning', Yii::t('hst2', 'El teu usuari encara no estas activat. Contacta amb el administrador per més informació'));
+						$this -> render('login', array('formModel' => $form));
+					}
+					else if ($result == PasswordIdentity::EMAIL_NOT_ACTIVATED) {
+						Yii::app() -> user -> setFlash('danger', Yii::t('hst2', 'El teu email encara no està activat'));
+						$this -> render('login', array('formModel' => $form));
+					}
+					else if ($result == PasswordIdentity::OK) {
+
+						Yii::app() -> user -> login($user);
+						Yii::app() -> user -> setFlash('success', Yii::t('hst2', 'Sessió iniciada correctament!'));
+						$this -> redirect(Yii::app() -> user -> returnUrl);
+					} 
+					else {
+						Yii::app() -> user -> setFlash('danger', Yii::t('hst2', 'Error en iniciar la sessió'));
+				}
+				$form -> password = '';
+			}
+			else {
+				//mostrem el formulari
+				$this -> render('login', array('formModel' => $form));
+			}
+		}
+	}
+	public function actionLogout()
+	{
+		$user = new UserIdentity(Yii::app()->user->getState('username'), '');
+		$user->updatelogin();
+		Yii::app()->user->logout();
+		$this->redirect(Yii::app()->homeUrl);
 	}
 }

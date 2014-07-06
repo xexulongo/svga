@@ -1359,3 +1359,2182 @@ Stack trace:
 REQUEST_URI=/svga/index.php?r=users/login
 HTTP_REFERER=http://localhost/svga/
 ---
+2014/07/05 19:56:45 [warning] [application] Failed to set unsafe attribute "avatar" of "Users".
+in /home/joseluis/Web/svga/protected/controllers/UsersController.php (181)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 19:56:45 [warning] [application] Failed to set unsafe attribute "birthday" of "Users".
+in /home/joseluis/Web/svga/protected/controllers/UsersController.php (181)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 19:57:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'SVGATeam'' in /home/joseluis/Web/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /home/joseluis/Web/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /home/joseluis/Web/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /home/joseluis/Web/framework/base/CModule.php(387): CDbConnection->init()
+#3 /home/joseluis/Web/framework/base/CModule.php(103): CModule->getComponent('db2')
+#4 /home/joseluis/Web/svga/protected/models/Usuarisvga.php(34): CModule->__get('db2')
+#5 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(2309): Usuarisvga->getDbConnection()
+#6 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Usuarisvga))
+#7 /home/joseluis/Web/svga/protected/models/Usuarisvga.php(26): CActiveRecord::model('Usuarisvga')
+#8 /home/joseluis/Web/svga/protected/views/users/login.php(23): Usuarisvga::model()
+#9 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#10 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#11 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#13 /home/joseluis/Web/svga/protected/controllers/UsersController.php(113): CController->render('login', Array)
+#14 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsersController->actionLogin()
+#15 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#22 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('login')
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#25 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#26 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/svga/index.php?r=users/login
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 19:58:51 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.db2" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/base/CModule.php(105): CComponent->__get('db2')
+#1 /home/joseluis/Web/svga/protected/models/Usuarisvga.php(34): CModule->__get('db2')
+#2 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(2309): Usuarisvga->getDbConnection()
+#3 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Usuarisvga))
+#4 /home/joseluis/Web/svga/protected/models/Usuarisvga.php(26): CActiveRecord::model('Usuarisvga')
+#5 /home/joseluis/Web/svga/protected/views/users/login.php(23): Usuarisvga::model()
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#10 /home/joseluis/Web/svga/protected/controllers/UsersController.php(113): CController->render('login', Array)
+#11 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsersController->actionLogin()
+#12 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('login')
+#21 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#22 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/svga/index.php?r=users/login
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:01:33 [warning] [application] Failed to set unsafe attribute "avatar" of "Users".
+in /home/joseluis/Web/svga/protected/controllers/UsersController.php (181)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 20:01:33 [warning] [application] Failed to set unsafe attribute "birthday" of "Users".
+in /home/joseluis/Web/svga/protected/controllers/UsersController.php (181)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 20:07:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'SVGA.Torneos' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `Torneos`.
+in /home/joseluis/Web/svga/protected/controllers/TorneosController.php (149)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 20:07:29 [error] [exception.CDbException] exception 'CDbException' with message 'The table "Torneos" for active record class "Torneos" cannot be found in the database.' in /home/joseluis/Web/framework/db/ar/CActiveRecord.php:2310
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Torneos))
+#1 /home/joseluis/Web/framework/web/CActiveDataProvider.php(74): CActiveRecord::model('Torneos')
+#2 /home/joseluis/Web/svga/protected/controllers/TorneosController.php(149): CActiveDataProvider->__construct('Torneos')
+#3 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): TorneosController->actionIndex()
+#4 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('torneos/index')
+#14 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/svga/index.php?r=torneos/index
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:17:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:17:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:17:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:17:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:17:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=users/logout
+---
+2014/07/05 20:17:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=users/logout
+---
+2014/07/05 20:17:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/logout".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+---
+2014/07/05 20:19:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "torneos/index".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('torneos/index')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=torneos/index
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:19:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/logout".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=torneos/index
+---
+2014/07/05 20:19:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/login".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/login
+---
+2014/07/05 20:19:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /home/joseluis/Web/framework/web/CController.php:483
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(270): CController->missingAction('login')
+#1 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('login')
+#2 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logi...')
+#3 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/login
+---
+2014/07/05 20:19:36 [error] [php] include(Users.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(386): spl_autoload_call()
+#1 /home/joseluis/Web/framework/db/ar/CActiveFinder.php(215): model()
+#2 /home/joseluis/Web/framework/db/ar/CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#3 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(271): CActiveFinder->__construct()
+#4 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(141): Post->getRelated()
+#5 /home/joseluis/Web/svga/protected/views/post/_postview.php(17): Post->__get()
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#8 /home/joseluis/Web/framework/web/CController.php(869): PostController->renderFile()
+#9 /home/joseluis/Web/svga/protected/views/post/view.php(21): PostController->renderPartial()
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#12 /home/joseluis/Web/framework/web/CController.php(869): PostController->renderFile()
+#13 /home/joseluis/Web/framework/web/CController.php(782): PostController->renderPartial()
+#14 /home/joseluis/Web/svga/protected/controllers/PostController.php(60): PostController->render()
+#15 unknown(0): PostController->actionView()
+#16 /home/joseluis/Web/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#17 /home/joseluis/Web/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#18 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#19 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#20 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#21 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#22 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#23 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#24 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#25 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#26 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#27 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#28 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#29 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php?r=post/view&id=6
+in /home/joseluis/Web/svga/protected/views/post/_postview.php (17)
+in /home/joseluis/Web/svga/protected/views/post/view.php (21)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (60)
+2014/07/05 20:24:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/logout".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:24:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/logout".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=users/logout
+---
+2014/07/05 20:25:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/logout".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=users/logout
+---
+2014/07/05 20:25:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logout".' in /home/joseluis/Web/framework/web/CController.php:483
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(270): CController->missingAction('logout')
+#1 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#2 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logo...')
+#3 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/logout
+---
+2014/07/05 20:25:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/index".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/index')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/index
+HTTP_REFERER=http://localhost/svga/index.php?r=usuarisvga/logout
+---
+2014/07/05 20:25:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/logout".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=users/index
+---
+2014/07/05 20:25:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/logout".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:25:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logout".' in /home/joseluis/Web/framework/web/CController.php:483
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(270): CController->missingAction('logout')
+#1 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#2 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logo...')
+#3 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/logout
+---
+2014/07/05 20:25:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('login')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logi...')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/login
+---
+2014/07/05 20:26:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "svga/index.php".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('svga/index.php')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=svga/index.php
+---
+2014/07/05 20:26:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "svga/index.php".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('svga/index.php')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=svga/index.php
+---
+2014/07/05 20:26:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/logout".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=svga/index.php
+---
+2014/07/05 20:27:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/logout".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/logout')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/logout
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:28:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/login".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/login
+HTTP_REFERER=http://localhost/svga/index.php
+---
+2014/07/05 20:28:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/login".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/login
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 20:28:51 [error] [exception.CException] exception 'CException' with message 'UsuarisvgaController cannot find the requested view "login".' in /home/joseluis/Web/framework/web/CController.php:878
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#1 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(245): CController->render('login', Array)
+#2 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionLogin()
+#3 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#10 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logi...')
+#13 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/login
+---
+2014/07/05 20:30:00 [error] [exception.CException] exception 'CException' with message 'UsuarisvgaController cannot find the requested view "_loginform".' in /home/joseluis/Web/framework/web/CController.php:878
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/usuarisvga/login.php(20): CController->renderPartial('_loginform', Array, true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#3 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#4 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#5 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(245): CController->render('login', Array)
+#6 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionLogin()
+#7 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#14 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('login')
+#16 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logi...')
+#17 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/login
+---
+2014/07/05 20:30:02 [error] [exception.CException] exception 'CException' with message 'UsuarisvgaController cannot find the requested view "_loginform".' in /home/joseluis/Web/framework/web/CController.php:878
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/usuarisvga/login.php(20): CController->renderPartial('_loginform', Array, true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#3 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#4 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('login', Array, true)
+#5 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(245): CController->render('login', Array)
+#6 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionLogin()
+#7 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#14 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('login')
+#16 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logi...')
+#17 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/login
+---
+2014/07/05 21:12:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/login".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/login
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 21:13:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/login".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/login
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 21:21:09 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.db2" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/base/CModule.php(105): CComponent->__get('db2')
+#1 /home/joseluis/Web/svga/protected/models/Seccionsvga.php(27): CModule->__get('db2')
+#2 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(2309): Seccionsvga->getDbConnection()
+#3 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Seccionsvga))
+#4 /home/joseluis/Web/framework/db/ar/CActiveFinder.php(215): CActiveRecord::model('Seccionsvga')
+#5 /home/joseluis/Web/framework/db/ar/CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), 'seccions')
+#6 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(1301): CActiveFinder->__construct(Object(Usuarisvga), 'seccions')
+#7 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(1402): CActiveRecord->query(Object(CDbCriteria))
+#8 /home/joseluis/Web/svga/protected/components/UserIdentity.php(29): CActiveRecord->find(Object(CDbCriteria))
+#9 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(204): UserIdentity->authenticate()
+#10 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionLogin()
+#11 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#18 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('login')
+#20 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logi...')
+#21 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/login
+HTTP_REFERER=http://localhost/svga/index.php?r=usuarisvga/login
+---
+2014/07/05 21:22:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/index".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/index')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/index
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/05 21:31:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/create".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/create')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/create
+HTTP_REFERER=http://localhost/svga/index.php?r=usuarisvga/login
+---
+2014/07/05 21:40:30 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.bootstrap.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /home/joseluis/Web/framework/YiiBase.php:316
+Stack trace:
+#0 /home/joseluis/Web/framework/YiiBase.php(196): YiiBase::import('application.ext...', true)
+#1 /home/joseluis/Web/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /home/joseluis/Web/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /home/joseluis/Web/framework/base/CApplication.php(152): CModule->preloadComponents()
+#4 /home/joseluis/Web/framework/YiiBase.php(125): CApplication->__construct('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/home/joseluis/...')
+#6 /home/joseluis/Web/svga/index.php(13): YiiBase::createWebApplication('/home/joseluis/...')
+#7 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 21:42:40 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbNavbar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /home/joseluis/Web/framework/YiiBase.php:316
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'bootstrap.widge...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(34): CBaseController->widget('bootstrap.widge...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(784): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): CController->render('destacados', Array)
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 21:44:00 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(147): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): PostController->createWidget()
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(34): PostController->widget()
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#6 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (34)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:44:47 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(147): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): PostController->createWidget()
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(34): PostController->widget()
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#6 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (34)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:44:47 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(147): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): PostController->createWidget()
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(34): PostController->widget()
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#6 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (34)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:47:41 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:48:18 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:48:20 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:48:32 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:48:33 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:49:32 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:49:46 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:04 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:05 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:05 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:06 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:06 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:07 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(23): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (23)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:28 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(26): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (26)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:29 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(26): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (26)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:44 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(26): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (26)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:44 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(26): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (26)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:44 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(26): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (26)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:45 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(26): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (26)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:50:45 [error] [php] include(BsHtml.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(26): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#3 /home/joseluis/Web/framework/web/CController.php(784): PostController->renderFile()
+#4 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): PostController->render()
+#5 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#6 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#8 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#14 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/
+in /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php (26)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (217)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/05 21:51:48 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbBreadcrumbs" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /home/joseluis/Web/framework/YiiBase.php:316
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'bootstrap.widge...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(44): CBaseController->widget('bootstrap.widge...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(784): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): CController->render('destacados', Array)
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 21:52:57 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.BsBreadCrumb" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /home/joseluis/Web/framework/YiiBase.php:316
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'bootstrap.widge...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(44): CBaseController->widget('bootstrap.widge...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(784): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): CController->render('destacados', Array)
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 22:00:25 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.BsBreadCrumb" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /home/joseluis/Web/framework/YiiBase.php:316
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'bootstrap.widge...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(44): CBaseController->widget('bootstrap.widge...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(784): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): CController->render('destacados', Array)
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 22:00:56 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.BsBreadCrumb" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /home/joseluis/Web/framework/YiiBase.php:316
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'bootstrap.widge...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(43): CBaseController->widget('bootstrap.widge...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(784): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): CController->render('destacados', Array)
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 22:01:45 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbAlert" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /home/joseluis/Web/framework/YiiBase.php:316
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'bootstrap.widge...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(53): CBaseController->widget('bootstrap.widge...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(784): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): CController->render('destacados', Array)
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 22:03:32 [error] [exception.CException] exception 'CException' with message 'BsApi and its behaviors do not have a method or closure named "register".' in /home/joseluis/Web/framework/base/CComponent.php:265
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/post/index.php(16): CComponent->__call('register', Array)
+#1 /home/joseluis/Web/svga/protected/views/post/index.php(16): BsApi->register()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#3 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#4 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#5 /home/joseluis/Web/svga/protected/controllers/PostController.php(222): CController->renderPartial('index', Array)
+#6 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#7 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#14 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#16 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#17 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 22:03:38 [error] [exception.CException] exception 'CException' with message 'BsApi and its behaviors do not have a method or closure named "register".' in /home/joseluis/Web/framework/base/CComponent.php:265
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/post/index.php(16): CComponent->__call('register', Array)
+#1 /home/joseluis/Web/svga/protected/views/post/index.php(16): BsApi->register()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#3 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#4 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#5 /home/joseluis/Web/svga/protected/controllers/PostController.php(222): CController->renderPartial('index', Array)
+#6 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#7 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#14 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#16 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#17 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 22:04:26 [error] [exception.CException] exception 'CException' with message 'BsApi and its behaviors do not have a method or closure named "register".' in /home/joseluis/Web/framework/base/CComponent.php:265
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/post/index.php(16): CComponent->__call('register', Array)
+#1 /home/joseluis/Web/svga/protected/views/post/index.php(16): BsApi->register()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#3 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#4 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#5 /home/joseluis/Web/svga/protected/controllers/PostController.php(222): CController->renderPartial('index', Array)
+#6 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#7 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#14 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#16 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#17 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 22:04:41 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbNavbar" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /home/joseluis/Web/framework/YiiBase.php:316
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'bootstrap.widge...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /home/joseluis/Web/svga/protected/views/layouts/mainsinfooter.php(37): CBaseController->widget('bootstrap.widge...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(784): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/controllers/PostController.php(217): CController->render('destacados', Array)
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/svga/
+---
+2014/07/05 22:10:18 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.components.BsApi" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /home/joseluis/Web/framework/YiiBase.php:316
+Stack trace:
+#0 /home/joseluis/Web/framework/YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 /home/joseluis/Web/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /home/joseluis/Web/framework/base/CModule.php(523): CModule->getComponent('bootstrap')
+#3 /home/joseluis/Web/framework/base/CApplication.php(152): CModule->preloadComponents()
+#4 /home/joseluis/Web/framework/YiiBase.php(125): CApplication->__construct('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/YiiBase.php(98): YiiBase::createApplication('CWebApplication', '/home/joseluis/...')
+#6 /home/joseluis/Web/svga/index.php(13): YiiBase::createWebApplication('/home/joseluis/...')
+#7 {main}
+REQUEST_URI=/svga/
+---
+2014/07/06 18:01:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/index".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/index')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php/users/index
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:13:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:14:09 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:17:18 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:17:19 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:17:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/
+---
+2014/07/06 18:17:46 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/inde...')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/index
+---
+2014/07/06 18:18:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/inde...')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/index
+---
+2014/07/06 18:18:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/inde...')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/index
+---
+2014/07/06 18:18:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /home/joseluis/Web/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/inde...')
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/index
+---
+2014/07/06 18:19:19 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:20:37 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:20:38 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:20:43 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:20:44 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:20:45 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:20:46 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'validated')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Usuarisvga), 'validated', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Usuarisvga), 'validated', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(21): CActiveForm->textField(Object(Usuarisvga), 'validated')
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:25:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "elfinder/index".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('elfinder/index')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php/elfinder/index
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 18:34:14 [error] [php] include(Users.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(78): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionCreate()
+#2 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): UsuarisvgaController->runAction()
+#4 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): UsuarisvgaController->filterAccessControl()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(265): UsuarisvgaController->runActionWithFilters()
+#10 /home/joseluis/Web/framework/web/CWebApplication.php(282): UsuarisvgaController->run()
+#11 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php/usuarisvga/create
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (78)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/06 18:36:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/activate".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/activate')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php/users/activate?token=Uh6IuN7OWDsLD08D80aG1VI9nQ8frE5HXeuchoff
+---
+2014/07/06 18:39:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/activate".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/activate')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php/users/activate?token=Uh6IuN7OWDsLD08D80aG1VI9nQ8frE5HXeuchoff
+---
+2014/07/06 18:42:06 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.validated" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('validated')
+#1 /home/joseluis/Web/svga/protected/components/UserIdentity.php(32): CActiveRecord->__get('validated')
+#2 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(204): UserIdentity->authenticate()
+#3 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionLogin()
+#4 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('login')
+#13 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logi...')
+#14 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/login
+HTTP_REFERER=http://localhost/svga/index.php/usuarisvga/login
+---
+2014/07/06 19:05:58 [error] [php] Undefined variable: Yii (/home/joseluis/Web/svga/protected/views/post/index.php:22)
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(869): PostController->renderFile()
+#1 /home/joseluis/Web/svga/protected/controllers/PostController.php(222): PostController->renderPartial()
+#2 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#3 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#5 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#8 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#10 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#11 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#12 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php
+in /home/joseluis/Web/svga/protected/views/post/index.php (22)
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (222)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/06 19:08:43 [error] [php] Undefined variable: user (/home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php:237)
+Stack trace:
+#0 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): UsuarisvgaController->runAction()
+#1 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): UsuarisvgaController->filterAccessControl()
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(265): UsuarisvgaController->runActionWithFilters()
+#7 /home/joseluis/Web/framework/web/CWebApplication.php(282): UsuarisvgaController->run()
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php/usuarisvga/logout
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (237)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/06 19:10:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/login".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php/users/login
+HTTP_REFERER=http://localhost/svga/index.php
+---
+2014/07/06 19:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/login".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php/users/login
+HTTP_REFERER=http://localhost/svga/index.php
+---
+2014/07/06 19:10:51 [error] [exception.CException] exception 'CException' with message 'UsuarisvgaController and its behaviors do not have a method or closure named "getState".' in /home/joseluis/Web/framework/base/CComponent.php:265
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(236): CComponent->__call('getState', Array)
+#1 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(236): UsuarisvgaController->getState('username')
+#2 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionLogout()
+#3 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#10 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#12 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logo...')
+#13 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/logout
+HTTP_REFERER=http://localhost/svga/index.php/usuarisvga/login
+---
+2014/07/06 19:11:32 [error] [php] Missing argument 2 for UserIdentity::__construct(), called in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php on line 236 and defined (/home/joseluis/Web/svga/protected/components/UserIdentity.php:16)
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): UsuarisvgaController->runAction()
+#2 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): UsuarisvgaController->filterAccessControl()
+#5 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#7 /home/joseluis/Web/framework/web/CController.php(265): UsuarisvgaController->runActionWithFilters()
+#8 /home/joseluis/Web/framework/web/CWebApplication.php(282): UsuarisvgaController->run()
+#9 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php/usuarisvga/logout
+in /home/joseluis/Web/svga/protected/components/UserIdentity.php (16)
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (236)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/06 19:11:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`name` AS `t0_c1`, `t`.`username` AS `t0_c2`, `t`.`password` AS `t0_c3`, `t`.`email` AS `t0_c4`, `t`.`activated` AS `t0_c5`, `t`.`email_activated` AS `t0_c6`, `t`.`email_token` AS `t0_c7`, `t`.`recovery_token` AS `t0_c8`, `t`.`recovery_timestamp` AS `t0_c9`, `t`.`created` AS `t0_c10`, `t`.`last_login` AS `t0_c11`, `seccions`.`id` AS `t1_c0`, `seccions`.`name` AS `t1_c1` FROM `Usuaris` `t`  LEFT OUTER JOIN `Seccions_has_Usuaris` `seccions_seccions` ON (`t`.`id`=`seccions_seccions`.`Usuaris_id`) LEFT OUTER JOIN `Seccions` `seccions` ON (`seccions`.`id`=`seccions_seccions`.`Seccions_id`)  WHERE (username = :username AND password = :password).
+in /home/joseluis/Web/svga/protected/components/UserIdentity.php (64)
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (237)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/06 19:11:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`name` AS `t0_c1`, `t`.`username` AS `t0_c2`, `t`.`password` AS `t0_c3`, `t`.`email` AS `t0_c4`, `t`.`activated` AS `t0_c5`, `t`.`email_activated` AS `t0_c6`, `t`.`email_token` AS `t0_c7`, `t`.`recovery_token` AS `t0_c8`, `t`.`recovery_timestamp` AS `t0_c9`, `t`.`created` AS `t0_c10`, `t`.`last_login` AS `t0_c11`, `seccions`.`id` AS `t1_c0`, `seccions`.`name` AS `t1_c1` FROM `Usuaris` `t`  LEFT OUTER JOIN `Seccions_has_Usuaris` `seccions_seccions` ON (`t`.`id`=`seccions_seccions`.`Usuaris_id`) LEFT OUTER JOIN `Seccions` `seccions` ON (`seccions`.`id`=`seccions_seccions`.`Seccions_id`)  WHERE (username = :username AND password = :password)' in /home/joseluis/Web/framework/db/CDbCommand.php:541
+Stack trace:
+#0 /home/joseluis/Web/framework/db/CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/joseluis/Web/framework/db/ar/CActiveFinder.php(761): CDbCommand->queryAll()
+#2 /home/joseluis/Web/framework/db/ar/CActiveFinder.php(422): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /home/joseluis/Web/framework/db/ar/CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(1302): CActiveFinder->query(Object(CDbCriteria), false)
+#5 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(1402): CActiveRecord->query(Object(CDbCriteria))
+#6 /home/joseluis/Web/svga/protected/components/UserIdentity.php(64): CActiveRecord->find(Object(CDbCriteria))
+#7 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(237): UserIdentity->updatelogin()
+#8 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionLogout()
+#9 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('logout')
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/logo...')
+#19 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/logout
+HTTP_REFERER=http://localhost/svga/index.php/usuarisvga/login
+---
+2014/07/06 19:12:36 [error] [php] include(ii.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(238): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionLogout()
+#2 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): UsuarisvgaController->runAction()
+#4 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): UsuarisvgaController->filterAccessControl()
+#7 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/joseluis/Web/framework/web/CController.php(265): UsuarisvgaController->runActionWithFilters()
+#10 /home/joseluis/Web/framework/web/CWebApplication.php(282): UsuarisvgaController->run()
+#11 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php/usuarisvga/logout
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (238)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/06 19:20:14 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.repeat_password" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('repeat_password')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('repeat_password')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'repeat_password')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1391): CHtml::activeInputField('password', Object(Usuarisvga), 'repeat_password', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(687): CHtml::activePasswordField(Object(Usuarisvga), 'repeat_password', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_form.php(34): CActiveForm->passwordField(Object(Usuarisvga), 'repeat_password', Array)
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/create.php(16): CController->renderPartial('_form', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(105): CController->render('create', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionCreate()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/crea...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/create
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 19:20:45 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.repeat_password" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('repeat_password')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('repeat_password')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'repeat_password')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1391): CHtml::activeInputField('password', Object(Usuarisvga), 'repeat_password', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(687): CHtml::activePasswordField(Object(Usuarisvga), 'repeat_password', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_form.php(34): CActiveForm->passwordField(Object(Usuarisvga), 'repeat_password', Array)
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/create.php(16): CController->renderPartial('_form', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(105): CController->render('create', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionCreate()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/crea...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/create
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 19:20:46 [error] [exception.CException] exception 'CException' with message 'Property "Usuarisvga.repeat_password" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:130
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(143): CComponent->__get('repeat_password')
+#1 /home/joseluis/Web/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('repeat_password')
+#2 /home/joseluis/Web/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Usuarisvga), 'repeat_password')
+#3 /home/joseluis/Web/framework/web/helpers/CHtml.php(1391): CHtml::activeInputField('password', Object(Usuarisvga), 'repeat_password', Array)
+#4 /home/joseluis/Web/framework/web/widgets/CActiveForm.php(687): CHtml::activePasswordField(Object(Usuarisvga), 'repeat_password', Array)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/_form.php(34): CActiveForm->passwordField(Object(Usuarisvga), 'repeat_password', Array)
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/svga/protected/views/usuarisvga/create.php(16): CController->renderPartial('_form', Array)
+#10 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#11 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#13 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(105): CController->render('create', Array)
+#15 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionCreate()
+#16 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#23 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/crea...')
+#26 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/svga/index.php/usuarisvga/create
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 21:09:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in /home/joseluis/Web/framework/web/CController.php:483
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(270): CController->missingAction('about')
+#1 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('about')
+#2 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('site/about')
+#3 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/svga/index.php/site/about
+HTTP_REFERER=http://localhost/svga/index.php/post/index
+---
+2014/07/06 21:10:22 [error] [php] include(ContactForm.php): failed to open stream: No such file or directory (/home/joseluis/Web/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/controllers/SiteController.php(54): spl_autoload_call()
+#1 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#2 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /home/joseluis/Web/framework/web/CController.php(286): SiteController->runAction()
+#4 /home/joseluis/Web/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /home/joseluis/Web/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php/site/contact
+in /home/joseluis/Web/svga/protected/controllers/SiteController.php (54)
+in /home/joseluis/Web/svga/index.php (13)
