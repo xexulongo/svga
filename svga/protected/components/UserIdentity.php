@@ -37,7 +37,7 @@ class UserIdentity extends CUserIdentity
             }
 
             $criteria = new CDbCriteria();
-            $criteria->addCondition('Usuaris_id = :user');
+            $criteria->addCondition('Usuaris_id = :user AND confirmed = 1');
             $criteria->params = array(
                 ':user' => $user->id
             );

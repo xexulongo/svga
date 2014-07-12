@@ -6,13 +6,14 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'post-form',
-	'enableAjaxValidation'=>true,
-
-));
-
- ?>
+<?php $form = $this->beginWidget(
+    'booster.widgets.TbActiveForm',
+    array(
+        'id' => 'verticalForm',
+    	'type' => 'horizontal',
+        'htmlOptions' => array('class' => 'well'), // for inset effect
+    )
+); ?>
 
 	<script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/upclick-min.js"></script>
 
@@ -20,94 +21,99 @@
 
 	<?php echo $form->errorSummary($model,null,null,array("class"=>"alert alert-error")); ?>
 
-		<?php echo $form->error($model,'title',array("class"=>"alert alert-error")); ?>
-		<?php echo $form->labelEx($model,'Titulo:'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>128)); ?>
-		
-		<br />
-		<input type="button" id="uploader" value="Upload">
-		<?php echo $form->error($model,'image',array("class"=>"alert alert-error")); ?>
-		<?php echo $form->labelEx($model,'Nombre de la imagen:'); ?>
-		<?php echo $form->textField($model,'image',array('size'=>60,'maxlength'=>128)); ?>
-		
-		<br />
+		<?php echo $form->textFieldGroup(
+			$model,
+			'title',
+			array(
+				'wrapperHtmlOptions' => array(
+					'class' => 'col-lg-9',
+				),
+			)
+		); ?>
 
-		<?php echo $form->error($model,'description',array("class"=>"alert alert-error")); ?>
-		<?php echo $form->labelEx($model,'Descripción (resumen):'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textAreaGroup(
+			$model,
+			'description',
+			array(
+				'wrapperHtmlOptions' => array(
+					'class' => 'col-lg-9',
+				),
+				'widgetOptions' => array(
+					'htmlOptions' => array('rows' => 3),
+				)
+			)
+		); ?>
 		
-		<br />
 
-		<?php echo $form->error($model,'content', array("class"=>"alert alert-error")); ?>
-		<?php echo $form->labelEx($model,'Contenido (notícias):'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
-		
-		<br />
+		<?php echo $form->ckEditorGroup(
+			$model,
+			'content',
+			array(
+		   		'wrapperHtmlOptions' => array(
+					 'class' => 'col-lg-9', 
+				),
+				'widgetOptions' => array(
+					'editorOptions' => array(
+						'fullpage' => 'js:true',
+						/* 'width' => '640', */
+						/* 'resize_maxWidth' => '640', */
+						/* 'resize_minWidth' => '320'*/
+					)
+				)
+			)
+		); ?>
 
-		<?php echo $form->error($model,'tags', array("class"=>"alert alert-error")); ?>
-		<?php echo $form->labelEx($model,'tags:'); ?>
-		<?php echo $form->textField($model,'tags',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textFieldGroup(
+			$model,
+			'tags',
+			array(
+				'wrapperHtmlOptions' => array(
+					'class' => 'col-lg-9',
+				),
+			)
+		); ?>
 
-		<?php echo $form->error($model,'destacado', array("class"=>"alert alert-error")); ?>
-		<?php echo $form->labelEx($model,'destacado:'); ?>
-		<?php echo $form->checkBox($model,'destacado'); ?>
 
-		<br /><br />
-		
+		<?php echo $form->switchGroup($model, 'destacado',
+			array(
+				'widgetOptions' => array(
+					'events'=>array(
+						'switchChange'=>'js:function(event, state) {
+						  console.log(this); // DOM element
+						  console.log(event); // jQuery event
+						  console.log(state); // true | false
+						}'
+					),
+					'options' => array(
+			            'size' => 'large', //null, 'mini', 'small', 'normal', 'large
+			            'onColor' => 'success', // 'primary', 'info', 'success', 'warning', 'danger', 'default'
+			            'offColor' => 'danger',  // 'primary', 'info', 'success', 'warning', 'danger', 'default'
+        			),
+				)
+			)
+		); ?>
+		<?php echo $form->dropDownListGroup(
+			$model,
+			'status',
+			array(
+				'wrapperHtmlOptions' => array(
+					'class' => 'col-lg-9',
+				),
+				'widgetOptions' => array(
+					'data' => array('1'=>'Borrador', '2'=>'Publicado','3'=>'Archivado'),
+					'htmlOptions' => array(),
+				)
+			)
+		); ?>
 	
-	<div class="clear">
-		<?php echo ('Guardar como:'); ?>
-		<?php echo $form->dropDownList($model,'status', array('1'=>'Borrador', '2'=>'Publicado','3'=>'Archivado')); ?>
-		<div class="pull-right"><?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar', array('class'=>'btn btn-primary')); ?></div>
-	</div>
-
-	<script>
-	
-	$(document).ready(function() {
-		$('.input_class_checkbox').each(function(){
-    		$(this).hide().after('<div class="class_checkbox" />');
-    	});
-
-		$('.class_checkbox').on('click',function(){
-    		$(this).toggleClass('checked').prev().prop('checked',$(this).is('.checked'))
-    	});
-		
-		$('#News_title_ca').slug({'slug': 'News_slug'});
-		
-		tinymce.init({
-			selector: "textarea",
-			plugins: "textcolor pagebreak table link image emoticons preview",
-			pagebreak_separator: "<!-- mes -->",
-			menubar: 'edit insert format',
-			toolbar: 'undo redo | styleselect forecolor backcolor| bold italic | link image  | pagebreak table hr | emoticons preview',
-		});
-
-     
-		
-	});
-	
-</script>
-
-<script type="text/javascript">
-
-   var uploader = document.getElementById('uploader');
-   upclick(
-     {
-      element: uploader,
-      action: '/home/xexu/yii/svga/php/server.php', 
-      onstart:
-        function(filename)
-        {
-          alert('Start upload: '+filename);
-        },
-      oncomplete:
-        function(response_data) 
-        {
-          alert(response_data);
-        }
-     });
-
-   </script>
+	<?php $this->widget(
+			'booster.widgets.TbButton',
+			array(
+				'buttonType' => 'submit',
+				'context' => 'primary',
+				'label' => 'Guardar'
+			)
+	); ?>
 
 
 </div>

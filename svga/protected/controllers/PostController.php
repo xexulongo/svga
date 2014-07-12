@@ -52,11 +52,9 @@ class PostController extends Controller
 	public function actionView($id)
 	{
 		$post=$this->loadModel();
-	    $comment=$this->newComment($post);
 	 
 	    $this->render('view',array(
 	        'model'=>$post,
-	        'comment'=>$comment,
 	    ));
 		}
 	private $_model;

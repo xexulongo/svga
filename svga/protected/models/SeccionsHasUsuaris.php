@@ -45,6 +45,7 @@ class SeccionsHasUsuaris extends CActiveRecord
 		return array(
 			array('Seccions_id, Usuaris_id', 'required'),
 			array('Seccions_id, Usuaris_id', 'numerical', 'integerOnly'=>true),
+			array('confirmed','boolean','allowEmpty'=>false),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('Seccions_id, Usuaris_id', 'safe', 'on'=>'search'),
@@ -59,6 +60,8 @@ class SeccionsHasUsuaris extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'usuari' => array(self::BELONGS_TO, 'Usuarisvga', 'Usuaris_id','together'=>true),
+			'seccio' => array(self::BELONGS_TO, 'Seccionsvga', 'Seccions_id','together'=>true),
 		);
 	}
 
@@ -68,8 +71,10 @@ class SeccionsHasUsuaris extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id'=>'ID',
 			'Seccions_id' => 'Seccions',
 			'Usuaris_id' => 'Usuaris',
+			'Confirmed' => 'Confirmed',
 		);
 	}
 
@@ -90,5 +95,17 @@ class SeccionsHasUsuaris extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	public function getPendingSeccionsCount()
+	{
+		return $this->count('confirmed=0');
+	}
+
+	public function getUsername(){
+		return $this->usuari->username;
+	}
+
+	public function getSeccioname(){
+		return $this->seccio->name;
 	}
 }

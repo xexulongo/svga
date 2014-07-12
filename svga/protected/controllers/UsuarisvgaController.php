@@ -28,7 +28,7 @@ class UsuarisvgaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('view', 'create', 'login'),
+				'actions'=>array('view', 'create', 'login','activate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -237,5 +237,28 @@ class UsuarisvgaController extends Controller
 		$user->updatelogin();
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
+	}
+
+	public function actionActivate() {
+
+		if (!empty($_GET['token'])) {
+			$user = Usuarisvga::model()->find('email_token = :token', array(':token' => $_GET['token']));
+			if (empty($user)) {
+				Yii::app()->user->setFlash('danger', Yii::t('svga', "No existeix cap usuari amb aquest token"));
+				$this->redirect($this -> createUrl(Yii::app() -> homeUrl));
+			} else {
+				$user->email_activated = 1;
+				if ($user->save(false)) {
+					Yii::app()->user->setFlash('success', Yii::t('svga', "Hem activat el teu compte correctament. Ja pots iniciar sessió! :)"));
+					$this->redirect(Yii::app() -> homeUrl);
+				} else {
+					Yii::app()->user->setFlash('danger', Yii::t('svga', "Error en activar el teu compte"));
+					$this->redirect($this -> createUrl(Yii::app() -> homeUrl));
+				}
+			}
+		} else {
+			Yii::app()->user->setFlash('danger', Yii::t('svga', "No ens has passat cap token!"));
+			$this -> redirect($this -> createUrl(Yii::app() -> homeUrl));
+		}
 	}
 }

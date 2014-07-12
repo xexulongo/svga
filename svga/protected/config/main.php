@@ -12,7 +12,7 @@ return array(
 	// preloading 'log' component
 	'preload'=>array(
 		'log',
-		'bootstrap',
+		'booster',
 	),
 
 	// autoloading model and component classes
@@ -60,6 +60,7 @@ return array(
             'logging' => true,
             'dryRun' => false
         ),
+        'booster' => array('class' => 'ext.yiibooster.components.Booster'),
 		'bootstrap'=>array('class'=>'application.extensions.bootstrap.components.Bootstrap'),
 		'user'=>array(
 			// enable cookie-based authentication
@@ -74,7 +75,7 @@ return array(
             'defaultRoles'=>array('registrat', 'membre'),
         ),
 		// uncomment the following to enable URLs in path-format
-        
+        /*
 		'urlManager'=>array(
             //'showScriptName'=>false,
             'caseSensitive'=>false,
@@ -87,7 +88,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		
+		*/
 		
 		
 		/*

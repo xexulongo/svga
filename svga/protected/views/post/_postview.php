@@ -3,42 +3,34 @@
 /* @var $data Post */
 ?>
 
-<div class="container-fluid">
-	<!-- <b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::encode($data->id); ?>
-	<br /> -->
-
-	<!-- <b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>	 -->
+<div class="news">
 	<h2><?php echo CHtml::link(CHtml::encode($data->title), array('view', 'id'=>$data->id)); ?></h2>
+				<div class="author"><i class="icon-pencil"></i>Autor: <b>SVGA</b></div>
+				<div class="timeline"><i class="icon-calendar"> </i><?= Yii::app()->dateFormatter->formatDateTime($data->create_time,'long','short')?></div>
+				<div class="image"><?php if($data->image != NULl) echo CHtml::image(Yii::app()->baseUrl . '/images/' . $data->image)?></div>
+				<div class="content">
+					<?php echo $data->content; ?>
+				</div>
 
-			
-			<div class="text-center">
-
-				<i class="icon-pencil"></i>Autor: <b>SVGA</b>
-				<i class="icon-calendar"> </i><?= Yii::app()->dateFormatter->formatDateTime($data->create_time, 'long', 'short')?> <br /><?php if($data->image != NULl) echo CHtml::image(Yii::app()->baseUrl . '/images/' . $data->image)?>
-				<br /><br /><p class="text-left" style="font-size:16px;"><?php echo CHtml::encode($data->content); ?></p>
-			
-		</div>
-	<br />
-
-	
-	
-	<div class="nav">
 		<b><?php echo CHtml::encode($data->getAttributeLabel('Estado')); ?>:</b>
-	
-		<?php $temporal = $data->status;
-		if($temporal ==1)
-			echo CHtml::encode('Borrador  ||'); 
-		if($temporal ==2)
-			echo CHtml::encode('Publicada ||'); 
-		if($temporal ==3)
-			echo CHtml::encode('Archivada ||');?>
+		<?php
+		switch($data->status){
+			case 1:
+				echo CHtml::encode('Borrador  ||'); 
+				break;
+			case 2:			
+				echo CHtml::encode('Publicada ||');
+				break; 
+			case 3:
+				echo CHtml::encode('Archivada ||');
+				break;
+		}?>
 
-		<b>Tags:</b>
-		<?php echo implode(', ', $data->tagLinks); ?>
-		<br/>
-		<?php echo CHtml::link('Permalink', $data->url); ?> |
-		Last updated on <?php echo date('F j, Y',$data->update_time); ?>
-		<div class="pull-right btn"><b>	<?php echo CHtml::link(CHtml::encode('Leer más'), array('view', 'id'=>$data->id)); ?></b></div>
-	</div>
+		<div class="tags"><b>Tags:</b>
+		<?php foreach($data->tagLinks as $tag){
+			echo '<div class="item">' . $tag . '</div>'; 
+			} ?>
+		</div>
+		<?php echo CHtml::link('Permalink', $data->url); ?>
+		<div class="timeline">Última modificación: <?php echo date('F j, Y',$data->update_time); ?></div>
 </div>

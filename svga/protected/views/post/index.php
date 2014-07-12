@@ -2,10 +2,6 @@
 /* @var $this PostController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Home',
-);
-
 $this->menu=array(
 	array('label'=>'Crear Post', 'url'=>array('create')),
 	array('label'=>'Gestionar Post', 'url'=>array('admin')),
@@ -16,24 +12,22 @@ $this->menu=array(
 </head>
 
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <div id="sidebar">
+  <div class="row">
+    <div class="col-lg-9" style="overflow:hidden">
+        <?php $this->widget('zii.widgets.CListView', array(
+          'dataProvider'=>$dataProvider2,
+          'itemView'=>'_view',
+          'sortableAttributes'=>array(
+                  'title'=>'Título',
+                  'create_time'=>'Fecha',
+              ),
+        ));
+        ?>
+    </div>
+    <div class="col-lg-3">
         <?php if(Yii::app()->user->checkAccess('admin', array(Yii::app()->user->id)))$this->widget('UserMenu'); ?>
           <a class="twitter-timeline" href="https://twitter.com/SVGAupc" data-widget-id="381027193351983104">Tweets por @SVGAupc</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </div>
-    </div>
-    <div class="span10">
-      <?php $this->widget('zii.widgets.CListView', array(
-        'dataProvider'=>$dataProvider2,
-        'itemView'=>'_view',
-        'sortableAttributes'=>array(
-                'title'=>'Título',
-                'create_time'=>'Fecha',
-            ),
-      ));
-      ?>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
   </div>
 </div>

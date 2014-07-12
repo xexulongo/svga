@@ -42,20 +42,10 @@ class Usuarisvga extends CActiveRecord
 		return 'Usuaris';
 	}
 
-	public function getSeccionsNames()
-    {
-        $names = array();
-        foreach($this->seccions as $seccio) {
-                $names[] = $seccio->name;
-        }
-        
-        return implode(", ", $names);
-    }
-
     public function getSeccions(){
     	$names = array();
         foreach($this->seccions as $seccio) {
-                $names[] = $seccio->name;
+               $names[] = $seccio->name;
         }
         return $names;
     }
@@ -150,5 +140,16 @@ class Usuarisvga extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+
+	/**
+	 * @return integer the number of comments that are pending approval
+	 */
+
 	}
+
+	public function getPendingUsuarisCount()
+	{
+		return $this->count('activated=0');
+	}
+	
 }
