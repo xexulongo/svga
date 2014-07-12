@@ -61,7 +61,6 @@ return array(
             'dryRun' => false
         ),
         'booster' => array('class' => 'ext.yiibooster.components.Booster'),
-		'bootstrap'=>array('class'=>'application.extensions.bootstrap.components.Bootstrap'),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>false,
@@ -131,6 +130,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'jlexposito7@gmail.com',
 	),
 );

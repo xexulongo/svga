@@ -6087,3 +6087,628 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/svga/index.php?r=SeccionsHasUsuaris/view
 ---
+2014/07/12 20:28:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/login".' in /home/joseluis/Web/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('users/login')
+#1 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/svga/index.php?r=users/login
+HTTP_REFERER=http://localhost/svga/index.php?r=seccionsHasUsuaris/index
+---
+2014/07/12 20:30:16 [error] [php] Trying to get property of non-object (/home/joseluis/Web/svga/protected/views/seccionsHasUsuaris/_view.php:17)
+Stack trace:
+#0 /home/joseluis/Web/framework/zii/widgets/CListView.php(282): SeccionsHasUsuarisController->renderFile()
+#1 /home/joseluis/Web/framework/zii/widgets/CBaseListView.php(160): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /home/joseluis/Web/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#4 /home/joseluis/Web/framework/zii/widgets/CBaseListView.php(128): CListView->renderContent()
+#5 /home/joseluis/Web/framework/web/CBaseController.php(173): CListView->run()
+#6 /home/joseluis/Web/svga/protected/views/seccionsHasUsuaris/index.php(20): SeccionsHasUsuarisController->widget()
+#7 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#8 /home/joseluis/Web/framework/web/CBaseController.php(95): SeccionsHasUsuarisController->renderInternal()
+#9 /home/joseluis/Web/framework/web/CController.php(869): SeccionsHasUsuarisController->renderFile()
+#10 /home/joseluis/Web/framework/web/CController.php(782): SeccionsHasUsuarisController->renderPartial()
+#11 /home/joseluis/Web/svga/protected/controllers/SeccionsHasUsuarisController.php(129): SeccionsHasUsuarisController->render()
+#12 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): SeccionsHasUsuarisController->actionIndex()
+#13 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): SeccionsHasUsuarisController->runAction()
+#15 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): SeccionsHasUsuarisController->filterAccessControl()
+#18 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#20 /home/joseluis/Web/framework/web/CController.php(265): SeccionsHasUsuarisController->runActionWithFilters()
+#21 /home/joseluis/Web/framework/web/CWebApplication.php(282): SeccionsHasUsuarisController->run()
+#22 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#24 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php?r=seccionsHasUsuaris/index
+in /home/joseluis/Web/svga/protected/views/seccionsHasUsuaris/_view.php (17)
+in /home/joseluis/Web/svga/protected/views/seccionsHasUsuaris/index.php (20)
+in /home/joseluis/Web/svga/protected/controllers/SeccionsHasUsuarisController.php (129)
+2014/07/12 20:44:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in /home/joseluis/Web/framework/web/CController.php:483
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(270): CController->missingAction('about')
+#1 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('about')
+#2 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('site/about')
+#3 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/svga/index.php?r=site/about
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 20:44:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in /home/joseluis/Web/framework/web/CController.php:483
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(270): CController->missingAction('about')
+#1 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('about')
+#2 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('site/about')
+#3 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/svga/index.php?r=site/about
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 21:04:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in /home/joseluis/Web/framework/web/CController.php:483
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(270): CController->missingAction('about')
+#1 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('about')
+#2 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('site/about')
+#3 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/svga/index.php?r=site/about
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 22:15:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in /home/joseluis/Web/framework/web/CController.php:483
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(270): CController->missingAction('about')
+#1 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('about')
+#2 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('site/about')
+#3 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/svga/index.php?r=site/about
+HTTP_REFERER=http://localhost/svga/
+---
+2014/07/12 22:45:01 [error] [php] Array to string conversion (/home/joseluis/Web/svga/protected/extensions/yiibooster/widgets/TbPanel.php:196)
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CBaseController.php(172): UserMenu->createWidget()
+#1 /home/joseluis/Web/svga/protected/components/views/adminMenu.php(26): UserMenu->widget()
+#2 /home/joseluis/Web/framework/web/CBaseController.php(130): require()
+#3 /home/joseluis/Web/framework/web/CBaseController.php(95): UserMenu->renderInternal()
+#4 /home/joseluis/Web/framework/web/widgets/CWidget.php(243): UserMenu->renderFile()
+#5 /home/joseluis/Web/svga/protected/components/UserMenu.php(20): UserMenu->render()
+#6 /home/joseluis/Web/framework/zii/widgets/CPortlet.php(94): UserMenu->renderContent()
+#7 /home/joseluis/Web/framework/web/CBaseController.php(173): UserMenu->run()
+#8 /home/joseluis/Web/svga/protected/views/post/index.php(28): PostController->widget()
+#9 /home/joseluis/Web/framework/web/CBaseController.php(126): require()
+#10 /home/joseluis/Web/framework/web/CBaseController.php(95): PostController->renderInternal()
+#11 /home/joseluis/Web/framework/web/CController.php(869): PostController->renderFile()
+#12 /home/joseluis/Web/svga/protected/controllers/PostController.php(219): PostController->renderPartial()
+#13 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#14 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): PostController->runAction()
+#16 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#18 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): PostController->filterAccessControl()
+#19 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#20 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#21 /home/joseluis/Web/framework/web/CController.php(265): PostController->runActionWithFilters()
+#22 /home/joseluis/Web/framework/web/CWebApplication.php(282): PostController->run()
+#23 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#25 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php?r=post/index
+in /home/joseluis/Web/svga/protected/extensions/yiibooster/widgets/TbPanel.php (196)
+in /home/joseluis/Web/svga/protected/extensions/yiibooster/widgets/TbPanel.php (113)
+in /home/joseluis/Web/svga/protected/components/views/adminMenu.php (26)
+2014/07/12 23:05:34 [error] [php] Undefined variable: gridColumns (/home/joseluis/Web/svga/protected/views/usuarisvga/admin.php:74)
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CController.php(869): UsuarisvgaController->renderFile()
+#1 /home/joseluis/Web/framework/web/CController.php(782): UsuarisvgaController->renderPartial()
+#2 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): UsuarisvgaController->render()
+#3 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#4 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): UsuarisvgaController->runAction()
+#6 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/joseluis/Web/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): UsuarisvgaController->filterAccessControl()
+#9 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/joseluis/Web/framework/web/CController.php(265): UsuarisvgaController->runActionWithFilters()
+#12 /home/joseluis/Web/framework/web/CWebApplication.php(282): UsuarisvgaController->run()
+#13 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /home/joseluis/Web/svga/index.php(13): CWebApplication->run()
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin
+in /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php (74)
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (172)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/12 23:07:31 [error] [exception.CException] exception 'CException' with message 'Usuarisvga and its behaviors do not have a method or closure named "getData".' in /home/joseluis/Web/framework/base/CComponent.php:265
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(225): CComponent->__call('getData', Array)
+#1 /home/joseluis/Web/framework/zii/widgets/CBaseListView.php(107): CActiveRecord->__call('getData', Array)
+#2 /home/joseluis/Web/framework/zii/widgets/CBaseListView.php(107): Usuarisvga->getData()
+#3 /home/joseluis/Web/framework/zii/widgets/grid/CGridView.php(314): CBaseListView->init()
+#4 /home/joseluis/Web/svga/protected/extensions/yiibooster/widgets/TbGridView.php(68): CGridView->init()
+#5 /home/joseluis/Web/svga/protected/extensions/yiibooster/widgets/TbExtendedGridView.php(234): TbGridView->init()
+#6 /home/joseluis/Web/framework/web/CBaseController.php(147): TbExtendedGridView->init()
+#7 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#8 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(84): CBaseController->widget('booster.widgets...', Array)
+#9 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#10 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#11 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#14 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#15 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#22 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#25 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#26 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin&Usuarisvga_sort=name.desc
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 23:07:32 [error] [exception.CException] exception 'CException' with message 'Usuarisvga and its behaviors do not have a method or closure named "getData".' in /home/joseluis/Web/framework/base/CComponent.php:265
+Stack trace:
+#0 /home/joseluis/Web/framework/db/ar/CActiveRecord.php(225): CComponent->__call('getData', Array)
+#1 /home/joseluis/Web/framework/zii/widgets/CBaseListView.php(107): CActiveRecord->__call('getData', Array)
+#2 /home/joseluis/Web/framework/zii/widgets/CBaseListView.php(107): Usuarisvga->getData()
+#3 /home/joseluis/Web/framework/zii/widgets/grid/CGridView.php(314): CBaseListView->init()
+#4 /home/joseluis/Web/svga/protected/extensions/yiibooster/widgets/TbGridView.php(68): CGridView->init()
+#5 /home/joseluis/Web/svga/protected/extensions/yiibooster/widgets/TbExtendedGridView.php(234): TbGridView->init()
+#6 /home/joseluis/Web/framework/web/CBaseController.php(147): TbExtendedGridView->init()
+#7 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#8 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(84): CBaseController->widget('booster.widgets...', Array)
+#9 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#10 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#11 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#12 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#13 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#14 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#15 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#22 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#24 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#25 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#26 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin&Usuarisvga_sort=name.desc
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 23:09:33 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.fixedHeader" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('fixedHeader', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'booster.widgets...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(84): CBaseController->widget('booster.widgets...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#8 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#9 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#10 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#19 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#20 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin&Usuarisvga_sort=name.desc
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 23:09:40 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.headerOffset" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('headerOffset', 60)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'booster.widgets...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(83): CBaseController->widget('booster.widgets...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#8 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#9 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#10 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#19 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#20 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin&Usuarisvga_sort=name.desc
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 23:09:44 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.headerOffset" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('headerOffset', 60)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'booster.widgets...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(83): CBaseController->widget('booster.widgets...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#8 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#9 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#10 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#19 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#20 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin&Usuarisvga_sort=name.desc
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 23:09:45 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.headerOffset" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('headerOffset', 60)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'booster.widgets...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(83): CBaseController->widget('booster.widgets...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#8 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#9 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#10 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#19 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#20 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin&Usuarisvga_sort=name.desc
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 23:09:46 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.headerOffset" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('headerOffset', 60)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'booster.widgets...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(83): CBaseController->widget('booster.widgets...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#8 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#9 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#10 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#19 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#20 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin&Usuarisvga_sort=name.desc
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 23:09:48 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.fixedHeader" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('fixedHeader', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'booster.widgets...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(84): CBaseController->widget('booster.widgets...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#8 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#9 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#10 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#19 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#20 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin&Usuarisvga_sort=name.desc
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 23:09:49 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.fixedHeader" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('fixedHeader', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'booster.widgets...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(84): CBaseController->widget('booster.widgets...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#8 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#9 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#10 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#19 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#20 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin&Usuarisvga_sort=name.desc
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/12 23:47:50 [error] [exception.CException] exception 'CException' with message 'Property "TbGridView.responsive" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('responsive', true)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'booster.widgets...', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(172): CBaseController->createWidget('booster.widgets...', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(86): CBaseController->widget('booster.widgets...', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#8 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#9 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#10 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#19 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#20 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#21 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin
+HTTP_REFERER=http://localhost/svga/index.php?r=post/index
+---
+2014/07/13 00:03:18 [warning] [application] Failed to set unsafe attribute "activated" of "Usuarisvga".
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (168)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/13 00:03:18 [warning] [application] Failed to set unsafe attribute "email_activated" of "Usuarisvga".
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (168)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/13 00:03:20 [warning] [application] Failed to set unsafe attribute "activated" of "Usuarisvga".
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (168)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/13 00:03:20 [warning] [application] Failed to set unsafe attribute "email_activated" of "Usuarisvga".
+in /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php (168)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/13 00:06:15 [warning] [application] Failed to set unsafe attribute "create_time" of "Post".
+in /home/joseluis/Web/svga/protected/controllers/PostController.php (230)
+in /home/joseluis/Web/svga/index.php (13)
+2014/07/13 00:31:24 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "textFieldGroup".' in /home/joseluis/Web/framework/base/CComponent.php:265
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(22): CComponent->__call('textFieldGroup', Array)
+#1 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(22): CActiveForm->textFieldGroup(Object(Usuarisvga), 'id', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#3 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#4 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#10 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#11 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#12 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#21 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#22 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin
+---
+2014/07/13 00:32:59 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "textFieldGroup".' in /home/joseluis/Web/framework/base/CComponent.php:265
+Stack trace:
+#0 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(29): CComponent->__call('textFieldGroup', Array)
+#1 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(29): CActiveForm->textFieldGroup(Object(Usuarisvga), 'id', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#3 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#4 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#5 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#6 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#7 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#8 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#9 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#10 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#11 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#12 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#19 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#21 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#22 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin
+---
+2014/07/13 00:36:22 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.0" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('0', Array)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'CActiveForm', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(189): CBaseController->createWidget('CActiveForm', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(13): CBaseController->beginWidget('CActiveForm', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#8 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#9 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#10 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#11 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#12 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#13 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#14 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#21 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#23 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#24 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#25 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin
+---
+2014/07/13 00:36:36 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.0" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('0', Array)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'CActiveForm', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(189): CBaseController->createWidget('CActiveForm', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(13): CBaseController->beginWidget('CActiveForm', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#8 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#9 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#10 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#11 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#12 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#13 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#14 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#21 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#23 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#24 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#25 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin
+---
+2014/07/13 00:36:36 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.0" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('0', Array)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'CActiveForm', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(189): CBaseController->createWidget('CActiveForm', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(13): CBaseController->beginWidget('CActiveForm', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#8 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#9 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#10 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#11 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#12 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#13 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#14 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#21 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#23 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#24 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#25 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin
+---
+2014/07/13 00:36:36 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.0" is not defined.' in /home/joseluis/Web/framework/base/CComponent.php:173
+Stack trace:
+#0 /home/joseluis/Web/framework/web/CWidgetFactory.php(161): CComponent->__set('0', Array)
+#1 /home/joseluis/Web/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UsuarisvgaController), 'CActiveForm', Array)
+#2 /home/joseluis/Web/framework/web/CBaseController.php(189): CBaseController->createWidget('CActiveForm', Array)
+#3 /home/joseluis/Web/svga/protected/views/usuarisvga/_search.php(13): CBaseController->beginWidget('CActiveForm', Array)
+#4 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#5 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#6 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#7 /home/joseluis/Web/svga/protected/views/usuarisvga/admin.php(40): CController->renderPartial('_search', Array)
+#8 /home/joseluis/Web/framework/web/CBaseController.php(126): require('/home/joseluis/...')
+#9 /home/joseluis/Web/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/joseluis/...', Array, true)
+#10 /home/joseluis/Web/framework/web/CController.php(869): CBaseController->renderFile('/home/joseluis/...', Array, true)
+#11 /home/joseluis/Web/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#12 /home/joseluis/Web/svga/protected/controllers/UsuarisvgaController.php(172): CController->render('admin', Array)
+#13 /home/joseluis/Web/framework/web/actions/CInlineAction.php(49): UsuarisvgaController->actionAdmin()
+#14 /home/joseluis/Web/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /home/joseluis/Web/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /home/joseluis/Web/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /home/joseluis/Web/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /home/joseluis/Web/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /home/joseluis/Web/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /home/joseluis/Web/framework/web/CController.php(291): CFilterChain->run()
+#21 /home/joseluis/Web/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /home/joseluis/Web/framework/web/CWebApplication.php(282): CController->run('admin')
+#23 /home/joseluis/Web/framework/web/CWebApplication.php(141): CWebApplication->runController('usuarisvga/admi...')
+#24 /home/joseluis/Web/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#25 /home/joseluis/Web/svga/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/svga/index.php?r=usuarisvga/admin
+---

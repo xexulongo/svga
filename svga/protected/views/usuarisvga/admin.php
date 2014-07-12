@@ -26,11 +26,11 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Usuarisvgas</h1>
+<h1>Gestión de Usuarios</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+Puedes utilizar comparadores (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) al principio de cada uno de los valores de busqueda.
 </p>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
@@ -40,21 +40,27 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'usuarisvga-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'activated',
-		'email_activated',
-		'name',
-		'username',
-		'email',
-		'created',
-		'last_login',
-		array(
-			'class'=>'CButtonColumn',
+<?php $this->widget(
+    'booster.widgets.TbGridView',
+    array(
+        'filter' => $model,
+        'type' => 'striped condensed bordered',
+        // 40px is the height of the main navigation at bootstrap
+        'dataProvider' => $model->search(),
+        'template' => "{items}",
+        'columns' => array(
+			'id',
+			'activated',
+			'email_activated',
+			'name',
+			'username',
+			'email',
+			'created',
+			'last_login',
+			array(
+			'class'=>'booster.widgets.TbButtonColumn',
 		),
-	),
-)); ?>
+    	)
+	));
+?>
+

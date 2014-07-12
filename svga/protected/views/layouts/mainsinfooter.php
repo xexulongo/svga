@@ -19,7 +19,7 @@ $this->widget(
     array(
         'type' => null, // null or 'inverse'
         'brand' => 'HST2',
-        'brandUrl' => '#',
+        'brandUrl' => Yii::app()->baseUrl,
         'collapse' => true, // requires bootstrap-responsive.css
         'fixed' => false,
         'fluid' => true,
@@ -28,7 +28,7 @@ $this->widget(
                 'class' => 'booster.widgets.TbMenu',
                 'type' => 'navbar',
                 'items' => array(
-                    array('label' => 'Inicio', 'url' => $this->createUrl('post/index'),  'active'=>EUtils::returnActive('post', 'index')),
+                    array('label' => 'Inicio', 'url' => Yii::app()->baseUrl,  'active'=>EUtils::returnActive('post', 'index')),
                     array('label' => 'Sobre Nosotros', 'url' => $this->createUrl('site/about'), 'active'=>EUtils::returnActive('site', 'about')),
                     /*array(
                         'label' => 'Dropdown',
@@ -59,22 +59,7 @@ $this->widget(
                 'items' => array(
                     array('label' => 'Login', 'url' => $this->createUrl('usuarisvga/login'),  'active'=>EUtils::returnActive('usuarisvga', 'login'), 'visible'=>Yii::app()->user->isGuest),
                     array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => $this->createUrl('usuarisvga/logout'),  'active'=>EUtils::returnActive('usuarisvga', 'logout'), 'visible'=>!Yii::app()->user->isGuest),
-
                     '---',
-                    array(
-                        'label' => 'Dropdown',
-                        'url' => '#',
-                        'items' => array(
-                            array('label' => 'Action', 'url' => '#'),
-                            array('label' => 'Another action', 'url' => '#'),
-                            array(
-                                'label' => 'Something else here',
-                                'url' => '#'
-                            ),
-                            '---',
-                            array('label' => 'Separated link', 'url' => '#'),
-                        )
-                    ),
                 ),
             ),
         ),
@@ -106,10 +91,4 @@ $this->widget(
 <div class="row">
     <div class="col-lg-12">
 	<?php echo $content; ?>
-    <?php if(isset($this->breadcrumbs)):?>
-        <?php $this->widget('booster.widgets.TbBreadcrumbs', array(
-            'links'=>$this->breadcrumbs,
-            'homeLink' => Chtml::link(Yii::t('HST2', 'Inicio'), $this->createUrl('post/index'))
-        )); ?><!-- breadcrumbs -->
-        <?php endif?>
     </div>

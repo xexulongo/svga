@@ -19,7 +19,7 @@ $this->widget(
     array(
         'type' => null, // null or 'inverse'
         'brand' => 'HST2',
-        'brandUrl' => '#',
+        'brandUrl' => Yii::app()->baseUrl,
         'collapse' => true, // requires bootstrap-responsive.css
         'fixed' => false,
         'fluid' => true,
@@ -59,22 +59,7 @@ $this->widget(
                 'items' => array(
                     array('label' => 'Login', 'url' => $this->createUrl('usuarisvga/login'),  'active'=>EUtils::returnActive('usuarisvga', 'login'), 'visible'=>Yii::app()->user->isGuest),
                     array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => $this->createUrl('usuarisvga/logout'),  'active'=>EUtils::returnActive('usuarisvga', 'logout'), 'visible'=>!Yii::app()->user->isGuest),
-
                     '---',
-                    array(
-                        'label' => 'Dropdown',
-                        'url' => '#',
-                        'items' => array(
-                            array('label' => 'Action', 'url' => '#'),
-                            array('label' => 'Another action', 'url' => '#'),
-                            array(
-                                'label' => 'Something else here',
-                                'url' => '#'
-                            ),
-                            '---',
-                            array('label' => 'Separated link', 'url' => '#'),
-                        )
-                    ),
                 ),
             ),
         ),
@@ -82,7 +67,11 @@ $this->widget(
 );
 ?>
 
-
+<?php if(isset($this->metahead)) : ?>
+    <?php $this->widget('metahead', array(
+        'title'=>$this->metahead
+        )); 
+        endif;?>
 
 <div class="container">
     
@@ -107,7 +96,7 @@ $this->widget(
                 'error' => array('closeText' => 'AAARGHH!!')
             ),
     ));?>
-
+    
     <?php echo $content; ?>
 
 

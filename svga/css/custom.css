@@ -2,6 +2,7 @@
 	width: 50%;
 	border: 1px solid #ccc;
 }
+/*
 
 .portlet {
 	margin-bottom: 20px;
@@ -30,7 +31,10 @@
 	padding: 10px;
 	text-align: center;
 }
-
+*/
+.portlet{
+	margin-top:15px;
+}
 .slogan {
 	min-height: 100px;
 	background: #fafafa;
@@ -126,6 +130,7 @@ border: 0;
 	width: 2500px;
 	left: -765px;
 	height: 100%;
+	padding-bottom: 15px;
 }
 .title {
 	display: block;
@@ -146,7 +151,7 @@ border: 0;
 .carousel-inner > .item > img {
     margin: 0 auto;
     height: 400px !important;
-    width: 100% !important;
+    width: auto !important;
 }
 .news{
 	margin-left: auto;
@@ -167,4 +172,8 @@ border: 0;
 .news .tags .item{
 	display:inline-block;
 	margin-right: 5px;
+}
+
+.carousel-caption{
+	background: rgba(29, 29, 29, 0.40);
 }

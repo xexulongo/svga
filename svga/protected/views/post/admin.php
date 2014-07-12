@@ -40,26 +40,26 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>
 </div><!-- search-form -->
 
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'post-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'title',
-		'content',
-		'tags',
-		'status',
-		'create_time',
-		'destacado',
-		/*
-		'update_time',
-		'author_id',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<?php $this->widget(
+    'booster.widgets.TbGridView',
+    array(
+        'filter' => $model,
+        'type' => 'striped condensed bordered',
+        // 40px is the height of the main navigation at bootstrap
+        'dataProvider' => $model->search(),
+        'template' => "{items}",
+        'columns' => array(
+			'title',
+			'content',
+			'tags',
+			'status',
+			'create_time',
+			'destacado',
+				array(
+				'class'=>'booster.widgets.TbButtonColumn',
+			),
+    	)
+	));
+?>
 
 </div>

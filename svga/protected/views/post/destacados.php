@@ -29,21 +29,17 @@ $this->menu=array(
 		      array(
 		        'image'=>Yii::app()->baseUrl . '/images/' . $dataProvider1->data[0]->image,
 		        'label'=> $dataProvider1->data[0]->title,
-		        'caption'=>$dataProvider1->data[0]->content
+		        'caption'=> $dataProvider1->data[0]->description
 		        ),
 		      array(
 		        'image'=>Yii::app()->baseUrl . '/images/' . $dataProvider1->data[1]->image,
-		        'label'=>'Second Thumbnail label',
-		        'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. ' .
-		          'Donec id elit non mi porta gravida at eget metus. ' .
-		          'Nullam id dolor id nibh ultricies vehicula ut id elit.'
+		        'label'=> $dataProvider1->data[1]->title,
+		        'caption'=>$dataProvider1->data[1]->description
 		      ),
 		      array(
 		        'image'=>Yii::app()->baseUrl . '/images/' . $dataProvider1->data[2]->image,
-		        'label'=>'Third Thumbnail label',
-		        'caption'=>'Cras justo odio, dapibus ac facilisis in, egestas eget quam. ' .
-		          'Donec id elit non mi porta gravida at eget metus. ' .
-		          'Nullam id dolor id nibh ultricies vehicula ut id elit.'
+		        'label'=>$dataProvider1->data[2]->title,
+		        'caption'=>$dataProvider1->data[2]->description
 		      ),
 		    ),
 		));

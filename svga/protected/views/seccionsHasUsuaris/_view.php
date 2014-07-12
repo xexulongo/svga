@@ -3,26 +3,27 @@
 /* @var $data SeccionsHasUsuaris */
 ?>
 
-<div class="view">
+<div class="page-header" style="border: none !important">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-	<!-- <b><?php echo CHtml::encode($data->getAttributeLabel('Usuari')); ?>:</b> -->
-		<h2 class="pull-left"><?php echo CHtml::encode($data->usuari->name); ?></h2>
+	<div class="pull-left">
+		<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+		<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	</div>
+	<div class="pull-left">
+		<h1><?php echo CHtml::encode($data->usuari->name); ?></h1>
+	</div>
+	<div class="pull-left" style="margin-left: 5px;	margin-top: 21px; font-weight:bold;">
+		<h4><span class="label label-<?= ($data->seccio->name == "web") ? 'warning' : 'primary' ?>" style="margin-right:5px">
+			<?= $data->seccio->name ?>	
+		</span></h4>
+	</div>
 
-		
-
-		<div class="pull-left" style="margin-left: 5px;
-	margin-top: 28px; font-weight:bold;"><span class="label label-<?= ($data->confirmed) ? 'info' : 'warning' ?>" style="margin-right:5px">
-		<?php echo $data->seccio->name?>	</div>
-
-		</span>
-		<div class="pull-left">
-		<a href="<?= $this->createUrl('enabled', array("id"=>$data->id));?>" style="text-decoration:none"><span class="label label-<?= ($data->confirmed) ? 'success' : 'danger' ?>" style="margin-left: 5px;top: 28px;position: relative;"> <?= ($data->confirmed) ? 'confirmado' : 'no confirmado'; ?> </span></div>
-</a>
-		<div class="clearfix"></div>
-
+	<div class="pull-left">
+		<a href="<?= $this->createUrl('enabled', array("id"=>$data->id));?>" style="text-decoration:none">
+			<h4><span class="label label-<?= ($data->confirmed) ? 'success' : 'danger' ?>" style="margin-left: 5px;top: 21px;position: relative;"> <?= ($data->confirmed) ? 'confirmado' : 'no confirmado'; ?> </span></h4>
+		</a>
+	</div>
 </div>
+<div class="clearfix"></div>
 
 <hr>

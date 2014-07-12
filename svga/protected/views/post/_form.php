@@ -116,10 +116,6 @@
 	); ?>
 
 
-</div>
+</div><!-- form -->
 
 <?php $this->endWidget(); ?>
-
-
-
-</div><!-- form -->
