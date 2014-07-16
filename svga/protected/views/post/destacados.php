@@ -24,24 +24,10 @@ $this->menu=array(
 </div>
 <div class="clearfix"></div>
 	<div class="col-md-10 col-md-offset-1 hidden-xs hidden-sm">  
-	<?php $this->widget('booster.widgets.TbCarousel', array(
-		  'items'=>array(
-		      array(
-		        'image'=>Yii::app()->baseUrl . '/images/' . $dataProvider1->data[0]->image,
-		        'label'=> $dataProvider1->data[0]->title,
-		        'caption'=> $dataProvider1->data[0]->description
-		        ),
-		      array(
-		        'image'=>Yii::app()->baseUrl . '/images/' . $dataProvider1->data[1]->image,
-		        'label'=> $dataProvider1->data[1]->title,
-		        'caption'=>$dataProvider1->data[1]->description
-		      ),
-		      array(
-		        'image'=>Yii::app()->baseUrl . '/images/' . $dataProvider1->data[2]->image,
-		        'label'=>$dataProvider1->data[2]->title,
-		        'caption'=>$dataProvider1->data[2]->description
-		      ),
-		    ),
+	<?php 
+	 	$items = $this->getdestacadositems($dataProvider1);
+		$this->widget('booster.widgets.TbCarousel', array(
+			  'items'=>$items,
 		));
 	?>
 	</div>

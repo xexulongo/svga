@@ -272,4 +272,19 @@ public function loadModel()
 			Yii::app()->end();
 		}
 	}
+
+	public function getdestacadositems($dataprov){
+		$items = array();	
+		for($i = 0; $i <= count($dataprov->data); ++$i){
+			if(isset($dataprov->data[$i])){
+				$aux = array(
+					'image'=>Yii::app()->baseUrl . '/images/' . $dataprov->data[$i]->image,
+			        'label'=> $dataprov->data[$i]->title,
+			        'caption'=> $dataprov->data[$i]->description
+				);
+				$items[$i] = $aux;	
+			}
+		}
+		return $items;
+	}
 }
