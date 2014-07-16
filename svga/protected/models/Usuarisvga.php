@@ -66,6 +66,7 @@ class Usuarisvga extends CActiveRecord
 		$rules[] = array('email', 'email', 'on' => 'register');
 		$rules[] = array('email, username, name', 'unique', 'on' => 'register');
 		$rules[] = array('name, username, email, password', 'length', 'max'=>45, 'on' => 'register');
+		$rules[] = array('username, password', 'required', 'on' => 'login');
 		$rules[] = array('activated, email_activated, recovery_timestamp, last_login, created', 'numerical', 'integerOnly'=>true, 'on'=>'register');
 		$rules[] = array('id, username, name, password, email, last_login, created', 'safe', 'on'=>'search');
 

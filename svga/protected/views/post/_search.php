@@ -11,43 +11,43 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row-fluid">
-		<?php echo $form->label($model,'id'); ?>
+	<div class="form-group col-md-10">
+		<div class="col-lg-2"><?php echo $form->label($model,'id'); ?></div>
 		<?php echo $form->textField($model,'id'); ?>
 	</div>
 
-	<div class="row-fluid">
-		<?php echo $form->label($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>128)); ?>
+	<div class="form-group col-md-10">
+		<div class="col-lg-2"><?php echo $form->label($model,'title'); ?></div>
+		<?php echo $form->textField($model,'title',array('maxlength'=>128)); ?>
 	</div>
 
-	<div class="row-fluid">
-		<?php echo $form->label($model,'content'); ?>
+	<div class="form-group col-md-10">
+		<div class="col-lg-2"><?php echo $form->label($model,'content'); ?></div>
 		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
-	<div class="row-fluid">
-		<?php echo $form->label($model,'tags'); ?>
+	<div class="form-group col-md-10">
+		<div class="col-lg-2"><?php echo $form->label($model,'tags'); ?></div>
 		<?php echo $form->textArea($model,'tags',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
-	<div class="row-fluid">
-		<?php echo $form->label($model,'status'); ?>
+	<div class="form-group col-md-10">
+		<div class="col-lg-2"><?php echo $form->label($model,'status'); ?></div>
 		<?php echo $form->textField($model,'status'); ?>
 	</div>
 
-	<div class="row-fluid">
-		<?php echo $form->label($model,'create_time'); ?>
+	<div class="form-group col-md-10">
+		<div class="col-lg-2"><?php echo $form->label($model,'create_time'); ?></div>
 		<?php echo $form->textField($model,'create_time'); ?>
 	</div>
 
-	<div class="row-fluid">
-		<?php echo $form->label($model,'update_time'); ?>
+	<div class="form-group col-md-10">
+		<div class="col-lg-2"><?php echo $form->label($model,'update_time'); ?></div>
 		<?php echo $form->textField($model,'update_time'); ?>
 	</div>
 
-	<div class="row-fluid">
-		<?php echo $form->label($model,'author_id'); ?>
+	<div class="form-group col-md-10">
+		<div class="col-lg-2"><?php echo $form->label($model,'author_id'); ?></div>
 		<?php echo $form->textField($model,'author_id'); ?>
 	</div>
 

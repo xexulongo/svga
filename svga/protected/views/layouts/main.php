@@ -11,6 +11,8 @@
     <meta content="" name="author" />
     <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/custom.css" />
+    <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-social.css" />
+
 </head>
 
 <body><?php
@@ -67,20 +69,9 @@ $this->widget(
 );
 ?>
 
-<?php if(isset($this->metahead)) : ?>
-    <?php $this->widget('metahead', array(
-        'title'=>$this->metahead
-        )); 
-        endif;?>
+<?php if(isset($this->metahead)) Yii::app()->cmetahead->construir($this->metahead); ?>
 
 <div class="container">
-    
-    <?php if(isset($this->breadcrumbs)):?>
-        <?php $this->widget('booster.widgets.TbBreadcrumbs', array(
-            'links'=>$this->breadcrumbs,
-            'homeLink' => Chtml::link(Yii::t('HST2', 'Inicio'), $this->createUrl('post/index'))
-        )); ?><!-- breadcrumbs -->
-    <?php endif?>
 
     <?php $this->widget('booster.widgets.TbAlert', array(
             'fade' => true,
@@ -92,21 +83,31 @@ $this->widget(
                 // success, info, warning, error or danger
                 'success' => array('closeText' => '&times;'),
                 'info', // you don't need to specify full config
-                'warning' => array('closeText' => false),
-                'error' => array('closeText' => 'AAARGHH!!')
+                'warning' => array('closeText' => '&times'),
+                'error' => array('closeText' => '&times')
             ),
     ));?>
+<div id="fixedsocial">
+    <div class="facebookflat"></div>
+    <div class="twitterflat"></div> 
+    <a class="btn btn-block btn-social btn-twitter">  </a>
+<a class="btn btn-social-icon btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><i class="fa fa-facebook"></i></a>
+</div>
     
     <?php echo $content; ?>
 
 
-	<div class="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by HST2.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
+
 
 </div><!-- page -->
-
+<div class="footer">
+    <div class="row">
+    <div class="col-lg-8 col-lg-offset-5">
+        Copyright &copy; <?php echo date('Y'); ?> by HST2.<br/>
+        All Rights Reserved.<br/>
+        <?php echo Yii::powered(); ?>
+    </div>
+    </div>
+</div><!-- footer -->
 </body>
 </html>

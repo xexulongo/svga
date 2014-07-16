@@ -25,7 +25,8 @@ return array(
 	),
 
     'aliases' => array(
-        'xupload' => 'ext.xupload'
+        'xupload' => 'ext.xupload',
+        'bootstrap' => 'ext.bootstrap'
     ),
 
 	'defaultController'=>'post',
@@ -60,6 +61,7 @@ return array(
             'logging' => true,
             'dryRun' => false
         ),
+        'cmetahead'=>array('class'=>'ext.JMetahead'),
         'booster' => array('class' => 'ext.yiibooster.components.Booster'),
 		'user'=>array(
 			// enable cookie-based authentication

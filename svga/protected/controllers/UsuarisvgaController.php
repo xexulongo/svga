@@ -195,7 +195,7 @@ class UsuarisvgaController extends Controller
 		//només deixem loggejar si no ho està
 		if (!Yii::app() -> user -> isGuest) {
 			Yii::app() -> user -> setFlash('warning', Yii::t('hst2', 'Ja tens la sessió iniciada!'));
-			$this -> redirect($this -> createUrl(Yii::app() -> homeUrl));
+			$this -> redirect(Yii::app()->baseUrl);
 		} 
 		else {
 			$form = new LoginForm();
@@ -203,16 +203,13 @@ class UsuarisvgaController extends Controller
 					$user = new UserIdentity($_POST['Usuarisvga']['username'], $_POST['Usuarisvga']['password']);
 					$result = $user -> authenticate();
 					if ($result == PasswordIdentity::CREDENTIALS_ERROR) {
-						Yii::app() -> user -> setFlash('danger', Yii::t('hst2', 'Usuari i/o contrasenya incorrecte'));
-						$this -> render('login', array('formModel' => $form));
+						Yii::app() -> user -> setFlash('error', Yii::t('hst2', 'Usuari i/o contrasenya incorrecte'));
 					}
 					else if ($result == PasswordIdentity::NOT_ACTIVATED) {
 						Yii::app() -> user -> setFlash('warning', Yii::t('hst2', 'El teu usuari encara no estas activat. Contacta amb el administrador per més informació'));
-						$this -> render('login', array('formModel' => $form));
 					}
 					else if ($result == PasswordIdentity::EMAIL_NOT_ACTIVATED) {
-						Yii::app() -> user -> setFlash('danger', Yii::t('hst2', 'El teu email encara no està activat'));
-						$this -> render('login', array('formModel' => $form));
+						Yii::app() -> user -> setFlash('errpr', Yii::t('hst2', 'El teu email encara no està activat'));
 					}
 					else if ($result == PasswordIdentity::OK) {
 
@@ -221,9 +218,10 @@ class UsuarisvgaController extends Controller
 						$this -> redirect(Yii::app() -> user -> returnUrl);
 					} 
 					else {
-						Yii::app() -> user -> setFlash('danger', Yii::t('hst2', 'Error en iniciar la sessió'));
+						Yii::app() -> user -> setFlash('error', Yii::t('hst2', 'Error en iniciar la sessió'));
 				}
 				$form -> password = '';
+				$this -> render('login', array('formModel' => $form));
 			}
 			else {
 				//mostrem el formulari
@@ -234,7 +232,7 @@ class UsuarisvgaController extends Controller
 	public function actionLogout()
 	{
 		$user = new UserIdentity(Yii::app()->user->getState('username'), '');
-		$user->updatelogin();
+		$user->updatelogin();	//Refresca l'últim login i el camp d'actiu
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}

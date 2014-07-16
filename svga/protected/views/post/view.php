@@ -2,9 +2,8 @@
 /* @var $this PostController */
 /* @var $model Post */
 $this->pageTitle = 'SVGA - ' . $model->title;
-$this->breadcrumbs=array(
-	'Home'=>array('index'),
-	$model->title,
+$this->metahead = array(
+	'title' => $model->title,
 );?>
 
 	<?php $this->menu=array(

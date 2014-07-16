@@ -1,21 +1,51 @@
-<div class="form text-center nomargin">
-	<?php $form=$this->beginWidget('CActiveForm', array(
-		'enableClientValidation'=>true,
-		'clientOptions'=>array(
-			'validateOnSubmit'=>true,
-		),
-	)); ?>
-	<div class="head-form text-center minim"><h3>Membre SVGA</h3></div>
-		<div class="nomargin"><?php echo $form->labelEx($model,'username'); ?>
-			<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><?php echo $form->textField($model,'username'); ?></div>
-			<?php echo $form->error($model,'username',array("class"=>"alert alert-error")); ?>
-
-			<?php echo $form->labelEx($model,'password'); ?>
-			<div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><?php echo $form->passwordField($model,'password'); ?></div>
-			<?php echo $form->error($model,'password',array("class"=>"alert alert-error")); ?>
-			<br/><br/>
-		<?php echo CHtml::submitButton(Yii::t('SVGA', 'Inicia sessió'), array("class"=>"btn btn-primary"));?> 	
+	<?php $form=$this->beginWidget(
+	'booster.widgets.TbActiveForm',
+	array(
+		'type' => 'horizontal',
+	)
+);?>
+		<div class="account-wall">
+				<div class="ribbon-wrapper">
+		<div class="ribbon-front">
+			<h1 class="text-center" style="color:white;"><b>Login</b></h1>
+		</div>
+		<div class="ribbon-edge-topleft"></div>
+		<div class="ribbon-edge-topright"></div>
+		<div class="ribbon-edge-bottomleft"></div>
+		<div class="ribbon-edge-bottomright"></div>
+		<div class="ribbon-back-left"></div>
+		<div class="ribbon-back-right"></div>
 	</div>
+			<hr>
+            <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
+            <form class="form-signin">
+            <?php echo $form->textFieldGroup(
+			$model,
+			'username',
+			array(
+				'wrapperHtmlOptions' => array(
+					'class' => 'col-lg-10 col-lg-offset-1',
+				),
+				'prepend' => '<i class="glyphicon glyphicon-user"></i>',
+				'labelOptions' => array('label' => false),
+			)
+		); ?>			
 
-	<?php $this->endWidget(); ?>
-</div>
+		<?php echo $form->textFieldGroup(
+			$model,
+			'password',
+			array(
+				'wrapperHtmlOptions' => array(
+					'class' => 'col-lg-10 col-lg-offset-1',
+				),
+				'prepend' => '<i class="glyphicon glyphicon-lock"></i>',
+				'labelOptions' => array('label' => false),
+			)
+		); ?>
+		<?php echo CHtml::submitButton(Yii::t('SVGA', 'Inicia sessió'), array("class"=>"btn btn-lg btn-primary btn-block"));?> 	
+
+		</div>
+
+		
+		<br/><br/>
+		<?php $this->endWidget(); ?>
