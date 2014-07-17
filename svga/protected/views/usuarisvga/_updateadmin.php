@@ -63,8 +63,6 @@
 	<?php $this->endWidget(); ?>
 
 		</div>
-
-		<br/><br/>
 			</div>
 </div>
 <div class="clearfix"></div>

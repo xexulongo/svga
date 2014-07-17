@@ -264,7 +264,7 @@ border: 0;
 .ribbon-wrapper {
 	position: relative;
 }
-  .ribbon-front {
+.ribbon-front {
 	background-color: #428bca;
 	height: 40px;
 	width: 111%;
@@ -352,9 +352,18 @@ border: 0;
 html, body, .container { height: 100%; }
 body > .container { height: auto; min-height: 90%; }
 #fixedsocial {
-    top:30%;
+    top:40%;
     height:200px;
     width:60px;
     position:fixed;
     right: 0;
+}
+#twitter{
+	position: absolute;
+	right:0;
+}
+#facebook{
+	position:absolute;
+	right:0;
+	top:34px;
 }

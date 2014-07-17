@@ -88,10 +88,15 @@ $this->widget(
             ),
     ));?>
 <div id="fixedsocial">
-    <div class="facebookflat"></div>
-    <div class="twitterflat"></div> 
-    <a class="btn btn-block btn-social btn-twitter">  </a>
-<a class="btn btn-social-icon btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><i class="fa fa-facebook"></i></a>
+    <a class="btn btn-social-icon btn-twitter" id="twitter"> 
+        <i class="fa fa-twitter"></i> 
+    </a>
+    <a class="btn btn-social-icon btn-facebook" id="facebook">
+        <i class="fa fa-facebook"></i>
+    </a>
+    <a class="btn btn-social-icon btn-facebook" id="facebook">
+        <i class="fa fa-facebook"></i>
+    </a>
 </div>
     
     <?php echo $content; ?>
