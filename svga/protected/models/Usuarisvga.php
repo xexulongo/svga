@@ -15,6 +15,7 @@
 class Usuarisvga extends CActiveRecord
 {
 	public $repeat_password;
+	public $seccio;
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -60,7 +61,7 @@ class Usuarisvga extends CActiveRecord
 		// will receive user inputs.
 		$rules = array();
 
-		$rules[] = array('name, username, password, email, repeat_password', 'required', 'on'=>'register');
+		$rules[] = array('username, password, email, repeat_password', 'required', 'on'=>'register');
 		$rules[] = array('repeat_password', 'compare', 'compareAttribute' => 'password', 'on' => 'register');
 		$rules[] = array('password', 'length', 'min' => 5, 'on' => 'register');
 		$rules[] = array('email', 'email', 'on' => 'register');

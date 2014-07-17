@@ -31,7 +31,7 @@ $this->menu=array(
 		));
 	?>
 	</div>
-<div class="clearfix"></div>
+<div class="clearfix" style="margin-bottom:15px"></div>
 
 <?php $this->breadcrumbs=array(
 	'Home',

@@ -18,11 +18,14 @@ $this->menu=array(
 
 <h1>Veure usuari <?php echo $model->name; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'name',
-		'username',
-		'email',
-	),
-)); ?>
+<?php 
+	$attributes = array('username', 'email');
+	if(! Yii::app()->user->isGuest) {
+		if(Yii::app()->user->checkAccess('admin', array(Yii::app()->user->id))) $attributes[] = 'name';
+	}
+	$this->widget('zii.widgets.CDetailView', 
+		array(
+		'data'=>$model,
+		'attributes'=>$attributes
+		)
+	); ?>

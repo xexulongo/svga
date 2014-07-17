@@ -12,5 +12,9 @@ $this->menu=array(
 	array('label'=>'Manage Usuarisvga', 'url'=>array('admin')),
 );
 ?>
-
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+	<div class="col-sm-6 col-md-4 col-md-offset-4">
+		<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+    </div>
+</div>
+<div class="clearfix"></div>

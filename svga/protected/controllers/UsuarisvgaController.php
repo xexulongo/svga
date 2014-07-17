@@ -62,7 +62,7 @@ class UsuarisvgaController extends Controller
 	 */
 	public function actionCreate()
 	{
-
+		$this->layout='//layouts/main';
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 		if (!Yii::app() -> user -> isGuest) {
@@ -114,6 +114,7 @@ class UsuarisvgaController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->layout='//layouts/main';
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -127,9 +128,14 @@ class UsuarisvgaController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array(
+		if(Yii::app()->user->checkAccess('admin', array(Yii::app()->user->id)) and $id != Yii::app()->user->id){
+			$this->render('_updateadmin',array(
 			'model'=>$model,
-		));
+			));
+		}
+		else $this->render('update',array(
+			'model'=>$model,
+			));
 	}
 
 	/**
