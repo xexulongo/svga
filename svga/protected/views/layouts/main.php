@@ -32,25 +32,6 @@ $this->widget(
                 'items' => array(
                     array('label' => 'Inicio', 'url' => $this->createUrl('post/index'),  'active'=>EUtils::returnActive('post', 'index')),
                     array('label' => 'Sobre Nosotros', 'url' => $this->createUrl('site/about'), 'active'=>EUtils::returnActive('site', 'about')),
-                    /*array(
-                        'label' => 'Dropdown',
-                        'url' => '#',
-                        'items' => array(
-                            array('label' => 'Action', 'url' => '#'),
-                            array('label' => 'Another action', 'url' => '#'),
-                            array(
-                                'label' => 'Something else here',
-                                'url' => '#'
-                            ),
-                            '---',
-                            array('label' => 'NAV HEADER'),
-                            array('label' => 'Separated link', 'url' => '#'),
-                            array(
-                                'label' => 'One more separated link',
-                                'url' => '#'
-                            ),
-                        )
-                    ),*/
                 ),
             ),
             //'<form class="navbar-form navbar-left" action=""><div class="form-group"><input type="text" class="form-control" placeholder="Search"></div></form>',
@@ -70,6 +51,12 @@ $this->widget(
 ?>
 
 <?php if(isset($this->metahead)) Yii::app()->cmetahead->construir($this->metahead); ?>
+<?php if(isset($this->slideritems))  {
+    $this->widget('booster.widgets.TbCarousel', array(
+        'items'=>$this->slideritems,
+    ));
+} ?>
+<?php if(isset($this->destacadosnews)) //Yii::app()->cmetahead->noticias($this->destacadosnews);?>
 
 <div class="container">
 
@@ -87,31 +74,28 @@ $this->widget(
                 'error' => array('closeText' => '&times')
             ),
     ));?>
-<div id="fixedsocial">
-    <a class="btn btn-social-icon btn-twitter" id="twitter"> 
-        <i class="fa fa-twitter"></i> 
-    </a>
-    <a class="btn btn-social-icon btn-facebook" id="facebook">
-        <i class="fa fa-facebook"></i>
-    </a>
-    <a class="btn btn-social-icon btn-facebook" id="facebook">
-        <i class="fa fa-facebook"></i>
-    </a>
-</div>
-    
+    <div class="fixedsocial" id="second-z">
+        <a class="btn btn-social-icon btn-twitter" id="twitter"> 
+            <i class="fa fa-twitter"></i> 
+        </a>
+        <a class="btn btn-social-icon btn-facebook" id="facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a class="btn btn-social-icon btn-facebook" id="facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+    </div>
     <?php echo $content; ?>
-
-
-
-
 </div><!-- page -->
+
+
 <div class="footer">
     <div class="row">
-    <div class="col-lg-8 col-lg-offset-5">
-        Copyright &copy; <?php echo date('Y'); ?> by HST2.<br/>
-        All Rights Reserved.<br/>
-        <?php echo Yii::powered(); ?>
-    </div>
+        <div class="col-lg-8 col-lg-offset-4">
+            Copyright &copy; <?php echo date('Y'); ?> by HST2.<br/>
+            All Rights Reserved.<br/>
+            <?php echo Yii::powered(); ?>
+        </div>
     </div>
 </div><!-- footer -->
 </body>

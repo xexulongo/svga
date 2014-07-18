@@ -149,34 +149,10 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*
-		** CREA UNA LLISTA DE LES FOTOGRAFIES
-		*/
-		// $fileListOfDirectory = array();
-
-		// $pathTofileListDirectory = '/home/xexu/yii/HST2/gallery/' ;
-
-		// if(!is_dir($pathTofileListDirectory ))
-		// {
-		//     die(" Invalid Directory");
-		// }
-
-		// if(!is_readable($pathTofileListDirectory ))
-		// {
-		//     die("You don't have permission to read Directory");
-		// }
-
-		// foreach ( new DirectoryIterator ( $pathTofileListDirectory ) as $file ) {
-		//       if ($file->getExtension () == "jpg" or $file->getExtension () == "png") {
-		//           array_push ( $fileListOfDirectory, $file->getBasename () );
-	 //      }
-		// }
-
 		/* 
 		** DEFINIM DATAPROVIDERS PER LES NOTICIES DESTACADES I TOTES LES NOTICIES
 		*/
 
-		$this->layout = '//layouts/mainsinfooter';
 		$criteriaPost=new CDbCriteria(array(
 	        'condition'=>'status='.Post::STATUS_PUBLICADO,
 	        'order'=>'update_time DESC',
@@ -205,17 +181,14 @@ class PostController extends Controller
 	    	'pagination' => false,
 	        'criteria'=>$criteriaDestacados,
 	    ));
-
-
+		$this->slideritems = $this->getdestacadositems($dataProviderDestacados);
+		$this->destacadosnews = $dataProviderDestacados;
 
 	  	$this->pageTitle = "HST2 - Noticias"; // It could be something from DB or...whatever
-	   	$this->render('destacados',array(
-	   		'dataProvider1'=>$dataProviderDestacados,
-	   	));
-	   	$this->layout = '//layouts/column2';
-	   	$this->renderPartial('index',array(
+	   	$this->render('index',array(
         	'dataProvider2'=>$dataProviderPost,
-        	//'filelist'=>$fileListOfDirectory
+        	'dataProvider1'=>$dataProviderDestacados,
+
     	));
 	}
 

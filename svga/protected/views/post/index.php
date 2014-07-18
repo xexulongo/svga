@@ -11,38 +11,32 @@ $this->menu=array(
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-9" style="overflow:hidden">
-        <?php $this->widget('zii.widgets.CListView', array(
-          'dataProvider'=>$dataProvider2,
-          'itemView'=>'_view',
-          'sortableAttributes'=>array(
-                  'title'=>'Título',
-                  'create_time'=>'Fecha',
-              ),
-        ));
-        ?>
-    </div>
-    <div class="col-lg-3">
-        <?php if(Yii::app()->user->checkAccess('admin', array(Yii::app()->user->id)))$this->widget('UserMenu'); ?>
-          <a class="twitter-timeline" href="https://twitter.com/SVGAupc" data-widget-id="381027193351983104">Tweets por @SVGAupc</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
+<h1 class="text-center">Bienvenido a la página web de SVGA</h1>
+
+<div class="title"><h2>Notícias destacadas</h2></div>
+
+<div class="featured-covers">
+  <div class="featured-covers-inner">
+    <?php $this->widget('zii.widgets.CListView', array(
+      'dataProvider'=>$dataProvider1,
+      'summaryText'=>'', 
+      'itemView'=>'_destacadosview',
+    ));
+    ?>
   </div>
 </div>
-
-	<div class="copyright">
-        <div class="container">
-            <div class="row-fluid">
-        		<div class= "span7"><p>Copyright &copy; <?php echo date('Y'); ?> by HST2. || All Rights Reserved.</p></div>
-        		<div class="span5">
-        			<?= CHtml::link(Yii::t('HST2', 'Home'), $this->createUrl('post/index'))?> |
-        			<?= CHtml::link(Yii::t('HST2', 'Contacte'), $this->createUrl('site/contact'))?> |
-        			<?= CHtml::link(Yii::t('HST2', 'Política de privacitat'), $this->createUrl('site/privacy'))?> |
-        			<?= CHtml::link(Yii::t('HST2', 'Quant a aquest web'), $this->createUrl('site/about'))?>
-	          </div>
-           </div><!-- footer -->
-       </div>
-   </div>
-
+<div class="clearfix"></div>
+  <div class="col-lg-12 hidden-xs hidden-sm">  
+  <?php 
+  ?>
+  </div>
+<div class="clearfix" style="margin-bottom:15px;"></div>
+<?php $this->widget('zii.widgets.CListView', array(
+  'dataProvider'=>$dataProvider2,
+  'itemView'=>'_view',
+  'sortableAttributes'=>array(
+          'title'=>'Título',
+          'create_time'=>'Fecha',
+      ),
+));
+?>
