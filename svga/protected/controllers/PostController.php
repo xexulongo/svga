@@ -64,7 +64,7 @@ class PostController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
-	{			$model=new Post;
+	{		$model=new Post;
 
 			// Uncomment the following line if AJAX validation is needed
 			// $this->performAjaxValidation($model);
@@ -79,32 +79,6 @@ class PostController extends Controller
 			$this->render('create',array(
 				'model'=>$model,
 			));
-	}
-	protected function newComment($post)
-	{
-		$comment=new Comment;
-		 if(isset($_POST['ajax']) && $_POST['ajax']==='comment-form')
-		{
-			echo CActiveForm::validate($comment);
-			Yii::app()->end();
-		}
-		if(isset($_POST['Comment']))
-		{
-			if(!Yii::app()->user->isGuest) {
-					$comment->attributes=$_POST['Comment'];
-				if($post->addComment($comment))
-				{
-					if($comment->status==Comment::STATUS_PENDING)
-						Yii::app()->user->setFlash('commentSubmitted','Gracias por tu comentario. Tu comentario sera publicado cuando sea aprobado.');
-					$this->refresh();
-				}
-			}
-			else {
-				Yii::app()->user->setFlash('error', "Para comentar debes loguearte!");
-				$this->redirect(array('site/login'));
-			}
-		}
-		return $comment;
 	}
 	/**
 	 * Updates a particular model.

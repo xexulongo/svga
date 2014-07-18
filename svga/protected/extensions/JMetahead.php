@@ -5,7 +5,7 @@ class JMetahead extends CApplicationComponent
 		 	echo '<header class="masthead subhead"">';
 		 	echo '<container><h1>' . $data['title'] . '</h1></container></header>';
 	}
-	public function noticias($dataprov){
+	/*public function noticias($dataprov){
 		echo '<div class="featured-covers"><div class="featured-covers-inner">';
 		for($i = 0; $i <= count($dataprov->data); ++$i){
 			echo '<article class="post type-post status-publish format-standard hentry category-news cover-left">';
@@ -18,4 +18,5 @@ class JMetahead extends CApplicationComponent
 		}
 		echo '</div></div>';
 	}
+	*/
 }
