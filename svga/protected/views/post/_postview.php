@@ -5,12 +5,12 @@
 
 <div class="news">
 	<!-- <h2><?php echo CHtml::link(CHtml::encode($data->title), array('view', 'id'=>$data->id)); ?></h2> -->
-				<div class="author"><i class="icon-pencil"></i>Autor: <b>SVGA</b></div>
-				<div class="timeline"><i class="icon-calendar"> </i><?= Yii::app()->dateFormatter->formatDateTime($data->create_time,'long','short')?></div>
-				<div class="image"><?php if($data->image != NULl) echo CHtml::image(Yii::app()->baseUrl . '/images/' . $data->image)?></div>
-				<div class="content">
-					<?php echo $data->content; ?>
-				</div>
+		<div class="author"><i class="icon-pencil"></i>Autor: <b>SVGA</b></div>
+		<div class="timeline"><i class="icon-calendar"> </i><?= Yii::app()->dateFormatter->formatDateTime($data->create_time,'long','short')?></div>
+		<div class="image"><?php if($data->image != NULl) echo CHtml::image(Yii::app()->baseUrl . '/images/' . $data->image)?></div>
+		<div class="content">
+			<?php echo $data->content; ?>
+		</div>
 
 		<b><?php echo CHtml::encode($data->getAttributeLabel('Estado')); ?>:</b>
 		<?php

@@ -287,10 +287,6 @@ body > .container { height: auto; min-height: 90%; }
 	right:0;
 	top:34px;
 }
-.news .image img{
-	width:100%;
-}
-
-#yw2 img{
-	width:100%;
+img{
+	max-width:100%;
 }
