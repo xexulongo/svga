@@ -8,7 +8,7 @@
 		
 		<header class="shadow">
 
-			<p class ="meta"><?php echo CHtml::link('News', array('index'))?> - <time datetime"2013-09-18" pubdate=""><?= Yii::app()->dateFormatter->formatDateTime($data->create_time, 'long', 'short')?></time></p>
+			<p class ="meta"><?php echo CHtml::link('News', array('index'))?> - <time datetime"2013-09-18" pubdate=""><?= Yii::app()->dateFormatter->formatDateTime($data->create_time, 'long', '')?></time></p>
 			
 			<h1 class="h2"><?php echo CHtml::link(CHtml::encode($data->title), array('view', 'id'=>$data->id)); ?></h1>
 			

@@ -4,9 +4,13 @@
 ?>
 
 <div class="news">
-		<div class="author"><i class="icon-pencil"></i>Autor: <b>SVGA</b></div>
-		<div class="timeline"><i class="icon-calendar"> </i><?= Yii::app()->dateFormatter->formatDateTime($data->create_time,'long','short')?></div>
-		<div class="image"><?php if($data->image != NULl) echo CHtml::image(Yii::app()->baseUrl . '/images/' . $data->image)?></div>
+		<div id="information">
+			<div class="author"><i class="fa fa-pencil"></i><p>Autor: <b>SVGA</b></p></div>
+			<div class="timeline"><i class="fa fa-calendar"></i><p><?= Yii::app()->dateFormatter->formatDateTime($data->create_time,'long','short')?></p></div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="image text-center"><?php if($data->image != NULl) echo CHtml::image(Yii::app()->baseUrl . '/images/' . $data->image)?></div>
 		<div class="content">
 			<?php echo $data->content; ?>
 		</div>

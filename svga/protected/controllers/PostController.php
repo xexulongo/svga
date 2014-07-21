@@ -32,7 +32,7 @@ class PostController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update', 'upload', 'subir', 'deleteimage'),
 				'roles'=>array('admin'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -64,7 +64,8 @@ class PostController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
-	{		$model=new Post;
+	{		
+		$model=new Post;
 
 			// Uncomment the following line if AJAX validation is needed
 			// $this->performAjaxValidation($model);
@@ -79,6 +80,14 @@ class PostController extends Controller
 			$this->render('create',array(
 				'model'=>$model,
 			));
+	}
+
+	public function actionSubir()
+	{
+		$image = new MyModel;
+		$this->render('upload', array(
+			'image'=>$image
+		));
 	}
 	/**
 	 * Updates a particular model.
@@ -234,4 +243,56 @@ public function loadModel()
 		}
 		return $items;
 	}
+
+public function actionDeleteimage($url)
+{
+    unlink($url);
+}
+public function actionUpload()
+{
+    header('Vary: Accept');
+    if (isset($_SERVER['HTTP_ACCEPT']) && 
+        (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false))
+    {
+        header('Content-type: application/json');
+    } else {
+        header('Content-type: text/plain');
+    }
+    $data = array();
+ 
+    $model = new MyModel('upload');
+    $model->picture = CUploadedFile::getInstance($model, 'picture');
+    if ($model->picture !== null  && $model->validate(array('picture')))
+    {
+    	$url = '/var/www/html/uploads/'. $model->picture->name;
+    	$thumb = '/uploads/'. $model->picture->name;
+        $model->picture->saveAs($url);
+        $model->file_name = $model->picture->name;
+         $data[] = array(
+                'name' => $model->picture->name,
+                'type' => $model->picture->type,
+                'size' => $model->picture->size,
+                // we need to return the place where our image has been saved
+                'url' => $url, // Should we add a helper method?
+                // we need to provide a thumbnail url to display on the list
+                // after upload. Again, the helper method now getting thumbnail.
+                'thumbnail_url' => $thumb,
+                // we need to include the action that is going to delete the picture
+                // if we want to after loading
+                'delete_url' => $this->createUrl('post/Deleteimage', 
+                    array('url' => $url, 'method' => 'uploader')),
+                'delete_type' => 'POST');
+        // save picture name
+    } else {
+        if ($model->hasErrors('picture'))
+        {
+            $data[] = array('error', $model->getErrors('picture'));
+        } else {
+            throw new CHttpException(500, "Could not upload file ".     CHtml::errorSummary($model));
+        }
+    }
+    // JQuery File Upload expects JSON data
+    echo json_encode($data);
+}
+
 }
