@@ -32,7 +32,7 @@ class PostController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'upload', 'subir', 'deleteimage'),
+				'actions'=>array('create','update', 'upload', 'subir', 'deleteimage', 'gallery'),
 				'roles'=>array('admin'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -293,6 +293,31 @@ public function actionUpload()
     }
     // JQuery File Upload expects JSON data
     echo json_encode($data);
+}
+public function actionGallery(){
+	$fileListOfDirectory = array();
+
+	 $pathTofileListDirectory = '/var/www/html/uploads' ;
+
+		if(!is_dir($pathTofileListDirectory ))
+		{
+		    die(" Invalid Directory");
+		}
+
+		if(!is_readable($pathTofileListDirectory ))
+		{
+		    die("You don't have permission to read Directory");
+		}
+
+		foreach ( new DirectoryIterator ( $pathTofileListDirectory ) as $file ) {
+		      if ($file->getExtension () == "jpg" or $file->getExtension () == "png") {
+		          array_push ( $fileListOfDirectory, $file->getBasename () );
+	      }
+		}
+
+	$this->render('gallery',array(
+		'folder'=>$fileListOfDirectory,
+	));
 }
 
 }
