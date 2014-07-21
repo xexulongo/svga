@@ -115,17 +115,6 @@
 			)
 	); ?>
 
-	<?php $this->widget('booster.widgets.TbFileUpload', array(
-    'url' => $this->createUrl("post/upload"),
-    'model' => $image,
-    'attribute' => 'picture', // see the attribute?
-    'multiple' => true,
-    'options' => array(
-	    'maxFileSize' => 2000000,
-	    'acceptFileTypes' => 'js:/(\.|\/)(gif|jpe?g|png)$/i',
-	)
-)); ?>
-
 
 </div><!-- form -->
 
