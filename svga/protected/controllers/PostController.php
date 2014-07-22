@@ -66,6 +66,7 @@ class PostController extends Controller
 	public function actionCreate()
 	{		
 		$model=new Post;
+		$images= $this->getImages();
 
 			// Uncomment the following line if AJAX validation is needed
 			// $this->performAjaxValidation($model);
@@ -73,12 +74,14 @@ class PostController extends Controller
 			if(isset($_POST['Post']))
 			{
 				$model->attributes=$_POST['Post'];
+				$model->image = $_POST['Post']['image'];
 				if($model->save())
 					$this->redirect(array('view','id'=>$model->id));
 			}
 
 			$this->render('create',array(
 				'model'=>$model,
+				'images'=>$images,
 			));
 	}
 
@@ -97,6 +100,7 @@ class PostController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$images= $this->getImages();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -110,6 +114,7 @@ class PostController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'images'=>$images,
 		));
 	}
 
@@ -264,7 +269,9 @@ public function actionUpload()
     $model->picture = CUploadedFile::getInstance($model, 'picture');
     if ($model->picture !== null  && $model->validate(array('picture')))
     {
-    	$url = '/var/www/html/uploads/'. $model->picture->name;
+    	$partial = Yii::getPathOfAlias('webroot');
+    	$partial = str_replace("svga", "", $partial);
+    	$url = $partial . 'uploads/' . $model->picture->name;
     	$thumb = '/uploads/'. $model->picture->name;
         $model->picture->saveAs($url);
         $model->file_name = $model->picture->name;
@@ -273,7 +280,7 @@ public function actionUpload()
                 'type' => $model->picture->type,
                 'size' => $model->picture->size,
                 // we need to return the place where our image has been saved
-                'url' => $url, // Should we add a helper method?
+                'url' => $thumb, // Should we add a helper method?
                 // we need to provide a thumbnail url to display on the list
                 // after upload. Again, the helper method now getting thumbnail.
                 'thumbnail_url' => $thumb,
@@ -294,29 +301,33 @@ public function actionUpload()
     // JQuery File Upload expects JSON data
     echo json_encode($data);
 }
-public function actionGallery(){
+
+protected function getImages(){
 	$fileListOfDirectory = array();
+	$pathTofileListDirectory = '/var/www/html/uploads' ;
 
-	 $pathTofileListDirectory = '/var/www/html/uploads' ;
+	if(!is_dir($pathTofileListDirectory ))
+	{
+	    die(" Invalid Directory");
+	}
 
-		if(!is_dir($pathTofileListDirectory ))
-		{
-		    die(" Invalid Directory");
-		}
+	if(!is_readable($pathTofileListDirectory ))
+	{
+	    die("You don't have permission to read Directory");
+	}
 
-		if(!is_readable($pathTofileListDirectory ))
-		{
-		    die("You don't have permission to read Directory");
-		}
-
-		foreach ( new DirectoryIterator ( $pathTofileListDirectory ) as $file ) {
-		      if ($file->getExtension () == "jpg" or $file->getExtension () == "png") {
-		          array_push ( $fileListOfDirectory, $file->getBasename () );
-	      }
-		}
+	foreach ( new DirectoryIterator ( $pathTofileListDirectory ) as $file ) {
+	      if ($file->getExtension () == "jpg" or $file->getExtension () == "png") {
+	          array_push ( $fileListOfDirectory, $file->getBasename () );
+      }
+	}
+	return $fileListOfDirectory;
+}
+public function actionGallery(){
+	$folder = $this->getImages();	
 
 	$this->render('gallery',array(
-		'folder'=>$fileListOfDirectory,
+		'folder'=>$folder,
 	));
 }
 

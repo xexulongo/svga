@@ -319,3 +319,12 @@ img{
     color:#fff !important;
     z-index:2;
 }
+#image_container img{
+	width: 33%;
+}
+.img_border {
+    border: 2px solid red;
+}
+#image_container{
+	margin: 25px 0;
+}

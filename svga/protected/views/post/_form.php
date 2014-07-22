@@ -73,6 +73,24 @@
 			)
 		); ?>
 
+		<?php echo $form->textFieldGroup(
+			$model,
+			'image',
+			array(
+				'wrapperHtmlOptions' => array(
+					'class' => 'col-lg-9',
+					'id'=>'image_from_list',
+				),
+			)
+		); ?>
+
+		<div id="image_container">
+		    <?php if(isset($images)){
+		    	echo '<h3 class="text-center"><b>Haz click en la imagen que quieres que aparezca como cabecera</b></h3>';
+		    	foreach($images as $image) echo CHtml::image('/uploads/'.$image, $image, array('id'=>$image));
+	    	}?>
+
+		</div>
 
 		<?php echo $form->switchGroup($model, 'destacado',
 			array(
@@ -115,7 +133,10 @@
 			)
 	); ?>
 
-
 </div><!-- form -->
 
 <?php $this->endWidget(); ?>
+
+<?php Yii::app()->clientScript->registerCoreScript('jquery');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/imagepicker.js');
+?>
