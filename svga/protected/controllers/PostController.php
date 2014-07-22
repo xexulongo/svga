@@ -240,7 +240,7 @@ public function loadModel()
 		for($i = 0; $i <= count($dataprov->data); ++$i){
 			if(isset($dataprov->data[$i])){
 				$aux = array(
-					'image'=>Yii::app()->baseUrl . '/images/' . $dataprov->data[$i]->image,
+					'image'=>'/uploads/'. $dataprov->data[$i]->image,
 			        'label'=> $dataprov->data[$i]->title,
 			        'caption'=> $dataprov->data[$i]->description
 				);
