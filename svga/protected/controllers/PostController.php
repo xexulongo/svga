@@ -308,12 +308,12 @@ protected function getImages(){
 
 	if(!is_dir($pathTofileListDirectory ))
 	{
-	    die(" Invalid Directory");
+	    die(" Invalid Directory " . $pathTofileListDirectory);
 	}
 
 	if(!is_readable($pathTofileListDirectory ))
 	{
-	    die("You don't have permission to read Directory");
+	    die("You don't have permission to read Directory " . $pathTofileListDirectory );
 	}
 
 	foreach ( new DirectoryIterator ( $pathTofileListDirectory ) as $file ) {
