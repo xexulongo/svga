@@ -305,8 +305,7 @@ public function actionUpload()
 protected function getImages(){
 	$fileListOfDirectory = array();
 	$partial = Yii::getPathOfAlias('webroot');
-	$partial = str_replace("svga", "", $partial);
-	$pathTofileListDirectory = $partial . 'uploads/' ;
+	$pathTofileListDirectory = $partial . '/uploads/' ;
 
 	if(!is_dir($pathTofileListDirectory ))
 	{
