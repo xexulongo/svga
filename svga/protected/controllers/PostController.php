@@ -173,7 +173,7 @@ class PostController extends Controller
 		$this->slideritems = $this->getdestacadositems($dataProviderDestacados);
 		$this->destacadosnews = $dataProviderDestacados;
 
-	  	$this->pageTitle = "HST2 - Noticias"; // It could be something from DB or...whatever
+	  	$this->pageTitle = "SVGA - Noticias"; // It could be something from DB or...whatever
 	   	$this->render('index',array(
         	'dataProvider2'=>$dataProviderPost,
         	'dataProvider1'=>$dataProviderDestacados,
@@ -271,9 +271,8 @@ public function actionUpload()
     if ($model->picture !== null  && $model->validate(array('picture')))
     {
     	$partial = Yii::getPathOfAlias('webroot');
-    	$partial = str_replace("svga", "", $partial);
-    	$url = $partial . 'uploads/' . $model->picture->name;
-    	$thumb = '/uploads/'. $model->picture->name;
+    	$url = $partial . '/uploads/' . $model->picture->name;
+    	$thumb =  '/uploads/'. $model->picture->name;
         $model->picture->saveAs($url);
         $model->file_name = $model->picture->name;
          $data[] = array(

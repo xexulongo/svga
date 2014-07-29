@@ -11,10 +11,6 @@ $this->menu=array(
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
-<h1 class="text-center">HST2</h1>
-
-<div class="title"><h2>Notícias destacadas</h2></div>
-
 <div class="featured-covers">
   <div class="featured-covers-inner">
     <?php $this->widget('zii.widgets.CListView', array(
