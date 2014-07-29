@@ -87,7 +87,7 @@
 		<div id="image_container">
 		    <?php if(isset($images)){
 		    	echo '<h3 class="text-center"><b>Haz click en la imagen que quieres que aparezca como cabecera</b></h3>';
-		    	foreach($images as $image) echo CHtml::image('/uploads/'.$image, $image, array('id'=>$image));
+		    	foreach($images as $image) echo CHtml::image(Yii::app()->baseUrl . '/uploads/'.$image, $image, array('id'=>$image));
 	    	}?>
 
 		</div>
