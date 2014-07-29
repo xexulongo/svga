@@ -16,7 +16,7 @@ else {
 		echo CHtml::openTag('div', array('class'=>'col-md-3'));         
 	    	echo CHtml::openTag('div', array('class'=>'thumbnail'));             
 		    	echo CHtml::openTag('a', array('href'=>Yii::app()->baseUrl . '/uploads/'.$file,'target'=>'_blank'));
-		   	 		echo CHtml::image('/uploads/'.$file, $file);
+		   	 		echo CHtml::image( Yii::app()->baseUrl . '/uploads/'.$file, $file);
 			    echo CHtml::closeTag('a');
 				echo CHtml::openTag('pre',array('class'=>'text-center')) . $file .CHtml::closeTag('pre');
 		    echo CHtml::closeTag('div');
