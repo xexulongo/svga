@@ -457,15 +457,5 @@ Pseudo ::after element
 .em-background-box {
 	border-bottom: 4px solid #22ba93;
 }
-#footer{
-	background: #333;
-min-height: 200px;
-padding: 30px 0;
-color: #a2a2a2;
-color: rgba(255,255,255,0.6);
-border-top: 2px solid #55a79a;
-}
-#footer .container {
-position: relative;
-}
+
 
