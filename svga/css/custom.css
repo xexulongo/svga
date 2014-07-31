@@ -1,3 +1,6 @@
+.carousel {
+	margin-bottom: 26px;
+}
 .filter_input_custom{
 	width: 50%;
 	border: 1px solid #ccc;
@@ -27,10 +30,10 @@
     margin-top: -5em;
 }
 .featured-covers { position: relative; margin-top: -5px; overflow: hidden;}
-.featured-covers article {position: relative; width: 24%;height: 0; padding-bottom:24%; float: left; margin: 5px;overflow: hidden;background: #b3b3b3;-webkit-box-shadow: 0px 0px 7px 1px #1f1f1f;box-shadow: 0px 0px 7px 1px #1f1f1f;}
+.featured-covers article {position: relative; width: 23%;height: 0; padding-bottom:24%; float: left; margin: 1%;overflow: hidden;background: #b3b3b3;-webkit-box-shadow: 0px 0px 7px 1px #1f1f1f;box-shadow: 0px 0px 7px 1px #1f1f1f;}
 .shadow {-webkit-box-shadow: 0px 0px 7px 1px #1f1f1f;box-shadow: 0px 0px 7px 1px #1f1f1f;}
 .featured-covers-inner {/*height: 619px*/;width: auto;margin: 0 0 5px -5px;padding: 0 5px 0 5px;overflow: hidden;}
-.featured-covers article.cover-left {margin-left: 0;}
+.featured-covers article.cover-left {}
 .featured-covers article header {position: absolute;left: 0;bottom: 10px;width: 90%; overflow: hidden; height: 70px;margin: 10px 10px 0 10px;padding: 10px;background: rgb(255,255,255);background: rgba(255,255,255,0.9);}
 .shadow {-webkit-box-shadow: 0px 0px 7px 1px #1f1f1f;box-shadow: 0px 0px 7px 1px #1f1f1f;}
 .featured-covers article header .meta {margin: 0;font-size: 14px;line-height: 14px;}
@@ -454,14 +457,5 @@ Pseudo ::after element
 .em-background-box {
 	border-bottom: 4px solid #22ba93;
 }
-#footer{
-	background: #333;
-min-height: 200px;
-padding: 30px 0;
-color: #a2a2a2;
-color: rgba(255,255,255,0.6);
-border-top: 2px solid #55a79a;
-}
-#footer .container {
-position: relative;
-}
+
+
