@@ -12,6 +12,7 @@
     <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/custom.css" />
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-social.css" />
+    <link rel="icon" type="img/ico" href="<?php echo Yii::app()->baseUrl;?>/images/favicon.ico">
 
 </head>
 
@@ -78,7 +79,7 @@ $this->widget(
         <a class="btn btn-social-icon btn-twitter" id="twitter"> 
             <i class="fa fa-twitter"></i> 
         </a>
-        <a class="btn btn-social-icon btn-facebook" id="facebook">
+        <a class="btn btn-social-icon btn-facebook" id="facebook" href="https://www.facebook.com/hitstuntournament">
             <i class="fa fa-facebook"></i>
         </a>
         <a class="btn btn-social-icon btn-facebook" id="facebook">
@@ -86,17 +87,84 @@ $this->widget(
         </a>
     </div>
     <?php echo $content; ?>
-</div><!-- page -->
+</div><!-- page --></div>
 
-
-<div class="footer">
+<footer id="footer">
+  <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-4">
-            Copyright &copy; <?php echo date('Y'); ?> by HST2.<br/>
-            All Rights Reserved.<br/>
-            <?php echo Yii::powered(); ?>
+      <div class="col-md-3 col">
+        <div class="block contact-block">
+          <!--@todo: replace with company contact details-->
+          <h3>
+            Contact Us
+          </h3>
+          <address>
+            <ul class="fa-ul">
+              <li>
+                <abbr title="Phone"><i class="fa fa-li fa-phone"></i></abbr>
+                019223 8092344
+              </li>
+              <li>
+                <abbr title="Email"><i class="fa fa-li fa-envelope"></i></abbr>
+                info@appstraptheme.com
+              </li>
+              <li>
+                <abbr title="Address"><i class="fa fa-li fa-home"></i></abbr>
+                Sunshine House, Sunville. SUN12 8LU.
+              </li>
+            </ul>
+          </address>
         </div>
+      </div>
+      
+      <div class="col-md-5 col">
+        <div class="block">
+          <h3>
+            About Us
+          </h3>
+          <p>Making the web a prettier place one template at a time! We make beautiful, quality, responsive Drupal &amp; web templates!</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 col">
+        <div class="block newsletter">
+          <h3>
+            Newsletter
+          </h3>
+          <p>Stay up to date with our latest news and product releases by signing up to our newsletter.</p>
+          <!--@todo: replace with mailchimp code-->
+          <form role="form">
+            <div class="input-group input-group-sm">
+              <label class="sr-only" for="email-field">Email</label>
+              <input type="text" class="form-control" id="email-field" placeholder="Email">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">Go!</button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-</div><!-- footer -->
+    
+    <div class="row">
+      <div id="toplink">
+        <a href="#top" class="top-link" title="Back to top">Back To Top <i class="fa fa-chevron-up"></i></a>
+      </div>
+      <!--@todo: replace with company copyright details-->
+      <div class="subfooter">
+        <div class="col-md-6">
+          <p>Site template by <a href="appstraptheme.com">AppStrap</a> | Copyright 2012 © AppStrap</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-inline footer-menu">
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

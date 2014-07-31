@@ -4,7 +4,7 @@
 ?>
 	<article class="post type-post status-publish format-standard hentry category-news cover-left">
 
-		<a title=<?php echo $data->title?> href=<?php echo $data->url ?>><?php if($data->image != NULL and $data->image != 'blanks') echo CHtml::image('/uploads/' . $data->image)?></a>
+		<a title=<?php echo $data->title?> href=<?php echo $data->url ?>><?php if($data->image != NULL and $data->image != 'blanks') echo CHtml::image(Yii::app()->baseUrl . '/uploads/' . $data->image)?></a>
 		
 		<header class="shadow">
 

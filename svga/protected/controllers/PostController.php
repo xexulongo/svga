@@ -51,6 +51,9 @@ class PostController extends Controller
 	 */
 	public function actionView($id)
 	{
+		/*if(Yii::app()->user->checkAccess('blogger', array(Yii::app()->user->id))) echo 'THATS OK';
+        else echo 'MERDA';
+        die(); */
 		$post=$this->loadModel();
 	 
 	    $this->render('view',array(
