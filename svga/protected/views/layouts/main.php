@@ -60,11 +60,6 @@ $this->widget(
 <?php if(isset($this->destacadosnews)) //Yii::app()->cmetahead->noticias($this->destacadosnews);?>
 
 <div class="container">
-    <?php echo 'mierda' . Yii::app()->user->checkSeccio('hst') ?>
-    <?php if(!Yii::app()->user->isGuest) {
-        echo 'mierder' . Yii::app()->user->checkAccess('blogger', array(Yii::app()->user->id));
-        }
-        ?>
     <?php $this->widget('booster.widgets.TbAlert', array(
             'fade' => true,
             'closeText' => '&times;', // false equals no close link
