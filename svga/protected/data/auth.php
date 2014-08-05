@@ -11,7 +11,7 @@ return array (
   array (
     'type' => 2,
     'description' => 'secció blog',
-    'bizRule' => 'return Yii::app()->user->checkSeccio(\'hst2\');',
+    'bizRule' => 'return Yii::app()->user->checkSeccio(\'hst\');',
     'data' => NULL,
     'children' => 
     array (
@@ -57,6 +57,7 @@ return array (
     array (
       0 => 'web',
       1 => 'junta',
+      2 => 'blogaire',
     ),
   ),
 );

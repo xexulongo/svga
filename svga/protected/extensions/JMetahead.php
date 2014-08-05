@@ -2,8 +2,8 @@
 class JMetahead extends CApplicationComponent
 {
 	public function construir($data){
-		 	echo '<header class="masthead subhead"">';
-		 	echo '<container><h1>' . $data['title'] . '</h1></container></header>';
+		 	echo '<header class="masthead subhead""><container><h1>';
+		 	echo $data['title'] . '</h1></container></header>';
 	}
 	/*public function noticias($dataprov){
 		echo '<div class="featured-covers"><div class="featured-covers-inner">';
