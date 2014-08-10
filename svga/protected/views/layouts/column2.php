@@ -2,7 +2,6 @@
 <div class="row">
     <div class="col-lg-9">
     	<?php echo $content; ?>
-        <?php $this->endContent(); ?>
     </div>
     <div class="col-lg-3" id="initial-z">
         <div id="sidebar">
@@ -11,3 +10,4 @@
         </div>
     </div>
 </div>
+        <?php $this->endContent(); ?>

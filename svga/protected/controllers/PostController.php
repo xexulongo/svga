@@ -173,10 +173,10 @@ class PostController extends Controller
 	    	'pagination' => false,
 	        'criteria'=>$criteriaDestacados,
 	    ));
-		$this->slideritems = $this->getdestacadositems($dataProviderDestacados);
-		$this->destacadosnews = $dataProviderDestacados;
+		//$this->slideritems = $this->getdestacadositems($dataProviderDestacados);
+		//$this->destacadosnews = $dataProviderDestacados;
 
-	  	$this->pageTitle = "SVGA - Noticias"; // It could be something from DB or...whatever
+	  	$this->pageTitle = "HST - Noticias"; // It could be something from DB or...whatever
 	   	$this->render('index',array(
         	'dataProvider2'=>$dataProviderPost,
         	'dataProvider1'=>$dataProviderDestacados,

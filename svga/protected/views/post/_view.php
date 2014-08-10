@@ -11,10 +11,9 @@
 			<i class="icon-calendar"></i><?= Yii::app()->dateFormatter->formatDateTime($data->create_time, 'long', 'short')?> <br />
 			<?php if($data->image != NULl) echo CHtml::image(Yii::app()->baseUrl . '/uploads/'. $data->image)?>
 			<div class="clear"></div>
-			
 			<?php echo $data->description;?>
 		</div>
-	<br />
+	<br/>
 
 	
 	
@@ -41,8 +40,7 @@
 		<b>Última edición: </b> <?php echo date('F j, Y',$data->update_time); ?> <i class="icon-time"></i>
 		<a href="<?= Yii::app()->createUrl('post/view',array('id'=>$data->id))?>">
 			<div class="pull-right btn">
-				<?php 
-				$this->widget(
+				<?php $this->widget(
 				    'booster.widgets.TbButton',
 				    array(
 				        'label' => 'Leer más',

@@ -10,7 +10,7 @@ $this->menu=array(
 <head>
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
-
+<!--
 <div class="featured-covers">
   <div class="featured-covers-inner">
     <?php $this->widget('zii.widgets.CListView', array(
@@ -20,12 +20,8 @@ $this->menu=array(
     ));
     ?>
   </div>
-</div>
+</div>-->
 <div class="clearfix"></div>
-  <div class="col-lg-12 hidden-xs hidden-sm">  
-  <?php 
-  ?>
-  </div>
 <div class="clearfix" style="margin-bottom:15px;"></div>
 <?php $this->widget('zii.widgets.CListView', array(
   'dataProvider'=>$dataProvider2,

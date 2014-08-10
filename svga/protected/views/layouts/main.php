@@ -11,12 +11,49 @@
     <meta content="" name="author" />
     <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/custom.css" />
-    <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-social.css" />
     <link rel="icon" type="img/ico" href="<?php echo Yii::app()->baseUrl;?>/images/favicon.ico">
+    <?php if (!Yii::app()->user->isGuest) {?>
+          <meta http-equiv="refresh" content="<?php echo Yii::app()->params['session_timeout'];?>;"/>
+    <?php }?>
 
 </head>
 
-<body><?php
+<body>
+<!-- Header Area -->
+<div class="header">
+  <!-- Navigation Menu -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- LOGO in brand section -->
+        <a class="navbar-brand" href="<?= $this->createUrl('post/index') ?>">
+          <!-- Logo Text -->
+          <img id="logo-header" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" alt="Logo">
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="<?php if(EUtils::returnActive('post', 'index')) echo 'active';?>"><a href="<?= $this->createUrl('post/index') ?>">Home</a></li>
+          <li class="<?php if(EUtils::returnActive('site', 'pricing')) echo 'active';?>"><a href="#pricing">Pricing</a></li>
+          <li class="<?php if(EUtils::returnActive('site', 'about')) echo 'active';?>"><a href="#about">About</a></li>
+          <li class="<?php if(EUtils::returnActive('site', 'contact')) echo 'active';?>"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navigation End -->
+</div>
+<!-- Header End -->
+<!--    <?php
 $this->widget(
     'booster.widgets.TbNavbar',
     array(
@@ -50,7 +87,7 @@ $this->widget(
     )
 );
 ?>
-
+-->
 <?php if(isset($this->metahead)) Yii::app()->cmetahead->construir($this->metahead); ?>
 <?php if(isset($this->slideritems))  {
     $this->widget('booster.widgets.TbCarousel', array(
@@ -74,20 +111,10 @@ $this->widget(
                 'error' => array('closeText' => '&times')
             ),
     ));?>
-    <div class="fixedsocial" id="second-z">
-        <a class="btn btn-social-icon btn-twitter" id="twitter"> 
-            <i class="fa fa-twitter"></i> 
-        </a>
-        <a class="btn btn-social-icon btn-facebook" id="facebook" href="https://www.facebook.com/hitstuntournament">
-            <i class="fa fa-facebook"></i>
-        </a>
-        <a class="btn btn-social-icon btn-facebook" id="facebook">
-            <i class="fa fa-facebook"></i>
-        </a>
-    </div>
     <?php echo $content; ?>
-</div><!-- page --></div>
-
+    <div class="clearfix"></div>
+</div><!-- page -->
+<div class="clearfix"></div>
 <footer id="footer">
   <div class="container">
     <div class="row">

@@ -468,4 +468,95 @@ border-top: 2px solid #55a79a;
 #footer .container {
 	position: relative;
 }
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Open Sans', sans-serif;
+font-weight: 400;
+}
+img#logo-header{
+	height: 50px;
+}
+/* Header */
+.header{
+	margin-bottom: 120px;
+}
+.header .navbar { 
+	margin: 0;
+	background: #fff;
+	border: 0;
+	border-radius: 0;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	border-bottom: 3px solid #32c8de;
+}
 
+.header .navbar-brand  h1 {
+	display: inline-block;
+	font-size: 30px;
+	font-weight:600;
+	line-height:40px;
+	margin:0px;
+	padding:0px;
+	color: #777;
+}
+
+.header .navbar-brand h1 i{
+	display:inline-block;
+	font-size:28px;
+	margin-right:2px;
+}
+
+.header .navbar-nav>li>a {
+	padding: 25px 18px;
+	font-size: 16px;
+	line-height: 25px;
+	font-weight: 600;
+	color: #777;
+	background:transparent;
+	text-transform: uppercase;
+   -webkit-transition: background 0.5s ease-in-out;
+      -moz-transition: background 0.5s ease-in-out;
+        -o-transition: background 0.5s ease-in-out;
+       -ms-transition: background 0.5s ease-in-out;
+           transition: background 0.5s ease-in-out;
+}
+
+.header .navbar-nav>li>a:hover,
+.header .navbar-nav>li>a:focus { 
+	color:#fff; 
+   -webkit-transition: background 0.5s ease-in-out;
+      -moz-transition: background 0.5s ease-in-out;
+        -o-transition: background 0.5s ease-in-out;
+       -ms-transition: background 0.5s ease-in-out;
+           transition: background 0.5s ease-in-out;	
+}
+
+.header .navbar-nav>li.active>a{
+	color:#fff;
+}
+
+.header .icon-bar{
+	background:#fff;
+}
+
+/* Navigation Menu */
+.header .navbar .navbar-brand > h1 > i {
+  color: #32c8de;
+}
+.header .navbar .navbar-nav > li > a:hover {
+  background: #32c8de !important;
+}
+.header .navbar .navbar-nav > li > a:focus {
+  background: #32c8de !important;
+}
+.header .navbar .navbar-nav > li.active > a {
+  background: #32c8de !important;
+}
+.header .navbar .navbar-toggle {
+  background: #32c8de;
+}
+/* Default Heading */
+.default-heading .dh-icon i {
+  color: #32c8de;
+}
+.services {
+background-color: #32c8de;
+}

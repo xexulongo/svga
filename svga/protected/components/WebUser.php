@@ -35,6 +35,7 @@ class WebUser extends CWebUser {
 	{
 		$app=Yii::app();
 		$request=$app->getRequest();
+		$url2 = $app->createUrl('usuarisvga/login');
 
 		if(!$request->getIsAjaxRequest())
 		{
@@ -47,7 +48,7 @@ class WebUser extends CWebUser {
 					$route=isset($url[0]) ? $url[0] : $app->defaultController;
 					$url=$app->createUrl($route,array_splice($url,1));
 				}
-				$request->redirect($url);
+				$request->redirect($url2);
 			}
 		}
 		elseif(isset($this->loginRequiredAjaxResponse))
