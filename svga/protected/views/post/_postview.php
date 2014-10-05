@@ -11,7 +11,7 @@
 			<div class="clearfix"></div>
 		</div>
 		
-		<div class="image text-center"><?php if($data->image != NULl) echo CHtml::image('/uploads/'. $data->image)?></div>
+		<div class="image text-center"><?php if($data->image) echo CHtml::image(Yii::app()->baseUrl .'/uploads/'. $data->image)?></div>
 		<div class="content">
 			<?php echo $data->content; ?>
 		</div>
