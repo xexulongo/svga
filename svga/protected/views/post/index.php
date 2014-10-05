@@ -21,8 +21,7 @@ $this->menu=array(
     ?>
   </div>
 </div>-->
-<div class="clearfix"></div>
-<div class="clearfix" style="margin-bottom:15px;"></div>
+<div class="clearfix" style="margin-bottom:45px;"></div>
 <?php $this->widget('zii.widgets.CListView', array(
   'dataProvider'=>$dataProvider2,
   'itemView'=>'_view',

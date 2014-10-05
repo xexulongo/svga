@@ -12,9 +12,10 @@
     <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/custom.css" />
     <link rel="icon" type="img/ico" href="<?php echo Yii::app()->baseUrl;?>/images/favicon.ico">
-    <?php if (!Yii::app()->user->isGuest) {?>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
+    <?php if (!Yii::app()->user->isGuest): ?>
           <meta http-equiv="refresh" content="<?php echo Yii::app()->params['session_timeout'];?>;"/>
-    <?php }?>
+    <?php endif; ?>
 
 </head>
 
@@ -35,7 +36,7 @@
         <!-- LOGO in brand section -->
         <a class="navbar-brand" href="<?= $this->createUrl('post/index') ?>">
           <!-- Logo Text -->
-          <img id="logo-header" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" alt="Logo">
+          <img src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" alt="Logo">
         </a>
       </div>
 
@@ -43,9 +44,9 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li class="<?php if(EUtils::returnActive('post', 'index')) echo 'active';?>"><a href="<?= $this->createUrl('post/index') ?>">Home</a></li>
-          <li class="<?php if(EUtils::returnActive('site', 'pricing')) echo 'active';?>"><a href="#pricing">Pricing</a></li>
-          <li class="<?php if(EUtils::returnActive('site', 'about')) echo 'active';?>"><a href="#about">About</a></li>
-          <li class="<?php if(EUtils::returnActive('site', 'contact')) echo 'active';?>"><a href="#contact">Contact</a></li>
+           <?php if (Yii::app()->user->isGuest) :?><li class="<?php if(EUtils::returnActive('usuarisvga', 'login')) echo 'active';?>"><a href="<?= $this->createUrl('usuarisvga/login') ?>">Login</a></li>
+           <?php else :?><li class="<?php if(EUtils::returnActive('usuarisvga', 'logout')) echo 'active';?>"><a href="<?= $this->createUrl('usuarisvga/logout') ?>">Logout</a></li>
+           <?php endif; ?>
         </ul>
       </div>
     </div>
@@ -118,47 +119,44 @@ $this->widget(
 <footer id="footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-3 col">
+      <div class="col-md-6 col">
         <div class="block contact-block">
           <!--@todo: replace with company contact details-->
           <h3>
-            Contact Us
+            Contacta con Nosotros
           </h3>
           <address>
             <ul class="fa-ul">
               <li>
-                <abbr title="Phone"><i class="fa fa-li fa-phone"></i></abbr>
-                019223 8092344
-              </li>
-              <li>
                 <abbr title="Email"><i class="fa fa-li fa-envelope"></i></abbr>
-                info@appstraptheme.com
+                upcsvga@gmail.com
               </li>
               <li>
                 <abbr title="Address"><i class="fa fa-li fa-home"></i></abbr>
-                Sunshine House, Sunville. SUN12 8LU.
+                 C/ Jordi Girona 1-3 Campus Nord Edifici Ω Despatx 104 08034 Barcelona 
               </li>
             </ul>
           </address>
         </div>
       </div>
       
-      <div class="col-md-5 col">
+      <div class="col-md-6 col">
         <div class="block">
           <h3>
-            About Us
+            Sobre Nosotros
           </h3>
-          <p>Making the web a prettier place one template at a time! We make beautiful, quality, responsive Drupal &amp; web templates!</p>
+          <p>SVGA(Series and Video Games Association) és una associació dedicada a la projecció de sèries i organització de tornejos.
+SVGA(Series and Video Games Association) es una associación dedicada a la proyección de series i organitzación de torneos.</p>
         </div>
       </div>
       
-      <div class="col-md-4 col">
+      <!--<div class="col-md-4 col">
         <div class="block newsletter">
           <h3>
             Newsletter
           </h3>
           <p>Stay up to date with our latest news and product releases by signing up to our newsletter.</p>
-          <!--@todo: replace with mailchimp code-->
+          @todo: replace with mailchimp code
           <form role="form">
             <div class="input-group input-group-sm">
               <label class="sr-only" for="email-field">Email</label>
@@ -168,28 +166,26 @@ $this->widget(
               </span>
             </div>
           </form>
-        </div>
+        </div>-->
       </div>
     </div>
     
-    <div class="row">
-      <div id="toplink">
+      <!--<div id="toplink">
         <a href="#top" class="top-link" title="Back to top">Back To Top <i class="fa fa-chevron-up"></i></a>
-      </div>
+      </div>-->
       <!--@todo: replace with company copyright details-->
-      <div class="subfooter">
-        <div class="col-md-6">
-          <p>Site template by <a href="appstraptheme.com">AppStrap</a> | Copyright 2012 © AppStrap</p>
+      <div class="subfooter text-center">
+        <div class="col-md-12">
+          Copyright 2014 © SVGA | Web designed by <a target="_blank" href="https://www.facebook.com/zherlonlogistics">José Luis Expósito</a></p>
         </div>
-        <div class="col-md-6">
+        <!--<div class="col-md-6">
           <ul class="list-inline footer-menu">
             <li><a href="#">Terms</a></li>
             <li><a href="#">Privacy</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
-        </div>
+        </div>-->
       </div>
-    </div>
   </div>
 </footer>
 </body>

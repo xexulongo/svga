@@ -3,7 +3,7 @@
 /* @var $data Post */
 ?>
 
-<div class="text-left">
+<div class="text-left <?= $index%2 ? 'blog rev' : 'blog' ?>">
 
 	<h2><?php echo CHtml::link(CHtml::encode($data->title), array('view', 'id'=>$data->id)); ?></h2>
 		<div class="text-left">		
