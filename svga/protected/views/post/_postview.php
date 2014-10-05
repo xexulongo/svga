@@ -7,7 +7,7 @@
 		<div id="information">
 			<div class="author"><i class="fa fa-pencil"></i><p>Autor: <b>SVGA</b></p></div>
 			<div class="timeline"><i class="fa fa-calendar"></i><p><?= Yii::app()->dateFormatter->formatDateTime($data->create_time,'long','short')?></p></div>
-			<div class="fb-like pull-right" style="margin-top:5px;" data-href="<?= $data->url ?>" data-width="100%" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+			<div class="fb-like pull-right" style="margin-top:5px;" data-href="<?= $data->url?>" data-width="100%" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 			<div class="clearfix"></div>
 		</div>
 		
@@ -37,11 +37,10 @@
 		</div>
 		<?php echo CHtml::link('Permalink', $data->url); ?>
 		<div class="timeline">Última modificación: <?php echo date('F j, Y',$data->update_time); ?></div>
-		<div class="fb-comments" data-href="<?= $data->url ?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+		<div class="fb-comments" data-href="http://svga.upc.es/index.php/post/<?= $data->id?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
 </div>
 <div id="fb-root"></div>
-<script>
-(function(d, s, id) {
+<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
