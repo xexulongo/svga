@@ -83,14 +83,29 @@
 				),
 			)
 		); ?>
-
-		<div id="image_container">
-		    <?php if(isset($images)){
-		    	echo '<h3 class="text-center"><b>Haz click en la imagen que quieres que aparezca como cabecera</b></h3>';
-		    	foreach($images as $image) echo CHtml::image(Yii::app()->baseUrl . '/uploads/'.$image, $image, array('id'=>$image));
-	    	}?>
-
+		<?php $collapse = $this->beginWidget('booster.widgets.TbCollapse'); ?>
+		<div class="panel-group" id="accordion">
+  			<div class="panel panel-default">
+    			<div class="panel-heading">
+     				<h1 style="font-size: 26px;text-align: center;"class="panel-title">
+        				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          					Haz click aqui para elegir la imagen del post
+        				</a>
+      				</h1>
+   			 	</div>
+		    	<div id="collapseOne" class="panel-collapse collapse">
+		      		<div class="panel-body">
+						<div id="image_container">
+					    	<?php if(isset($images)){
+					    		echo '<h3 class="text-center"><b>Haz click en la imagen que quieres que aparezca como cabecera</b></h3>';
+					    		foreach($images as $image) echo CHtml::image(Yii::app()->baseUrl . '/uploads/'.$image, $image, array('id'=>$image));
+				    		}?>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		<?php $this->endWidget(); ?>
 
 		<?php echo $form->switchGroup($model, 'destacado',
 			array(
