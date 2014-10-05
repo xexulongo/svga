@@ -37,7 +37,7 @@
 		</div>
 		<?php echo CHtml::link('Permalink', $data->url); ?>
 		<div class="timeline">Última modificación: <?php echo date('F j, Y',$data->update_time); ?></div>
-		<div class="fb-comments" data-href="http://svga.upc.es/index.php/post/<?= $data->id?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+		<div class="fb-comments" data-href="http://svga.upc.es/svga-pre/svga/svga/index.php/post/<?= $data->id?>" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
 </div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
