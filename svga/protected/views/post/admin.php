@@ -48,6 +48,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         // 40px is the height of the main navigation at bootstrap
         'dataProvider' => $model->search(),
         'template' => "{items}",
+        'htmlOptions'=>array('style'=>'word-wrap:break-word; width:850px;'),
         'columns' => array(
 			'title',
 			'content',
